@@ -14,10 +14,14 @@
           <li class="nav-item">
             <a class="nav-link" href="/logout">Logout</a>
           </li> 
+          <% if(currentUser.role === 'manager'){ %>
           <li class="nav-item">
             <a class="nav-link" href="/register">New Account</a>
           </li>
-      <% } else { %>
+          <li class="nav-item">
+            <a class="nav-link" href="/services/new">New Service</a>
+          </li>
+      <% }} else { %>
         <li class="nav-item">
           <a class="nav-link" href="/login">Login</a>
         </li> 

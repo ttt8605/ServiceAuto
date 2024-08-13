@@ -1,0 +1,66 @@
+<% layout('/layouts/boilerplate') %>
+  
+
+
+<head>
+    <link rel="stylesheet" href="/stylesheets/new-edit.css">
+  </head>
+  <% layout('/layouts/boilerplate') %>
+  <div class="row">
+    <div class="col-md-6 offset-md-3 mb-4">
+        <div class="card shadow">
+            <div class="card-body">
+                <h2 class="text-center card-title mb-4">Edit Service</h2>
+  <form action="/services/<%=service._id %>?_method=PUT" method="POST" novalidate  class="validated-form" enctype="multipart/form-data" >
+      <div class=" mb-3">
+       <label for="name" class="form-label text">Name of the service</label>
+       <input type="text" name="name" id="name" class="form-control" placeholder="service-name" value="<%= service.name %>" autofocus required>
+       <div class="valid-feedback">
+        Looks good!
+       </div>
+      </div>
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+     bsCustomFileInput.init();
+   });
+     </script>
+     <div class="mb-3">
+       <div class="form-file custom-file">
+           <input type="file" class="form-file-input" id="image" name="image" multiple>
+           <label class="form-file-label" for="image">
+               <span class="form-file-text custom-file-label">Choose image(s)...</span>
+               <span class="form-file-button">Browse</span>
+           </label>
+       </div>
+   </div>
+  
+         <div class="mb-3">
+          <label class="form-label text" for="description">Description</label>
+          <textarea class="form-control" name="description" id="description" aria-label="Description" rows="10" maxlength="1500" required><%=service.description %></textarea>
+          <div class="valid-feedback">
+            Looks good!
+           </div>
+        </div>
+   
+
+      <div class="mb-3 mt-4">
+        <h6 class="text mb-3">Choose the images you want to delete:</h6>
+        <% service.images.forEach(function(img,i){ %>
+          <img src="<%=img.thumbnail%>" class="img-thumbnail" alt="">
+          <div class="form-check-inline md-3">
+            <input type="checkbox" id="image-<%=i%>" name="deleteImages[]" value="<%=img.filename %>">
+             <label class="text" for="image-<%=i%>">Delete</label>
+         </div>
+        
+          <% }) %>
+      </div>
+        <div class="mb-3">
+          <button class="btn btn-success btn-block">Edit Service</button>
+          </div>
+  
+  </form>
+  
+  
+  </div>
+  
+  </div>

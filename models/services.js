@@ -1,10 +1,28 @@
-const mongoose = require('mongoose')
-const Schema = mongoose.Schema;
+// nume , descriere , pret , youtube link , poza
+const mongoose = require('mongoose');
+const{Schema}=mongoose;
 
-const SericeSchema = new Schema({
-    title: String,
-    description: String,
+
+const ImageSchema = new Schema({
+    url:String,
+    filename:String
 });
+ImageSchema.virtual('thumbnail').get(function(){
+    return this.url.replace('/upload','/upload/w_200');
+ })
 
+const ServiciSchema = new Schema({
+name:{
+    type:String,
+    required:true
+},
+description:{
+    type:String,
+    required:true
+},
+images:[ImageSchema]
 
-module.exports = mongoose.model('Service',SericeSchema);
+})
+
+const Services = mongoose.model('Services',ServiciSchema);
+module.exports = Services;

@@ -105,9 +105,11 @@ app.use((req, res, next) => {
 //routes
 const homePageRoutes = require('./routes/homePage');
 const authRoutes = require('./routes/auth');
+const serviceRoutes = require('./routes/ServiceRoutes')
 
 app.use('/',homePageRoutes)
 app.use('/',authRoutes)
+app.use('/services',serviceRoutes)
 
 //404 handler
 app.all('*', (req, res, next) => {

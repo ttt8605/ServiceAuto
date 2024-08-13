@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+
+main{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+
+
+h1{
+    color: #f2f2f2;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500
+}
+.text{
+    color: #252525;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500
+}
+
+.offcanvas-body{
+    margin-top: 50px;
+    background-color: #212529;
+ }
+ 
+
+
+
+ #meniu1{
+    display: block;
+    width: 100%;
+ }
+ 
+ #meniu2{
+     display: none;
+ }
+
+ #footer{
+    display: none;
+ }
+#fastLinks{
+    text-decoration: none;
+    color: #373737;
+    font-family: 'Roboto',sans-serif;
+    font-weight: 300;
+    font-size:17px;
+}
+
+.container{
+    margin-top: 50px;
+}
+
+@media(max-width:1024px){
+    .social{
+        width: 215px;
+    }
+    }
+    
+    @media(max-width:911px){
+        #meniu1{
+            display: none;
+        }
+        
+        #meniu2{               
+             display: block;
+             border-bottom-left-radius: 20px;
+             border-bottom-right-radius: 20px;
+         }
+    
+    
+         #toggle {
+            margin-top: 10px;
+            margin-right: 15px;
+          
+        }
+    
+        #closeBtn {
+          background-color: #f2f2f2;
+        }
+    
+         .container-fluid{
+            width: 100%;
+            height: 90px;
+         }
+    
+          #list {
+            background-color: #373737;
+        }
+    
+       
+    
+        .leftDiv{
+            margin-top: 0px;
+        }
+    }

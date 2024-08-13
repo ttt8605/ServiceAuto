@@ -1,0 +1,19 @@
+<% layout('/layouts/boilerplate') %>
+  
+<div class="card mb-3 col-4">
+  <img src="<%= service.images[0].url %>" class="card-img-top" alt="Service Image">
+  <div class="card-body">
+      <h5 class="card-title"><%= service.name %></h5>
+
+      <% if (currentUser && currentUser.role === 'manager') { %>
+          <div class="d-flex mb-2">
+              <a class="btn btn-warning me-2" href="/services/<%= service._id %>/edit">Edit</a>
+              <form action="/services/<%= service._id %>?_method=DELETE" method="POST">
+                  <button type="submit" class="btn btn-danger">Delete</button>
+              </form>
+          </div>
+      <% } %>
+
+      <p class="card-text"><%= service.description %></p>
+  </div>
+</div>

@@ -1,3 +1,10 @@
 <% layout('/layouts/boilerplate') %>
 
 <h1>Welcome to the homePage</h1>
+
+
+    <% for(let service of services) {%>
+    <a href="services/<%=service.id %>"> <li><%=service.name %></li></a>
+
+
+        <% } %>
