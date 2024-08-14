@@ -16,10 +16,19 @@ const Sstorage = new CloudinaryStorage({
     }
 
 });
+const PostariStorage = new CloudinaryStorage({
+    cloudinary,
+    params:{
+       folder:'Postari',
+        allowedFormats:['jpeg','png','jpg']
+    }
+
+});
 
 
 module.exports={
     cloudinary,
-    Sstorage
+    Sstorage,
+    PostariStorage
 
 }

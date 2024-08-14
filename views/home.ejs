@@ -1,10 +1,43 @@
 <% layout('/layouts/boilerplate') %>
+<div class="container">
+<h1 class="mb-4">Welcome to the homePage</h1>
 
-<h1>Welcome to the homePage</h1>
-
-
+<h3 class="mb-4">Service section</h3>
     <% for(let service of services) {%>
-    <a href="services/<%=service.id %>"> <li><%=service.name %></li></a>
+    <a href="services/<%=service.id %>" class="mb-4"> <li><%=service.name %></li></a>
 
 
         <% } %>
+
+
+
+
+<h3 class="mb-4" >Postari section</h3>
+
+<% for(let post of postari) {%>
+    <div class="card mb-3" style="max-width: 600px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="<%= post.images[0].url %>" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title"><%=post.name %></h5>
+              <% if (currentUser && currentUser.role === 'manager') { %>
+                <div class="d-flex mb-2">
+                    <a class="btn btn-warning me-2" href="/postari/<%=post._id %>/edit">Edit</a>
+                    <form action="/postari/<%=post._id %>?_method=DELETE" method="POST">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </div>
+            <% } %>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+        <% } %>
+    
+    
+    
+    </div>
