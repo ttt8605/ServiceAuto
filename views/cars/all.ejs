@@ -1,0 +1,26 @@
+<% layout('/layouts/boilerplate') %>
+<div class="container">
+<h1 class="mb-4">All the Cars in Service</h1>
+
+
+    <% for(let car of cars) {%>
+        <div class="card mb-4" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title mb-2">Number Plate: <%=car.plate %></h5>
+              <h6 class="card-subtitle mb-2 text-body-secondary">Car model: <%= car.model %></h6>
+              <h6 class="card-subtitle mb-2 text-body-secondary"> Car owner: <%= car.owner%></h6>
+              <h6 class="card-subtitle mb-2 text-body-secondary"> Car status: <%= car.status%></h6>
+              <% if (currentUser && currentUser.role === 'manager') { %>
+                <div class="d-flex mb-2">
+                    <a class="btn btn-warning me-2" href="/cars/<%=car._id %>/edit">Edit</a>
+                    <form action="/cars/<%=car._id %>?_method=DELETE" method="POST">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </div>
+            <% } %>
+            
+            </div>
+          </div>
+
+        <% } %>
+

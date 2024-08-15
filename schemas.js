@@ -45,3 +45,12 @@ module.exports.ServiciiSchema = Joi.object({
     // description:Joi.string().required().escapeHTML(),
     deleteImages:Joi.array()
  }).required()
+
+
+ module.exports.CarSchema = Joi.object({
+    model:Joi.string().required().escapeHTML(),
+    plate:Joi.string().required().escapeHTML(),
+    owner:Joi.string().required().escapeHTML(),
+    status:Joi.string().required(),
+   
+ }).required()

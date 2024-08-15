@@ -1,0 +1,18 @@
+<% layout('/layouts/boilerplate') %>
+
+
+<div class="container">
+    <h1>Car Details</h1>
+    
+    <% if (cars) { %>
+        <div class="card text-bg-dark mb-3" style="max-width: 18rem;">
+            <h3 class="card-header mt-2 mb-2"><%=cars.plate %> - <%=cars.model %></h3>
+            <p class="card-text"></p>
+            <div class="card-body">
+              <h4 class="card-title"> Status: <%=cars.status %></h4>
+            </div>
+          </div>
+    <% } %>
+    
+    <a href="/">Back to home</a>
+</div>

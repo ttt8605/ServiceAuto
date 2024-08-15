@@ -1,0 +1,62 @@
+<head>
+    <link rel="stylesheet" href="/stylesheets/login.css">
+</head>
+
+<% layout('/layouts/boilerplate') %>
+
+
+<div class="container d-flex justify-content-center align-items-center mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 col-xl-4 offset-xl-4">
+            <div class="card shadow">
+                   <div class="card-body">
+<h5 class="card-title mb-4">New Car</h5>                                      
+<form action="/cars" method="POST" class="validated-form" novalidate>
+<div class=" mb-3">
+    <label for="model" class="form-label">Car Model</label>
+    <input type="text" name="model" id="model" class="form-control" placeholder="model" required>
+    <div class="valid-feedback">
+     Looks good!
+    </div>
+   </div>
+
+   <div class=" mb-3">
+    <label for="plate" class="form-label">Number Plate</label>
+    <input type="text" name="plate" id="plate" class="form-control" placeholder="plate" required>
+    <div class="valid-feedback">
+     Looks good!
+    </div>
+   </div>
+
+   <div class=" mb-3">
+    <label for="owner" class="form-label">Owner name</label>
+    <input type="text" name="owner" id="owner" class="form-control" placeholder="owner" required>
+    <div class="valid-feedback">
+     Looks good!
+    </div>
+    <div class=" mt-3 mb-3">
+        <label for="status" class="form-label">Status of the car:</label>
+        <select id="status" name="status" class="form-control" aria-label="Default select example">
+            <%for(let stat of status){  %>
+                <option value="<%= stat %>"><%= stat %></option>
+                <% } %>
+        </select>
+    </div>
+
+   </div>
+<button class="btn btn-success btn-block">Add Car</button>
+
+</form>
+                   </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    // Attach a submit event listener to the form
+    document.querySelector('form').addEventListener('submit', function() {
+        // Convert the plate input value to uppercase before submitting the form
+        const plateInput = document.getElementById('plate');
+        plateInput.value = plateInput.value.toUpperCase();
+    });
+</script>

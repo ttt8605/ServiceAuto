@@ -28,7 +28,6 @@ mongoose.connect(dbUrl)
 
 const app = express();
 
-app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 
@@ -40,6 +39,7 @@ app.set('view engine', 'ejs');
 
 
 app.use(helmet({contentSecurityPolicy:false}));
+
 
 // Parse incoming requests with URL-encoded payloads
 app.use(express.urlencoded({ extended: true }));
@@ -107,11 +107,13 @@ const homePageRoutes = require('./routes/homePage');
 const authRoutes = require('./routes/auth');
 const serviceRoutes = require('./routes/ServiceRoutes')
 const postariRoutes = require('./routes/postari')
+const carRoutes = require('./routes/car')
 
 app.use('/',homePageRoutes)
 app.use('/',authRoutes)
 app.use('/services',serviceRoutes)
 app.use('/postari',postariRoutes)
+app.use('/cars',carRoutes)
 
 //404 handler
 app.all('*', (req, res, next) => {
