@@ -30,15 +30,19 @@ module.exports.NewServiceRequest = async(req,res)=>{
     }
 }
 
-
-// Function to format description text
-function formatDescription(text) {
+const formatDescription = (text) => {
+    if (!text) return ''; // Return an empty string if the text is undefined or null
+    
+    // Trim the text to remove leading/trailing whitespace and ensure there's no newline at the end
     return text
-      .replace(/\n/g, '<br>') // Replace newlines with <br>
-      .replace(/ {2}/g, ' &nbsp;') // Replace double spaces with &nbsp;
+      .trim()
+      .replace(/\n+$/, '') // Remove any trailing newlines
+      .replace(/\n/g, '<br>') // Replace remaining newlines with <br>
       .replace(/ {4}/g, ' &nbsp;&nbsp;&nbsp;&nbsp;') // Replace quadruple spaces with &nbsp;&nbsp;&nbsp;&nbsp;
-      .replace(/ {3}/g, ' &nbsp;&nbsp;&nbsp;'); // Replace triple spaces with &nbsp;&nbsp;&nbsp;
-  }
+      .replace(/ {3}/g, ' &nbsp;&nbsp;&nbsp;') // Replace triple spaces with &nbsp;&nbsp;&nbsp;
+      .replace(/ {2}/g, ' &nbsp;'); // Replace double spaces with &nbsp;
+  };
+
 
 module.exports.ServiceIndividual = async (req, res) => {
     

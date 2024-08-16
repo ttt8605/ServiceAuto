@@ -10,7 +10,7 @@
               <h6 class="card-subtitle mb-2 text-body-secondary">Car model: <%= car.model %></h6>
               <h6 class="card-subtitle mb-2 text-body-secondary"> Car owner: <%= car.owner%></h6>
               <h6 class="card-subtitle mb-2 text-body-secondary"> Car status: <%= car.status%></h6>
-              <% if (currentUser && currentUser.role === 'manager') { %>
+              <% if (currentUser) { %>
                 <div class="d-flex mb-2">
                     <a class="btn btn-warning me-2" href="/cars/<%=car._id %>/edit">Edit</a>
                     <form action="/cars/<%=car._id %>?_method=DELETE" method="POST">

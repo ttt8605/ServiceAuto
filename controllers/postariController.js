@@ -19,7 +19,7 @@ module.exports.NewPostRequest = async(req,res)=>{
         const newPost = new Post(req.body)
           newPost.images = req.files.map(f => ({ url: f.path, filename: f.filename }));
            await newPost.save();
-           req.flash('success','Service created');
+           req.flash('success','Post created');
           res.redirect('/')
     }else{
         throw new Error('No files attached to the request');
@@ -31,30 +31,35 @@ module.exports.NewPostRequest = async(req,res)=>{
 }
 
 
-// // Function to format description text
-// function formatDescription(text) {
-//     return text
-//       .replace(/\n/g, '<br>') // Replace newlines with <br>
-//       .replace(/ {2}/g, ' &nbsp;') // Replace double spaces with &nbsp;
-//       .replace(/ {4}/g, ' &nbsp;&nbsp;&nbsp;&nbsp;') // Replace quadruple spaces with &nbsp;&nbsp;&nbsp;&nbsp;
-//       .replace(/ {3}/g, ' &nbsp;&nbsp;&nbsp;'); // Replace triple spaces with &nbsp;&nbsp;&nbsp;
-//   }
-
-// module.exports.ServiceIndividual = async (req, res) => {
+const formatDescription = (text) => {
+    if (!text) return ''; // Return an empty string if the text is undefined or null
     
-//     const service = await Service.findById(req.params.id);
-//     if (!service) {
-//         req.flash('error', 'Cannot find that service');
-//         return res.redirect('/services');
-//     }
-//     res.render('services/individual', { 
-//         service:{
-//             ...service.toObject(),
-//             description:formatDescription(service.description)
-//         }
-//     });
+    // Trim the text to remove leading/trailing whitespace and ensure there's no newline at the end
+    return text
+      .trim()
+      .replace(/\n+$/, '') // Remove any trailing newlines
+      .replace(/\n/g, '<br>') // Replace remaining newlines with <br>
+      .replace(/ {4}/g, ' &nbsp;&nbsp;&nbsp;&nbsp;') // Replace quadruple spaces with &nbsp;&nbsp;&nbsp;&nbsp;
+      .replace(/ {3}/g, ' &nbsp;&nbsp;&nbsp;') // Replace triple spaces with &nbsp;&nbsp;&nbsp;
+      .replace(/ {2}/g, ' &nbsp;'); // Replace double spaces with &nbsp;
+  };
 
-// };
+
+  module.exports.PostIndividual = async (req, res) => {
+    
+    const post = await Post.findById(req.params.id);
+    if (!post) {
+        req.flash('error', 'Cannot find that post');
+        return res.redirect('/');
+    }
+    res.render('postari/individual', { 
+        post:{
+            ...post.toObject(),
+            description:formatDescription(post.description)
+        }
+    });
+
+};
 
 
 module.exports.PostEditPage = async(req,res)=>{
@@ -68,7 +73,7 @@ if(req.isAuthenticated()){
     res.redirect(`/`);
 }
 }catch(error){
-    req.flash('error', "Ups we couldn't find that service")
+    req.flash('error', "Ups we couldn't find that post")
     res.redirect('/*')
 }
 }

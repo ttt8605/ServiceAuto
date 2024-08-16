@@ -16,10 +16,10 @@ name:{
     type:String,
     required:true
 },
-// description:{
-//     type:String,
-//     required:true
-// },
+description:{
+    type:String,
+    required:true
+},
 images:[ImageSchema]
 
 })

@@ -42,7 +42,7 @@ module.exports.ServiciiSchema = Joi.object({
 
  module.exports.PostariSchema = Joi.object({
     name:Joi.string().required().escapeHTML(),
-    // description:Joi.string().required().escapeHTML(),
+    description:Joi.string().required().escapeHTML(),
     deleteImages:Joi.array()
  }).required()
 

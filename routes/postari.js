@@ -36,7 +36,7 @@ router.get('/new',isManager ,catchAsync(postariController.PostariNewPage))
 
 
 router.route('/:id')
-// .get(catchAsync(servicesController.ServiceIndividual))
+.get(catchAsync(postariController.PostIndividual))
 .put( isManager, upload.array('image'),validatePost, catchAsync(postariController.PostEditRequest))
 .delete(isManager,catchAsync(postariController.PostDeleteRequest))
 
