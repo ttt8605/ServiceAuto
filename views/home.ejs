@@ -14,9 +14,28 @@
 
 <h3 class="mb-4">Service section</h3>
     <% for(let service of services) {%>
-    <a href="services/<%=service.id %>" class="mb-4"> <li><%=service.name %></li></a>
-
-
+      <div class="card mb-3" style="max-width: 600px;">
+      
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="<%= service.images[0].url %>" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+             <a href="/services/<%=service._id %>"> <h5 class="card-title"><%=service.name %></h5> </a>
+              <% if (currentUser && currentUser.role === 'manager') { %>
+                <div class="d-flex mb-2">
+                    <a class="btn btn-warning me-2" href="/services/<%=service._id %>/edit">Edit</a>
+                    <form action="/services/<%=service._id %>?_method=DELETE" method="POST">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </div>
+            <% } %>
+            </div>
+          </div>
+        </div>
+     
+      </div>
         <% } %>
 
 
@@ -51,9 +70,44 @@
         <% } %>
     
     
+   
+
+
+
+<h3 class="mb-4" >Angajati section</h3>
+
+<% for(let angajat of an) {%>
+    <div class="card mb-3 " style="max-width: 600px;">
+      
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="<%= angajat.images[0].url %>" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+            <h5 class="card-title"><%=angajat.name %></h5> 
+            <h6 class="card-title"><%=angajat.role %></h6> 
+              <% if (currentUser && currentUser.role === 'manager') { %>
+                <div class="d-flex mb-2">
+                    <a class="btn btn-warning me-2" href="/angajati/<%=angajat._id %>/edit">Edit</a>
+                    <form action="/angajati/<%=angajat._id %>?_method=DELETE" method="POST">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </div>
+            <% } %>
+            </div>
+          </div>
+        </div>
+     
+      </div>
+      
+        <% } %>
+    
+    
     
     </div>
 
+    </div>
     <script>
       // Attach a submit event listener to the form
       document.querySelector('form').addEventListener('submit', function() {

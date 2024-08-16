@@ -25,10 +25,19 @@ const PostariStorage = new CloudinaryStorage({
 
 });
 
+const AnStorage = new CloudinaryStorage({
+    cloudinary,
+    params:{
+       folder:'Angajati',
+        allowedFormats:['jpeg','png','jpg']
+    }
+
+});
+
 
 module.exports={
     cloudinary,
     Sstorage,
-    PostariStorage
-
+    PostariStorage,
+    AnStorage
 }

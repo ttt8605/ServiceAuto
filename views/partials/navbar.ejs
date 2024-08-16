@@ -15,20 +15,24 @@
             <a class="nav-link" href="/logout">Logout</a>
           </li> 
           <li class="nav-item">
-            <a class="nav-link" href="/cars/new">Add car</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="/cars/all">All Cars</a>
           </li>
-          <% if(currentUser.role === 'manager'){ %>
           <li class="nav-item">
-            <a class="nav-link" href="/register">New Account</a>
+            <a class="nav-link" href="/cars/new">Add car</a>
           </li>
+         
+          <% if(currentUser.role === 'manager'){ %>
           <li class="nav-item">
             <a class="nav-link" href="/services/new">New Service</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/postari/new">New Post</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/angajati/new">New Angajat</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/register">New Account</a>
           </li>
       <% }} else { %>
         <li class="nav-item">
