@@ -109,13 +109,16 @@ const serviceRoutes = require('./routes/ServiceRoutes')
 const postariRoutes = require('./routes/postari')
 const carRoutes = require('./routes/car')
 const AnRoutes = require('./routes/angajati')
+const programRoute = require('./routes/programari')
 
 app.use('/',homePageRoutes)
 app.use('/',authRoutes)
+app.use('/',programRoute)
 app.use('/services',serviceRoutes)
 app.use('/postari',postariRoutes)
 app.use('/cars',carRoutes)
 app.use('/angajati',AnRoutes)
+
 
 //404 handler
 app.all('*', (req, res, next) => {
