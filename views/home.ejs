@@ -126,14 +126,22 @@
          </div>
       
        
-          <div class=" mt-3 mb-3">
+          <div class=" mt-3 mb-3"> 
+            <label for="date" class="form-label">Select a date</label>
+             <select id="date" name="date" class="form-control mb-3" aria-label="Default select example">
+                <% dates.forEach(date => { %>
+                    <option value="<%= date %>"><%= date %></option>
+                <% }) %>
+            </select>
               <label for="status" class="form-label">Select an hour</label>
-              <select id="ora" name="ora" class="form-control" aria-label="Default select example">
+              <select id="ora" name="ora" class="form-control mb-3" aria-label="Default select example">
                
                   <% ore.forEach(hour => { %>
                       <option value="<%= hour %>"><%= hour %></option>
                   <% }) %>
               </select>
+             
+             
           </div>
       
          </div>
