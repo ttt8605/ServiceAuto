@@ -128,18 +128,22 @@
        
           <div class=" mt-3 mb-3"> 
             <label for="date" class="form-label">Select a date</label>
-             <select id="date" name="date" class="form-control mb-3" aria-label="Default select example">
-                <% dates.forEach(date => { %>
-                    <option value="<%= date %>"><%= date %></option>
-                <% }) %>
-            </select>
-              <label for="status" class="form-label">Select an hour</label>
-              <select id="ora" name="ora" class="form-control mb-3" aria-label="Default select example">
-               
-                  <% ore.forEach(hour => { %>
-                      <option value="<%= hour %>"><%= hour %></option>
-                  <% }) %>
-              </select>
+<select id="date" name="date" class="form-control mb-3" aria-label="Default select example">
+    <% datesWithAvailableHours.forEach(dateObj => { %>
+        <option value="<%= dateObj.date %>"><%= dateObj.date %></option>
+    <% }) %>
+</select>
+
+<label for="ora" class="form-label">Select an hour</label>
+<select id="ora" name="ora" class="form-control mb-3" aria-label="Default select example" required>
+  <% if (datesWithAvailableHours.length > 0 && datesWithAvailableHours[0].hours.length > 0) { %>
+    <% datesWithAvailableHours[0].hours.forEach(hour => { %>
+      <option value="<%= hour %>"><%= hour %></option>
+    <% }) %>
+  <% } else { %>
+    <option value="" disabled selected>No available times</option>
+  <% } %>
+</select>
              
              
           </div>
@@ -164,4 +168,41 @@
           const plateInput = document.getElementById('plate');
           plateInput.value = plateInput.value.toUpperCase();
       });
+      
+
+    const datesWithAvailableHours = <%- JSON.stringify(datesWithAvailableHours) %>;
+
+    document.getElementById('date').addEventListener('change', function() {
+        const selectedDate = this.value;
+        const hoursSelect = document.getElementById('ora');
+        const selectedDateObj = datesWithAvailableHours.find(dateObj => dateObj.date === selectedDate);
+
+        // Clear previous options
+        hoursSelect.innerHTML = '';
+
+        // Populate hours for the selected date
+        if (selectedDateObj) {
+            selectedDateObj.hours.forEach(hour => {
+                const option = document.createElement('option');
+                option.value = hour;
+                option.textContent = hour;
+                hoursSelect.appendChild(option);
+            });
+
+        }
+    });
+
+
+
+    document.getElementById('myForm').addEventListener('submit', function(event) {
+    const selectElement = document.getElementById('ora');
+    const selectedValue = selectElement.value;
+
+    // Prevent form submission if no valid option is selected
+    if (selectedValue === "" || selectedValue === "No available times") {
+      alert('Please select a valid time slot.');
+      event.preventDefault(); // Prevent form submission
+    }
+  });
+
   </script>
