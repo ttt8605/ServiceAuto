@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const programariSchema = new mongoose.Schema({
+const AppointmentSchema = new mongoose.Schema({
     name: {  type: String, required: true },
     phone: {  type: String, required: true  },
     date:{ type: String, required: true },
@@ -9,4 +9,4 @@ const programariSchema = new mongoose.Schema({
    
 });
 
-module.exports = mongoose.model('programari', programariSchema);
+module.exports = mongoose.model('appointment', AppointmentSchema);

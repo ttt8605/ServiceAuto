@@ -8,6 +8,8 @@ const{isLoggedIn} = require('../middleware')
 const Cars = require('../models/cars')
 const CarsController = require('../controllers/CarController')
 const {CarSchema} = require('../schemas')
+const {GetPlateSchema} = require('../schemas')
+
 const validateCar= (req,res,next)=>{
     const{error} = CarSchema.validate(req.body);
     if(error){
@@ -18,8 +20,18 @@ const validateCar= (req,res,next)=>{
     }
  }
 
- router.get('/search', catchAsync(CarsController.searchCarByPlate));
+ const validateGetPlate = (req, res, next) => {
+   const { error } = GetPlateSchema.validate(req.query); // Validate req.query instead of req.body
+   if (error) {
+       const msg = error.details.map(el => el.message).join(',');
+       throw new ExpressError(msg, 400); // Throw an ExpressError with the validation message
+   } else {
+       next(); // Proceed to the next middleware or route handler
+   }
+};
 
+// Assuming router is an Express router instance
+router.get('/search', validateGetPlate, catchAsync(CarsController.searchCarByPlate));
 router.route('/new')
 .get(isLoggedIn,catchAsync(CarsController.NewCarPage))
 

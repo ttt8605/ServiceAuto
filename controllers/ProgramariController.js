@@ -5,7 +5,6 @@ module.exports.ProgramareSubmitRequest = async(req,res)=>{
         const { name,phone,ora,date } = req.body;
         const newProgramare = new programari({name,ora,date ,phone,booked:true});
       await newProgramare.save()
-      console.log(newProgramare)
         res.redirect('/')
        
     } catch (e) {

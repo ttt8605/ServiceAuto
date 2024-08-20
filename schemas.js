@@ -55,8 +55,20 @@ module.exports.ServiciiSchema = Joi.object({
    
  }).required()
 
+ module.exports.GetPlateSchema = Joi.object({
+    plate: Joi.string().alphanum().min(1).max(8).required().escapeHTML(),
+ })
+
  module.exports.AngajatiSchema = Joi.object({
     name:Joi.string().required().escapeHTML(),
     role:Joi.string().required().escapeHTML(),
     deleteImages:Joi.array()
+ }).required()
+
+
+ module.exports.AppointmentSchema = Joi.object({
+    name:Joi.string().required().escapeHTML(),
+    phone:Joi.string().required().escapeHTML(),
+    ora: Joi.string().required().pattern(/^([0-9]|1[0-9]|2[0-3]):([0-5]\d)$/).escapeHTML(),
+    date: Joi.date().iso().required()
  }).required()
