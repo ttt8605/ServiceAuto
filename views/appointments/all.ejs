@@ -1,0 +1,70 @@
+<% layout('/layouts/boilerplate') %>
+<div class="container">
+<h1 class="mb-4">
+    Programari:
+</h1>
+
+
+
+<h3 class="mb-4">Today:</h3>
+    <% for(let apt of appointments) {%>
+<% if(apt.date === formattedToday){ %>
+
+    
+<div class="d-flex flex-row align-items-center">
+    <div class="card mb-4 mr-4" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title mb-2">Data: <%=apt.date %></h5>
+            <h6 class="card-subtitle mb-2 text-body-secondary">Ora: <%= apt.ora %></h6>
+            <h6 class="card-subtitle mb-2 text-body-secondary"> Nume: <%= apt.name%></h6>
+            <h6 class="card-subtitle mb-2 text-body-secondary"> Nr. telefon: <%= apt.phone%></h6>
+        
+          <% if (currentUser) { %>
+            <div class="d-flex mb-2">
+                <form action="/programare/<%=apt._id %>?_method=DELETE" method="POST">
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </div>
+        <% } %>
+        
+        </div>
+      </div>
+
+
+
+
+</div>
+
+
+    <% }} %>
+<h3 class="mb-4">Future appointments:</h3>    
+    <% for(let apt of appointments) {%>
+<% if(apt.date != formattedToday){ %>
+<div class="d-flex flex-collumn align-items-center">
+    <div class="card mb-4 mr-4" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title mb-2">Data: <%=apt.date %></h5>
+            <h6 class="card-subtitle mb-2 text-body-secondary">Ora: <%= apt.ora %></h6>
+            <h6 class="card-subtitle mb-2 text-body-secondary"> Nume: <%= apt.name%></h6>
+            <h6 class="card-subtitle mb-2 text-body-secondary"> Nr. telefon: <%= apt.phone%></h6>
+        
+          <% if (currentUser) { %>
+            <div class="d-flex mb-2">
+                <form action="/programare/<%=apt._id %>?_method=DELETE" method="POST">
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </div>
+        <% } %>
+        
+        </div>
+      </div>
+
+
+
+</div>
+
+        <% }} %>
+        
+      
+
+    

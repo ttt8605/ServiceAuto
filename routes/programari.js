@@ -23,7 +23,9 @@ const validateAppointment= (req,res,next)=>{
 
 router.route('/programare')
 .post(validateAppointment, catchAsync(programariController.ProgramareSubmitRequest))
+.get(isLoggedIn,catchAsync(programariController.allAppointmentsPage))
 
-
+router.route('/programare/:id')
+.delete(isLoggedIn,catchAsync(programariController.AppointmentDeleteRequest))
 
 module.exports =router;

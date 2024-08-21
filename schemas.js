@@ -69,6 +69,6 @@ module.exports.ServiciiSchema = Joi.object({
  module.exports.AppointmentSchema = Joi.object({
     name:Joi.string().required().escapeHTML(),
     phone:Joi.string().required().escapeHTML(),
-    ora: Joi.string().required().pattern(/^([0-9]|1[0-9]|2[0-3]):([0-5]\d)$/).escapeHTML(),
+    ora: Joi.string().required().pattern(/^(0[0-9]|1[0-9]|2[0-3]):([0-5]\d)$/).escapeHTML(),
     date: Joi.date().iso().required()
  }).required()
