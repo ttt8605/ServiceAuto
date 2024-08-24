@@ -102,6 +102,8 @@
       </div>
       
         <% } %>
+
+
         <div class="container d-flex justify-content-center align-items-center mt-4 mb-4">
           <div class="row">
               <div class="col-md-6 offset-md-3 col-xl-4 offset-xl-4">
@@ -126,14 +128,17 @@
          </div>
       
        
-          <div class=" mt-3 mb-3"> 
-            <label for="date" class="form-label">Select a date</label>
-<select id="date" name="date" class="form-control mb-3" aria-label="Default select example">
-    <% datesWithAvailableHours.forEach(dateObj => { %>
-        <option value="<%= dateObj.date %>"><%= dateObj.date %></option>
-    <% }) %>
-</select>
-
+    
+         <div class="mt-3 mb-3">
+          <label for="date" class="form-label">Select a date</label>
+          <select id="date" name="date" class="form-control mb-3" aria-label="Default select example">
+              <% datesWithAvailableHours.forEach(dateObj => { %>
+                  <option value="<%= dateObj.date %>"><%= dateObj.date %></option>
+              <% }) %>
+          </select>
+      </div>
+  
+     
 <label for="ora" class="form-label">Select an hour</label>
 <select id="ora" name="ora" class="form-control mb-3" aria-label="Default select example" required>
   <% if (datesWithAvailableHours.length > 0 && datesWithAvailableHours[0].hours.length > 0) { %>
@@ -162,6 +167,28 @@
 
     </div>
     <script>
+      function reverseDateFormat(dateString) {
+          // Split the date string into its components
+          const [year, month, day] = dateString.split('-');
+          
+          // Reformat the date components
+          return `${day}/${month}/${year}`;
+      }
+  
+      // Function to update the options in the select element
+      function updateDateOptions() {
+          const selectElement = document.getElementById('date');
+          
+          // Iterate over each option and update its text
+          Array.from(selectElement.options).forEach(option => {
+              const originalDate = option.value;
+              option.text = reverseDateFormat(originalDate);
+          });
+      }
+  
+      // Call the function after the page loads
+      document.addEventListener('DOMContentLoaded', updateDateOptions);
+      
       // Attach a submit event listener to the form
       document.querySelector('form').addEventListener('submit', function() {
           // Convert the plate input value to uppercase before submitting the form
