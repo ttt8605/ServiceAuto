@@ -13,6 +13,7 @@
               <% if (currentUser) { %>
                 <div class="d-flex mb-2">
                     <a class="btn btn-warning me-2" href="/cars/<%=car._id %>/edit">Edit</a>
+                    <a class="btn btn-info me-2" href="/cars/<%=car._id %>">Vezi</a>
                     <form action="/cars/<%=car._id %>?_method=DELETE" method="POST">
                         <button type="submit" class="btn btn-danger">Delete</button>
                     </form>

@@ -55,6 +55,13 @@ module.exports.ServiciiSchema = Joi.object({
    
  }).required()
 
+ module.exports.PiesaSchema = Joi.object({
+    piese: Joi.object({
+      name: Joi.string().required(),
+      status: Joi.string().required()
+    }).required()
+  });
+
  module.exports.GetPlateSchema = Joi.object({
     plate: Joi.string().alphanum().min(1).max(8).required().escapeHTML(),
  })

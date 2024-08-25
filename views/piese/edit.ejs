@@ -1,0 +1,42 @@
+
+
+<head>
+    <link rel="stylesheet" href="/stylesheets/login.css">
+</head>
+
+<% layout('/layouts/boilerplate') %>
+
+
+<div class="container d-flex justify-content-center align-items-center mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 col-xl-4 offset-xl-4">
+            <div class="card shadow">
+                   <div class="card-body">
+<h5 class="card-title mb-4">Edit Piesa</h5>                                      
+<form action="/cars/<%=car._id%>/piese/<%=piesa._id%>?_method=PUT" method="POST" novalidate class="validated-form"  >
+<div class=" mb-3">
+    <label for="name" class="form-label">Piesa:</label>
+    <input type="text" name="name" id="name" class="form-control" placeholder="model piesa" value="<%=piesa.name %>" required>
+    <div class="valid-feedback">
+     Looks good!
+    </div>
+   </div>
+
+    <div class=" mb-3 mt-3">
+        <label for="status" class="form-label text">Status of the Part</label>
+        <select class="form-select" name="status" aria-label="Default select example" >
+            <%for(let stat of statusPiese){  %>
+                <option value="<%= stat%>" <%= piesa.status === stat ? 'selected' : ''  %>><%=stat %></option>
+                <% } %>
+          </select>
+       </div>
+
+   </div>
+<button class="btn btn-success btn-block">edit piesa</button>
+
+</form>
+                   </div>
+            </div>
+        </div>
+    </div>
+</div>

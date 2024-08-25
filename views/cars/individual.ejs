@@ -1,18 +1,81 @@
 <% layout('/layouts/boilerplate') %>
 
 
-<div class="container">
-    <h1>Car Details</h1>
-    
-    <% if (cars) { %>
-        <div class="card text-bg-dark mb-3" style="max-width: 18rem;">
-            <h3 class="card-header mt-2 mb-2"><%=cars.plate %> - <%=cars.model %></h3>
-            <p class="card-text"></p>
-            <div class="card-body">
-              <h4 class="card-title"> Status: <%=cars.status %></h4>
+<div class="container ">
+  <div class="row align-items-center">
+    <div class="col-3">
+     
+    </div>
+    <div class="col-6">
+      <div class="card container " style="width: 40rem;">
+        <div class="card-body">
+          <h2 class="card-title mb-4 mt-4"><%=cars.plate%> --- <%=cars.model %></h2>
+          <h4 class="card-subtitle mb-2 text-body-secondary">status: <%=cars.status %></h4>
+          <%if( currentUser ){%>
+            <h4 class="card-subtitle mb-4 text-body-secondary">owner: <%=cars.owner %></h4>
+            <% } %>
+            <%if( currentUser ){%>
+              <div class="d-flex mb-2">
+                <a class="btn btn-warning me-2" href="/cars/<%=cars._id %>/edit">Edit</a>
+                <form action="/cars/<%=cars._id %>?_method=DELETE" method="POST">
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
             </div>
-          </div>
-    <% } %>
-    
+             
+        </div>
+        <div class="row align-items-center mb-2 ml-2 mt-2 ">
+           <h4 class="card-title text-body-secondary">Piese:</h4>
+           <% for(let piesa of cars.piese) { %>
+            <div class="card mb-3 ">
+                <div class="card-body">
+                    <h5 class="card-title"><%= piesa.name %></h5>
+                    <h6 class="card-title mb-2  mt-2 text-body-secondary">Status: <%=piesa.status %></h6>
+                    <% if(currentUser) { %>
+                      <div  class="d-flex mb-2">
+                      <a class="btn btn-warning btn-sm me-2" href="/cars/<%=cars._id %>/piese/<%=piesa._id %>/edit">Edit</a>
+                    <form action="/cars/<%=cars._id %>/piese/<%= piesa._id %>?_method=DELETE" method="POST">
+                        <button class="btn btn-sm btn-danger">Delete</button>
+                    </form>
+                  </div>
+                    <% } %>
+                </div>
+            </div>
+            <% } %>
+        
+        </div>
+        <div class="card-body">
+          <h2>Adauga o piesa</h2>
+          <form action="/cars/<%= cars._id %>/piese" method="POST" class="mb-3 validated-form" novalidate>
+            <div class="mb-3">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Piesa</label>
+                    <input type="text" name="piese[name]" id="name" class="form-control" placeholder="numele piesei" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mt-3 mb-3">
+                    <label for="status" class="form-label">Status of the part:</label>
+                    <select id="status" name="piese[status]" class="form-control" aria-label="Default select example">
+                        <% for(let stat of statusPiese) { %>
+                            <option value="<%= stat %>"><%= stat %></option>
+                        <% } %>
+                    </select>
+                </div>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <button class="btn btn-success">Submit</button>
+        </form>
+        
+        <% } %>
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+      
+    </div>
+  </div>
     <a href="/">Back to home</a>
 </div>

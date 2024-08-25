@@ -110,6 +110,7 @@ const postariRoutes = require('./routes/postari')
 const carRoutes = require('./routes/car')
 const AnRoutes = require('./routes/angajati')
 const programRoute = require('./routes/programari')
+const piesaRoute = require('./routes/piese')
 
 app.use('/',homePageRoutes)
 app.use('/',authRoutes)
@@ -118,7 +119,7 @@ app.use('/services',serviceRoutes)
 app.use('/postari',postariRoutes)
 app.use('/cars',carRoutes)
 app.use('/angajati',AnRoutes)
-
+app.use('/cars/:id/piese', piesaRoute);
 
 //404 handler
 app.all('*', (req, res, next) => {

@@ -2,6 +2,7 @@ const cars = require('../models/cars');
 const Car = require('../models/cars');
 
 const status = ['Verificare','Se lucreaza','Gata de ridicare'];
+const statusPiese = ['S-a comandat','se potriveste','nu se potriveste','retur'];
 
 module.exports.NewCarPage = async (req, res) => {
     res.render('cars/new',{status}); 
@@ -99,6 +100,12 @@ module.exports.searchCarByPlate = async (req, res) => {
 
 module.exports.individualCarPage = async (req, res) => {
     const { id } = req.params;
-    const cars =await Car.findById(id)
-    res.render('cars/individual',{cars})
+    const cars = await Car.findById(id).populate({
+        path: 'piese',
+        populate: [
+            { path: 'status' },
+            { path: 'name' }
+        ]
+    });
+    res.render('cars/individual',{cars,statusPiese})
 };
