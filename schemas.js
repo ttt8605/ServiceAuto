@@ -69,6 +69,7 @@ module.exports.ServiciiSchema = Joi.object({
  module.exports.AngajatiSchema = Joi.object({
     name:Joi.string().required().escapeHTML(),
     role:Joi.string().required().escapeHTML(),
+    about:Joi.string().required().escapeHTML(),
     deleteImages:Joi.array()
  }).required()
 

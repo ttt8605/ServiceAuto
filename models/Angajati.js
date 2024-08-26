@@ -20,6 +20,10 @@ role:{
     type:String,
     required:true
 },
+about:{
+    type:String,
+    required:true
+},
 images:[ImageSchema]
 
 })
