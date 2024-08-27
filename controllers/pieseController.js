@@ -11,33 +11,9 @@ module.exports.createPiesa = async(req,res)=>{
    await car.save();
 
    req.flash('success','successfully added a new part')
-   res.redirect(`/cars/${car._id}`)
+   res.redirect(`/cars/${car._id}/edit`)
 }
 
-module.exports.renderEditPiesaPage = async (req, res) => {
-    const { id, piesaId } = req.params;
-        // Find the Piesa document
-        const piesa = await Piese.findById(piesaId);
-        if (!piesa) {
-            req.flash('error', 'Piesa not found');
-            return res.redirect(`/cars/${id}`);
-        }
-
-        // Find the Car document to fetch related information (e.g., status options)
-        const car = await Cars.findById(id);
-        if (!car) {
-            req.flash('error', 'Car not found');
-            return res.redirect(`/cars/${id}`);
-        }
-
-        // Render the edit page with the Piesa and Car data
-        res.render('piese/edit', {
-            piesa,
-            car,
-            statusPiese
-        });
-  
-};
 
 
 module.exports.updatePiesa = async (req, res) => {

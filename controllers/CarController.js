@@ -1,4 +1,4 @@
-const cars = require('../models/cars');
+
 const Car = require('../models/cars');
 
 const status = ['Verificare','Se lucreaza','Gata de ridicare'];
@@ -10,8 +10,8 @@ module.exports.NewCarPage = async (req, res) => {
 
 module.exports.addCarRequest = async (req, res) => {
     try {
-        const { model,status,owner,plate } = req.body;
-        const newCar = new Car({ model,status,owner,plate });
+        const { model,status,owner,plate,phone } = req.body;
+        const newCar = new Car({ model,status,owner,phone,plate});
         newCar.save();
         res.redirect('/cars/all')
        
@@ -29,9 +29,15 @@ module.exports.showAllCars = async(req,res)=>{
 module.exports.CarEditPage = async(req,res)=>{
     try{
         const{id}=req.params;
-      const cars = await Car.findById(id);
+      const cars = await Car.findById(id).populate({
+        path: 'piese',
+        populate: [
+            { path: 'status' },
+            { path: 'name' }
+        ]
+    });;
 if(req.isAuthenticated()){
-        res.render('cars/edit',{cars,status})
+        res.render('cars/edit',{cars,status,statusPiese})
 }else{
     req.flash('error',"Uppps we couldn't find that page, but we think u might like this one ");
     res.redirect(`/cars/all`);

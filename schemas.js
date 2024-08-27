@@ -51,6 +51,10 @@ module.exports.ServiciiSchema = Joi.object({
     model:Joi.string().required().escapeHTML(),
     plate:Joi.string().required().escapeHTML(),
     owner:Joi.string().required().escapeHTML(),
+    phone:Joi.string().pattern(/^\d{4}\s?\d{3}\s?\d{3}$/).required().messages({
+        'string.pattern.base': 'Phone number must be in the format 0722456297 or 0722 456 297.',
+        'any.required': 'Phone number is required.'
+    }),
     status:Joi.string().required(),
    
  }).required()
@@ -76,7 +80,10 @@ module.exports.ServiciiSchema = Joi.object({
 
  module.exports.AppointmentSchema = Joi.object({
     name:Joi.string().required().escapeHTML(),
-    phone:Joi.string().required().escapeHTML(),
+    phone:Joi.string().pattern(/^\d{4}\s?\d{3}\s?\d{3}$/).required().messages({
+        'string.pattern.base': 'Phone number must be in the format 0722456297 or 0722 456 297.',
+        'any.required': 'Phone number is required.'
+    }),
     ora: Joi.string().required().pattern(/^(0[0-9]|1[0-9]|2[0-3]):([0-5]\d)$/).escapeHTML(),
     date: Joi.date().iso().required()
  }).required()

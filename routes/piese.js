@@ -30,6 +30,5 @@ router.route('/:piesaId')
 .put(isLoggedIn, catchAsync(piesaController.updatePiesa))
 .delete( isLoggedIn, catchAsync(piesaController.deletePiesa))
 
-router.get('/:piesaId/edit', isLoggedIn, catchAsync(piesaController.renderEditPiesaPage))
 
 module.exports = router;
