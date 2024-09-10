@@ -1,0 +1,185 @@
+@import url('https://fonts.cdnfonts.com/css/overused-grotesk');
+
+.navbar {
+    background-color: #27354E;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Menu button and text */
+.meniu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 150px;
+    height: 50px;
+}
+.logo{
+    width: 270px;
+    height: 96px;
+    margin-left: 20px;
+    align-items: center;
+}
+.meniuTextButton {
+    font-family: 'Overused Grotesk', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    margin-top: 5px;
+    color: #ffffff;
+}
+
+.meniuButton{
+    width: 75px ;
+    height: 10px;
+    border-left: none;
+    border-right: none;
+     background-color: #27354E;
+     border-bottom-color: #ffffff ;
+     border-top-color: #ffffff;
+}
+/* Sliding menu */
+.sliding-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #E2E1DD;
+    color: white;
+    z-index: 9999;
+    transition: right 1s ease;
+    display: flex;
+    flex-direction: row;
+}
+
+
+.menu-list {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+.menu-list li {
+    margin: 20px 0;
+}
+
+.menu-list li a {
+    font-family: 'Overused Grotesk', sans-serif;
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+}
+
+/* Close button */
+.close-btn {
+    position: absolute;
+    top: 0px;
+    right: 106px;
+    font-size: 70px;
+    font-weight: 100;
+    background: none;
+    color: #E34846;
+    border: none;
+    cursor: pointer;
+}
+.meniuTextButtonHide{
+    font-family: 'Overused Grotesk', sans-serif;
+    font-size: 27px;
+    position: absolute;
+    top: 36px;
+    right: 20px;
+    font-weight: 400;
+    margin-top: 5px;
+    color: #E34846;
+}
+.logoMeniu{
+    width: 300px;
+    height: 100px;
+    margin-left: 41px;
+    margin-top: 35px;
+}
+
+.leftDiv{
+    background-color: #27354E;
+    height: 100%;
+    width: 400px;
+    display: flex;
+}
+
+.rigthDiv{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+.upperDiv{
+    width: 100%;
+    height: 113px;
+}
+.lowerDiv{
+    display:flex;
+    flex-direction: row;
+}
+.links{
+    width: 50%;
+    height: 200px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    padding-left: 100px;
+    
+}
+
+.meniuLink{
+    font-family: 'Overused Grotesk', sans-serif;
+    font-size: 50px;
+    font-weight: 300;
+    text-decoration: none;
+    color: #E34846;
+    
+}
+.informations{
+    width: 50%;
+    height: 200px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    flex-direction: column;
+    padding-top: 30%;
+    padding-right: 10%;
+}
+.Contact{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    width: 300px;
+    margin-bottom: 80px;
+}
+.quickLinks{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    width: 300px;
+}
+
+.textInformations{
+    font-family: 'Overused Grotesk', sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+    color: #E34846;
+    margin-bottom: 80px;
+}
+.NumberContact{
+    font-family: 'Overused Grotesk', sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    color: #E34846;
+}
+
+
+
+/* Show menu when the class is added */
+.show-menu {
+    right: 0;
+}

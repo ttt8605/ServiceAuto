@@ -1,52 +1,102 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/">ServiceAuto</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/">Home</a>
-        </li>
+<!-- task-uri:
+-fa o pagina de add, la alegere
+sau
+-o pagina inviduala la alegere -->
 
-        <% if (currentUser) { %>
-          <li class="nav-item">
-            <a class="nav-link" href="/logout">Logout</a>
-          </li> 
-          <li class="nav-item">
-            <a class="nav-link" href="/cars/all">All Cars</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/cars/new">Add car</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/programare">programari</a>
-          </li>
-         
-          <% if(currentUser.role === 'manager'){ %>
-          <li class="nav-item">
-            <a class="nav-link" href="/services/new">New Service</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/postari/new">New Post</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/angajati/new">New Angajat</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/register">New Account</a>
-          </li>
-      <% }} else { %>
-        <li class="nav-item">
-          <a class="nav-link" href="/login">Login</a>
-        </li> 
-      <% } %>
-      
-       
-      
-    
-    
-    </div>
+<nav class="navbar sticky-top">
+  <div class="mr-4 ml-4">
+    <a class="navbar-brand" href="/">
+      <img src="https://res.cloudinary.com/dn9nc0upp/image/upload/v1725951527/Adimatech_logo_1_utu_1_cmbomq.svg" alt="Bootstrap" width="270" height="96" class="logo">
+    </a>
+  </div>
+  <div class="mr-4 ml-4 meniu">
+    <button class="meniuButton" id="menuButton"></button>
+    <h5 class="meniuTextButton">Meniu</h5>
   </div>
 </nav>
+
+<!-- The sliding menu -->
+<div id="slidingMenu" class="sliding-menu">
+  <div class="leftDiv">
+    <a class="navbar-brand" href="/">
+    <img src="https://res.cloudinary.com/dn9nc0upp/image/upload/v1725951527/Adimatech_logo_1_utu_1_cmbomq.svg" alt="Bootstrap"  class="logoMeniu">
+  </a>
+  </div>
+  <div class="rigthDiv">
+    <div class="upperDiv">
+   <button class="close-btn" id="closeMenu">&times;</button>
+   <h5 class="meniuTextButtonHide">Meniu</h5>
+    </div>
+
+    <div class="lowerDiv">
+      <div class="links">
+        
+            <a class="meniuLink" aria-current="page" href="/">Home</a>
+        
+  
+          <% if (currentUser) { %>
+         
+              <a class="meniuLink" href="/logout">Logout</a>
+           
+              <a class="meniuLink" href="/cars/all">All Cars</a>
+            
+              <a class="meniuLink" href="/cars/new">Add car</a>
+            
+              <a class="meniuLink" href="/programare">programari</a>
+            
+           
+            <% if(currentUser.role === 'manager'){ %>
+           
+              <a class="meniuLink" href="/services/new">New Service</a>
+            
+              <a class="meniuLink" href="/postari/new">New Post</a>
+           
+              <a class="meniuLink" href="/angajati/new">New Angajat</a>
+           
+              <a class="meniuLink" href="/register">New Account</a>
+           
+        <% }} else { %>
+         
+            <a class="meniuLink" href="/login">Login</a>
+          
+        <% } %>
+      </div>
+     <div class="informations">
+          <div class="Contact">
+            <h3 class="textInformations mb-1">Contacteaza-ne</h3>
+            <h5 class="NumberContact">07XX XXX XXX</h5>
+          </div>
+          <div class="quickLinks">
+          <h3 class="textInformations">Program &#8599;</h3>
+          <h3 class="textInformations">Locatie &#8599;</h3>
+        
+        </div>
+      </div>
+
+     
+    </div>
+  </div>
+  
+ 
+
+</div>
+
+<script>
+
+  // Get the menu button and sliding menu elements
+const menuButton = document.getElementById('menuButton');
+const slidingMenu = document.getElementById('slidingMenu');
+const closeMenu = document.getElementById('closeMenu');
+
+// Add event listener to open the sliding menu
+menuButton.addEventListener('click', () => {
+  slidingMenu.classList.add('show-menu');
+});
+
+// Add event listener to close the sliding menu
+closeMenu.addEventListener('click', () => {
+  slidingMenu.classList.remove('show-menu');
+});
+</script>
+
+
