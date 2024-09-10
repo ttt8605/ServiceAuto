@@ -1,8 +1,3 @@
-<!-- task-uri:
--fa o pagina de add, la alegere
-sau
--o pagina inviduala la alegere -->
-
 <nav class="navbar sticky-top">
   <div class="mr-4 ml-4">
     <a class="navbar-brand" href="/">
@@ -36,39 +31,39 @@ sau
   
           <% if (currentUser) { %>
          
-              <a class="meniuLink" href="/logout">Logout</a>
+              <a class="meniuLink" href="/logout">Log out</a>
            
-              <a class="meniuLink" href="/cars/all">All Cars</a>
+              <a class="meniuLink" href="/cars/all">Mașini în service</a>
             
-              <a class="meniuLink" href="/cars/new">Add car</a>
+              <a class="meniuLink" href="/cars/new">Adaugă o mașină</a>
             
-              <a class="meniuLink" href="/programare">programari</a>
+              <a class="meniuLink" href="/programare">Programări</a>
             
            
             <% if(currentUser.role === 'manager'){ %>
            
-              <a class="meniuLink" href="/services/new">New Service</a>
+              <a class="meniuLink" href="/services/new">Adaugă un serviciu</a>
             
-              <a class="meniuLink" href="/postari/new">New Post</a>
+              <a class="meniuLink" href="/postari/new">Adaugă o mașină</a>
            
-              <a class="meniuLink" href="/angajati/new">New Angajat</a>
+              <a class="meniuLink" href="/angajati/new">Adaugă un angajat</a>
            
-              <a class="meniuLink" href="/register">New Account</a>
+              <a class="meniuLink" href="/register">Crează cont</a>
            
         <% }} else { %>
          
-            <a class="meniuLink" href="/login">Login</a>
+            <a class="meniuLink" href="/login">Log in</a>
           
         <% } %>
       </div>
      <div class="informations">
           <div class="Contact">
-            <h3 class="textInformations mb-1">Contacteaza-ne</h3>
+            <h3 class="textInformations mb-1">Contactează-ne</h3>
             <h5 class="NumberContact">07XX XXX XXX</h5>
           </div>
           <div class="quickLinks">
           <h3 class="textInformations">Program &#8599;</h3>
-          <h3 class="textInformations">Locatie &#8599;</h3>
+          <h3 class="textInformations">Locație &#8599;</h3>
         
         </div>
       </div>
