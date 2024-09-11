@@ -117,9 +117,9 @@ module.exports.serviceDeleteRequest =  async(req,res)=>{
         }
 
         req.flash('success', 'Service deleted successfully');
-        res.redirect('/services');
+        res.redirect('/');
     } catch (error) {
         req.flash('error', 'An error occurred while deleting the Service');
-        res.redirect('/services');
+        res.redirect('/');
     }
 }

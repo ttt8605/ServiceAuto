@@ -12,7 +12,7 @@
 </div>
 
 
-<h3 class="mb-4">Service section</h3>
+<h3 id="ServiceSection" class="mb-4">Service section</h3>
     <% for(let service of services) {%>
       <div class="card mb-3" style="max-width: 600px;">
       
@@ -41,7 +41,7 @@
 
 
 
-<h3 class="mb-4" >Postari section</h3>
+<h3 id="PostariSection" class="mb-4" >Postari section</h3>
 
 <% for(let post of postari) {%>
     <div class="card mb-3" style="max-width: 600px;">
@@ -74,7 +74,7 @@
 
 
 
-<h3 class="mb-4" >Angajati section</h3>
+<h3 id="AngajatiSection" class="mb-4" >Angajati section</h3>
 
 <% for(let angajat of an) {%>
     <div class="card mb-3 " style="max-width: 600px;">
@@ -110,7 +110,7 @@
               <div class="col-md-6 offset-md-3 col-xl-4 offset-xl-4">
                   <div class="card shadow">
                          <div class="card-body">
-      <h5 class="card-title mb-4">Make an appoinment</h5>                                      
+      <h5 id="MakeAnAppoinment" class="card-title mb-4">Make an appoinment</h5>                                      
       <form action="/programare" method="POST" class="validated-form" novalidate>
       <div class=" mb-3">
           <label for="model" class="form-label">Your name</label>

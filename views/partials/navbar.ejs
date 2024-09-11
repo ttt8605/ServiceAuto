@@ -1,5 +1,5 @@
 <nav class="navbar sticky-top">
-  <div class="mr-4 ml-4">
+  <div id="logo" class="mr-4 ml-4 ">
     <a class="navbar-brand" href="/">
       <img src="https://res.cloudinary.com/dn9nc0upp/image/upload/v1725951527/Adimatech_logo_1_utu_1_cmbomq.svg" alt="Bootstrap" width="270" height="96" class="logo">
     </a>
@@ -25,47 +25,69 @@
 
     <div class="lowerDiv">
       <div class="links">
-        
+        <% if(!currentUser){ %>
             <a class="meniuLink" aria-current="page" href="/">Home</a>
-        
-  
-          <% if (currentUser) { %>
-         
-              <a class="meniuLink" href="/logout">Log out</a>
+            <a class="meniuLink" href="/#ServiceSection" aria-current="page">Servicii </a>
+            <a class="meniuLink" href="/#PostariSection" aria-current="page">Proiecte</a>
+            <a class="meniuLink" href="/#AngajatiSection" aria-current="page">Echipa</a>
+            <a class="meniuLink" href="/#MakeAnAppoinment" aria-current="page">Programeaza-te</a>
+
            
-              <a class="meniuLink" href="/cars/all">Mașini în service</a>
+  
+          <%}else if (currentUser) { %>
+        <script></script>
+              <a class="meniuLink mb-3" href="/logout">Log out</a>
+           
+              <a class="meniuLink mb-3" href="/cars/all">Mașini în service</a>
             
-              <a class="meniuLink" href="/cars/new">Adaugă o mașină</a>
+              <a class="meniuLink mb-3" href="/cars/new">Adaugă o mașină</a>
             
-              <a class="meniuLink" href="/programare">Programări</a>
+              <a class="meniuLink mb-3" href="/programare">Programări</a>
             
            
             <% if(currentUser.role === 'manager'){ %>
            
-              <a class="meniuLink" href="/services/new">Adaugă un serviciu</a>
+              <a class="meniuLink mb-3" href="/services/new">Adaugă un serviciu</a>
             
-              <a class="meniuLink" href="/postari/new">Adaugă o mașină</a>
+              <a class="meniuLink mb-3" href="/postari/new">Adaugă o postare</a>
            
-              <a class="meniuLink" href="/angajati/new">Adaugă un angajat</a>
+              <a class="meniuLink mb-3" href="/angajati/new">Adaugă un angajat</a>
            
-              <a class="meniuLink" href="/register">Crează cont</a>
+              <a class="meniuLink mb-3" href="/register">Crează cont</a>
            
-        <% }} else { %>
+        <% }%>
+        <script>
+        const lowDiv= document.querySelector('.lowerDiv');
+
+          function updateJustifyContent() {
+            if (window.innerWidth < 1000) {
+              lowDiv.style.justifyContent = 'normal';
+            } 
+          }
+          
+          // Call the function when the window is resized
+          window.addEventListener('resize', updateJustifyContent);
+          
+          // Call the function on page load
+          updateJustifyContent();</script>
+      <%} else { %>
          
             <a class="meniuLink" href="/login">Log in</a>
           
         <% } %>
       </div>
+      <% if(!currentUser){ %>
      <div class="informations">
           <div class="Contact">
             <h3 class="textInformations mb-1">Contactează-ne</h3>
             <h5 class="NumberContact">07XX XXX XXX</h5>
           </div>
           <div class="quickLinks">
-          <h3 class="textInformations">Program &#8599;</h3>
+         <h3 class="textInformations">Program &#8599;</h3>
           <h3 class="textInformations">Locație &#8599;</h3>
         
         </div>
+        <% } %>
       </div>
 
      
@@ -82,7 +104,7 @@
 const menuButton = document.getElementById('menuButton');
 const slidingMenu = document.getElementById('slidingMenu');
 const closeMenu = document.getElementById('closeMenu');
-
+const links = document.querySelectorAll('.meniuLink');
 // Add event listener to open the sliding menu
 menuButton.addEventListener('click', () => {
   slidingMenu.classList.add('show-menu');
@@ -92,6 +114,13 @@ menuButton.addEventListener('click', () => {
 closeMenu.addEventListener('click', () => {
   slidingMenu.classList.remove('show-menu');
 });
+
+// Add event listener to all links in the sliding menu
+links.forEach(link => {
+    link.addEventListener('click', () => {
+      slidingMenu.classList.remove('show-menu');
+    });
+  });
 </script>
 
 

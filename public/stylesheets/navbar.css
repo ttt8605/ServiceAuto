@@ -1,5 +1,8 @@
 @import url('https://fonts.cdnfonts.com/css/overused-grotesk');
 
+html {
+    scroll-behavior: smooth;
+  }
 .navbar {
     background-color: #27354E;
     padding: 10px;
@@ -76,7 +79,7 @@
 .close-btn {
     position: absolute;
     top: 0px;
-    right: 106px;
+    right: 116px;
     font-size: 70px;
     font-weight: 100;
     background: none;
@@ -89,7 +92,7 @@
     font-size: 27px;
     position: absolute;
     top: 36px;
-    right: 20px;
+    right: 30px;
     font-weight: 400;
     margin-top: 5px;
     color: #E34846;
@@ -118,12 +121,11 @@
     height: 113px;
 }
 .lowerDiv{
-    display:flex;
-    flex-direction: row;
+    height: 100%;
 }
 .links{
-    width: 50%;
-    height: 200px;
+    width: 100%;
+    height: 50%;
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
@@ -138,16 +140,17 @@
     text-decoration: none;
     color: #E34846;
     
+    
 }
 .informations{
-    width: 50%;
     height: 200px;
     display: flex;
     justify-content: space-evenly;
-    align-items: flex-end;
     flex-direction: column;
-    padding-top: 30%;
-    padding-right: 10%;
+    padding-top: 0;
+    padding-right: 30px;
+    width: 100%;
+    align-items: flex-end;
 }
 .Contact{
     display: flex;
@@ -183,3 +186,149 @@
 .show-menu {
     right: 0;
 }
+
+
+
+@media(max-width:1200px){
+    .links{
+        padding-left: 70px;
+        
+    }
+.meniuLink{
+    font-size: 45px;
+}
+.Contact{
+
+    margin-bottom: 15px;
+}
+.textInformations{
+    font-size: 35px;
+    margin-bottom: 30px;
+}
+.NumberContact{
+    font-size: 25px;
+}
+.informations{
+   margin-top: 30px;
+
+}
+
+}
+
+
+@media(max-width:1100px){
+    .links{
+        padding-left: 70px;
+        
+    }
+.meniuLink{
+    font-size: 35px;
+}
+.Contact{
+
+    margin-bottom: 15px;
+}
+.textInformations{
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+.NumberContact{
+    font-size: 23px;
+}
+.informations{
+   margin-top: 30px;
+
+}
+
+}
+
+
+
+@media(max-width:1000px){
+    .links{
+        padding-left: 70px;
+        
+    }
+.lowerDiv{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: flex-start;
+
+}
+.informations{
+   margin-top: 30px;
+   padding-left: 70px;
+   align-items: flex-start;
+   padding-right: 0;
+   margin-top: 0;
+}
+
+}
+
+
+@media(max-width:740px){
+
+    .logo{
+        width: 144px;
+        height: 64px;
+        margin-left: 0;
+    }
+    .meniu{
+        justify-content: space-evenly;
+    }
+.meniuButton{
+    width: 40px;
+}
+    .meniuTextButton{
+        font-size: 20px;
+    }
+
+    .meniuTextButtonHide{
+        display: none;
+    }
+    .close-btn{
+        right: 20px;
+    }
+.leftDiv{
+    display: none;
+}
+
+}
+
+@media(max-width:600px){
+
+.meniuLink{
+    font-size: 30px;
+}
+
+.textInformations{
+    font-size: 30px;
+}
+.NumberContact{
+    font-size: 20px;
+}
+
+.meniu{
+    margin: 0 !important;
+}
+#logo{
+    margin:0 !important;
+}
+}
+
+
+@media(max-width:400px){
+
+
+    .links{
+        padding-left: 30px;
+    }
+.informations{
+    padding-left: 30px;
+}
+    
+    }
+    
+
+
