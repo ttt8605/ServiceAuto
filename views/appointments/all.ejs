@@ -1,11 +1,11 @@
 <% layout('/layouts/boilerplate') %>
 <div class="container">
 <h1 class="mb-4">
-    Programari:
+    Programări curente
 </h1>
 
 
-<h3 class="mb-4">Today:</h3>
+<h3 class="mb-4">Astăzi</h3>
  <div class="d-flex flex-row ">
 <% for(let apt of appointments) {%>
     <% if(apt.date === formattedToday){ %>
@@ -28,7 +28,7 @@
         
     <% }} %>
 </div>
-<h3 class="mb-4">Future appointments:</h3>
+<h3 class="mb-4">Zilele următoare</h3>
 <div class="d-flex flex-row">
 <% for(let apt of appointments) {%>
     <% if(apt.date != formattedToday){ %>

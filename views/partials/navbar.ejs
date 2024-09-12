@@ -30,32 +30,28 @@
             <a class="meniuLink" href="/#ServiceSection" aria-current="page">Servicii </a>
             <a class="meniuLink" href="/#PostariSection" aria-current="page">Proiecte</a>
             <a class="meniuLink" href="/#AngajatiSection" aria-current="page">Echipa</a>
-            <a class="meniuLink" href="/#MakeAnAppoinment" aria-current="page">Programeaza-te</a>
+            <a class="meniuLink" href="/#MakeAnAppoinment" aria-current="page">Programează-te</a>
 
-           
-  
+          
           <%}else if (currentUser) { %>
        
-              <a class="meniuLink mb-3" href="/logout">Log out</a>
-           
-              <a class="meniuLink mb-3" href="/cars/all">Mașini în service</a>
-            
               <a class="meniuLink mb-3" href="/cars/new">Adaugă o mașină</a>
-            
+              <a class="meniuLink mb-3" href="/cars/all">Mașini în service</a>
               <a class="meniuLink mb-3" href="/programare">Programări</a>
-            
+
+              <a class="meniuLink mb-3" href="/logout">Log out</a>
            
             <% if(currentUser.role === 'manager'){ %>
            
               <a class="meniuLink mb-3" href="/services/new">Adaugă un serviciu</a>
-            
               <a class="meniuLink mb-3" href="/postari/new">Adaugă o postare</a>
-           
-              <a class="meniuLink mb-3" href="/angajati/new">Adaugă un angajat</a>
+              <a class="meniuLink mb-3" href="/angajati/new">Adaugă un membru</a>
            
               <a class="meniuLink mb-3" href="/register">Crează cont</a>
            
         <% }%>
+
+
         <script>
         const lowDiv= document.querySelector('.lowerDiv');
 
@@ -72,7 +68,7 @@
           updateJustifyContent();</script>
       <%} else { %>
          
-            <a class="meniuLink" href="/login">Log in</a>
+            <a class="meniuLink" href="/login">Intră în cont</a>
           
         <% } %>
       </div>
