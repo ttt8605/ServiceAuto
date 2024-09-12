@@ -109,17 +109,19 @@ const serviceRoutes = require('./routes/ServiceRoutes')
 const postariRoutes = require('./routes/postari')
 const carRoutes = require('./routes/car')
 const AnRoutes = require('./routes/angajati')
-const programRoute = require('./routes/programari')
+const programareRoute = require('./routes/programari')
 const piesaRoute = require('./routes/piese')
+const programRoute = require('./routes/program')
 
 app.use('/',homePageRoutes)
 app.use('/',authRoutes)
-app.use('/',programRoute)
+app.use('/',programareRoute)
 app.use('/services',serviceRoutes)
 app.use('/postari',postariRoutes)
 app.use('/cars',carRoutes)
 app.use('/angajati',AnRoutes)
 app.use('/cars/:id/piese', piesaRoute);
+app.use('/',programRoute);
 
 //404 handler
 app.all('*', (req, res, next) => {
@@ -133,6 +135,6 @@ app.use((err, req, res, next) => {
 });
 
 const port = process.env.PORT || 3000;
-app.listen(port, () => {
-    console.log(`listening on port ${port}`);
+app.listen(port,'0.0.0.0',() => {
+    console.log(`listening on port  http://0.0.0.0:${port}`);
 });
