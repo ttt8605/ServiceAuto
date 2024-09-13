@@ -16,8 +16,8 @@ body {
     left: 0;
     width: 100%;
     height: 180vh;
-    background-image: url('https://res.cloudinary.com/dn9nc0upp/image/upload/v1726125106/A4_-_2_staga9.svg');
-    background-repeat: repeat; /* Repeat the image */
+    background-image: url('https://res.cloudinary.com/dn9nc0upp/image/upload/v1726217926/A4_-_3_xywdlc.svg');
+    background-repeat: revert; /* Repeat the image */
     background-position: top left; /* Position the image */
     background-size: auto; /* Adjust size as needed */
     opacity: 0.5; /* Adjust opacity (0 is fully transparent, 1 is fully opaque) */

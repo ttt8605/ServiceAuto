@@ -1,20 +1,41 @@
+<head>
+    <link rel="stylesheet" href="/stylesheets/postariInvidual.css">
+</head>
 
 <% layout('/layouts/boilerplate') %>
   
-<div class="card mb-3 mt-4 col-4">
-  <img src="<%= post.images[0].url %>" class="card-img-top" alt="Service Image">
-  <div class="card-body">
-      <h5 class="card-title"><%= post.name %></h5>
-
-      <% if (currentUser && currentUser.role === 'manager') { %>
-          <div class="d-flex mb-2">
-              <a class="btn btn-warning me-2" href="/postari/<%= post._id %>/edit">Edit</a>
-              <form action="/postari/<%= post._id %>?_method=DELETE" method="POST">
-                  <button type="submit" class="btn btn-danger">Delete</button>
-              </form>
+<section class="container">
+    <div class="image-side">
+        <div class="carousel">
+          <div class="carousel-container">
+            <% post.images.forEach((img, i) => { %>
+              <div class="carousel-slide <%= i === 0 ? 'active' : ''%>">
+                <div class="image-carousel">
+                    <img src="<%= img.url %>" alt="Image <%= i + 1 %>">
+                </div>
+               
+              </div>
+            <% }) %>
           </div>
-      <% } %>
+    </div>
+      
+      <!-- Navigation Arrows -->
+       <div class="ArrowDiv">
+      <button class="prev">&larr;</button>
+      <button class="next">&rarr;</button>
+    </div>
+    </div>
+    </div>
 
-      <p class="card-text"><%= post.description %></p>
-  </div>
-</div>
+
+    <div class="TextSide">
+     <h3 class="PostName"><%=post.name %></h3>
+     <p class="PostDescription"><%=post.description %></p>
+    </div>
+
+
+
+
+  </section>
+
+<script src="/javascripts/carousel.js"></script>

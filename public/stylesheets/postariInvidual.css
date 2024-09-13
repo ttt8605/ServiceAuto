@@ -1,0 +1,127 @@
+@import url('https://fonts.cdnfonts.com/css/overused-grotesk');
+
+
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  /* Pseudo-element for background image */
+  body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 170vh;
+    background-image: url('https://res.cloudinary.com/dn9nc0upp/image/upload/v1726217926/A4_-_3_xywdlc.svg');
+    background-repeat:repeat; /* Repeat the image */
+    background-position: top left; /* Position the image */
+    background-size: auto; /* Adjust size as needed */
+    opacity: 0.5; /* Adjust opacity (0 is fully transparent, 1 is fully opaque) */
+    z-index: -1; /* Make sure the image is behind the content */
+  }
+  
+  .container{
+    margin-top: 150px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    max-width: 90%;
+  }
+  .TextSide{
+    width: 100%;
+    max-width: 700px;
+    height: 850px;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+  }
+  /* Carousel wrapper */
+  .image-side{
+    width: 100%;
+    max-width: 700px;
+    height: 850px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  .carousel {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    max-height: 700px;
+    overflow: hidden;
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  /* Carousel container */
+  .carousel-container {
+    display: flex;
+    transition: transform 0.8s ease-in-out; /* Smooth animation */
+    width: 100%;
+    max-width: 800px;
+  }
+  
+  /* Each slide */
+  .carousel-slide {
+    width: 100%;
+    flex-shrink: 0;
+  }
+  .image-carousel{
+    width: 100%;   /* Define the width of the container */
+    height: 100%;  /* Define the height of the container */
+    overflow: hidden;  /* Hide the overflowing parts of the image */
+    border-radius: 14px;
+  }
+  /* Images inside the slides */
+  .carousel-slide img {
+    width: 100%;    /* Ensure the image takes the full width of the container */
+    height: 60%;   /* Ensure the image takes the full height */
+    object-fit: cover;  /* Crops the image without distorting */
+    border-radius: 14px;
+  }
+  
+  /* Navigation Arrows */
+.prev,.next {
+    width: 80px;
+    height: 80px;
+    transform: translateY(-50%);
+    background-color: #e2e2e2;
+    color: #292929;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    font-size: 32px;
+    font-weight: 300;
+  }
+
+
+  .ArrowDiv{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+/* Text side */
+
+.PostName{
+    font-family: 'Overused Grotesk', sans-serif;
+    font-size: 70px;
+    font-weight: 400;
+    color: #292929;
+    margin-top: 10px;
+    margin-bottom: 150px;
+
+}
+
+.PostDescription{
+    font-family: 'Overused Grotesk', sans-serif;
+    font-size: 26px;
+    font-weight: 400;
+    color: #292929;
+
+}
