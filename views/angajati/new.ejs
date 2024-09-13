@@ -8,19 +8,19 @@
         <div class="col-md-6 offset-md-3">
           <div class="card shadow">
           <div class="card-body">
-          <h2 class="text-center mb-4 text">New Angajat</h2>
+          <h2 class="text-center mb-4 text">Adaugă un angajat</h2>
           
   <form action="/angajati" method="POST" novalidate class="validated-form" enctype="multipart/form-data" >
       <div class=" mb-3">
-       <label for="name" class="form-label text">Name</label>
-       <input type="text" name="name" id="name" class="form-control" placeholder="service name" autofocus required>
+       <label for="name" class="form-label text">Nume & prenume</label>
+       <input type="text" name="name" id="name" class="form-control" autofocus required>
        <div class="valid-feedback">
         Looks good!
        </div>
       </div>
       <div class="mb-3">
         <label class="form-label text" for="role">Rol</label>
-        <input class="form-control" name="role" id="role" aria-label="role"  placeholder="Rolul ocupat de angajat" required>
+        <input class="form-control" name="role" id="role" aria-label="role" required>
         <div class="valid-feedback">
           Looks good!
          </div>
@@ -30,13 +30,13 @@
         <div class="form-file custom-file">
             <input type="file" class="form-file-input" id="image" name="image" multiple required>
             <label class="form-file-label text" for="image">
-                <span class="form-file-text custom-file-label">Choose image(s)...</span>
+                <span class="form-file-text custom-file-label">Adaugă imagini</span>
                 <span class="form-file-button">Browse</span>
             </label>
         </div>
     </div>
     <div class="mb-3">
-      <label class="form-label text" for="about">About</label>
+      <label class="form-label text" for="about">Descriere</label>
       <textarea class="form-control" name="about" id="about" aria-label="about " rows="6" maxlength="200"  required></textarea>
       <div class="valid-feedback">
         Looks good!
@@ -44,7 +44,7 @@
     </div>
   
         <div class="mb-3">
-          <button class="btn btn-success btn-block">Add Angajat</button>
+          <button class="btn btn-success btn-block">Adaugă</button>
           </div>
   
   </form>

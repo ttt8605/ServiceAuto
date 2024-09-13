@@ -1,21 +1,21 @@
 <% layout('/layouts/boilerplate') %>
 <div class="container">
-<h1 class="mb-4">All the Cars in Service</h1>
+<h1 class="mb-4">Mașini în service</h1>
 
 <div class="d-flex flex-row align-items-center">
     <% for(let car of cars) {%>
         <div class="card mb-4 mr-4" style="width: 18rem;">
             <div class="card-body">
-              <h5 class="card-title mb-2">Number Plate: <%=car.plate %></h5>
-              <h6 class="card-subtitle mb-2 text-body-secondary">Car model: <%= car.model %></h6>
-              <h6 class="card-subtitle mb-2 text-body-secondary"> Car owner: <%= car.owner%></h6>
-              <h6 class="card-subtitle mb-2 text-body-secondary"> Car status: <%= car.status%></h6>
+              <h5 class="card-title mb-2">Număr de înmatriculare: <%=car.plate %></h5>
+              <h6 class="card-subtitle mb-2 text-body-secondary">Model: <%= car.model %></h6>
+              <h6 class="card-subtitle mb-2 text-body-secondary"> Proprietar: <%= car.owner%></h6>
+              <h6 class="card-subtitle mb-2 text-body-secondary"> Status: <%= car.status%></h6>
               <% if (currentUser) { %>
                 <div class="d-flex mb-2">
-                    <a class="btn btn-warning me-2" href="/cars/<%=car._id %>/edit">Edit</a>
+                    <a class="btn btn-warning me-2" href="/cars/<%=car._id %>/edit">Modifică</a>
                     <a class="btn btn-info me-2" href="/cars/<%=car._id %>">Vezi</a>
                     <form action="/cars/<%=car._id %>?_method=DELETE" method="POST">
-                        <button type="submit" class="btn btn-danger">Delete</button>
+                        <button type="submit" class="btn btn-danger">Șterge</button>
                     </form>
                 </div>
             <% } %>

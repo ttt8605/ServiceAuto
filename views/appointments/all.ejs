@@ -15,11 +15,11 @@
                     <h5 class="card-title mb-2 date">Data: <%= apt.date %></h5>
                     <h6 class="card-subtitle mb-2 text-body-secondary">Ora: <%= apt.ora %></h6>
                     <h6 class="card-subtitle mb-2 text-body-secondary"> Nume: <%= apt.name %></h6>
-                    <h6 class="card-subtitle mb-2 text-body-secondary"> Nr. telefon: <%= apt.phone %></h6>
+                    <h6 class="card-subtitle mb-2 text-body-secondary"> Telefon: <%= apt.phone %></h6>
                     <% if (currentUser) { %>
                         <div class="d-flex mb-2">
                             <form action="/programare/<%=apt._id %>?_method=DELETE" method="POST">
-                                <button type="submit" class="btn btn-danger">Delete</button>
+                                <button type="submit" class="btn btn-danger">Șterge</button>
                             </form>
                         </div>
                     <% } %>
@@ -38,11 +38,11 @@
                     <h5 class="card-title mb-2 date">Data: <%= apt.date %></h5>
                     <h6 class="card-subtitle mb-2 text-body-secondary">Ora: <%= apt.ora %></h6>
                     <h6 class="card-subtitle mb-2 text-body-secondary"> Nume: <%= apt.name %></h6>
-                    <h6 class="card-subtitle mb-2 text-body-secondary"> Nr. telefon: <%= apt.phone %></h6>
+                    <h6 class="card-subtitle mb-2 text-body-secondary"> Telefon: <%= apt.phone %></h6>
                     <% if (currentUser) { %>
                         <div class="d-flex mb-2">
                             <form action="/programare/<%=apt._id %>?_method=DELETE" method="POST">
-                                <button type="submit" class="btn btn-danger">Delete</button>
+                                <button type="submit" class="btn btn-danger">Șterge</button>
                             </form>
                         </div>
                     <% } %>

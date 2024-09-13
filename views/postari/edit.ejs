@@ -10,10 +10,10 @@
     <div class="col-md-6 offset-md-3 mb-4">
         <div class="card shadow">
             <div class="card-body">
-                <h2 class="text-center card-title mb-4">Edit Post</h2>
+                <h2 class="text-center card-title mb-4">Modifică proiect</h2>
   <form action="/postari/<%=post._id %>?_method=PUT" method="POST" novalidate  class="validated-form" enctype="multipart/form-data" >
       <div class=" mb-3">
-       <label for="name" class="form-label text">Title of the Post</label>
+       <label for="name" class="form-label text">Titlu</label>
        <input type="text" name="name" id="name" class="form-control" placeholder="service-name" value="<%= post.name %>" autofocus required>
        <div class="valid-feedback">
         Looks good!
@@ -28,26 +28,26 @@
        <div class="form-file custom-file">
            <input type="file" class="form-file-input" id="image" name="image" multiple>
            <label class="form-file-label" for="image">
-               <span class="form-file-text custom-file-label">Choose image(s)...</span>
+               <span class="form-file-text custom-file-label">Alege imagini</span>
                <span class="form-file-button">Browse</span>
            </label>
        </div>
    </div>
 
    <div class="mb-3">
-    <label class="form-label text" for="description">Description</label>
+    <label class="form-label text" for="description">Descriere</label>
     <textarea class="form-control" name="description" id="description" aria-label="Description" rows="10" maxlength="1500" required><%=post.description %></textarea>
     <div class="valid-feedback">
       Looks good!
      </div>
   </div>
       <div class="mb-3 mt-4">
-        <h6 class="text mb-3">Choose the images you want to delete:</h6>
+        <h6 class="text mb-3">Alege imaginile pe care vrei să le ștergi:</h6>
         <% post.images.forEach(function(img,i){ %>
           <img src="<%=img.thumbnail%>" class="img-thumbnail" alt="">
           <div class="form-check-inline md-3">
             <input type="checkbox" id="image-<%=i%>" name="deleteImages[]" value="<%=img.filename %>">
-             <label class="text" for="image-<%=i%>">Delete</label>
+             <label class="text" for="image-<%=i%>">Șterge</label>
          </div>
         
           <% }) %>
@@ -56,7 +56,7 @@
       
  
         <div class="mb-3">
-          <button class="btn btn-success btn-block">Edit Post</button>
+          <button class="btn btn-success btn-block">Terminatt</button>
           </div>
   
   </form>

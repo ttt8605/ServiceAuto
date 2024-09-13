@@ -8,11 +8,11 @@
         <div class="col-md-6 offset-md-3">
           <div class="card shadow">
           <div class="card-body">
-          <h2 class="text-center mb-4 text">New Service</h2>
+          <h2 class="text-center mb-4 text">Adaugă un serviciu</h2>
           
   <form action="/services" method="POST" novalidate class="validated-form" enctype="multipart/form-data" >
       <div class=" mb-3">
-       <label for="name" class="form-label text">Name of the service</label>
+       <label for="name" class="form-label text">Titlu</label>
        <input type="text" name="name" id="name" class="form-control" placeholder="service name" autofocus required>
        <div class="valid-feedback">
         Looks good!
@@ -24,21 +24,21 @@
         <div class="form-file custom-file">
             <input type="file" class="form-file-input" id="image" name="image" multiple required>
             <label class="form-file-label text" for="image">
-                <span class="form-file-text custom-file-label">Choose image(s)...</span>
+                <span class="form-file-text custom-file-label">Adaugă imagini</span>
                 <span class="form-file-button">Browse</span>
             </label>
         </div>
     </div>
 
          <div class="mb-3">
-          <label class="form-label text" for="description">Description</label>
+          <label class="form-label text" for="description">Descriere</label>
           <textarea class="form-control" name="description" id="description" aria-label="Description" rows="6"  required></textarea>
           <div class="valid-feedback">
             Looks good!
            </div>
         </div>
         <div class="mb-3">
-          <button class="btn btn-success btn-block">Add Service</button>
+          <button class="btn btn-success btn-block">Adaugă</button>
           </div>
   
   </form>
