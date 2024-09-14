@@ -1,1 +1,91 @@
 @import url('https://fonts.cdnfonts.com/css/overused-grotesk');
+
+#footer {
+    background-color: #27354E;
+    display: flex;
+    flex-direction: row; 
+}
+
+.footerLinks{
+    width: 350px;
+    height: 300px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    padding-left: 60px;
+}
+
+.link {
+    font-family: 'Overused Grotesk', sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    text-decoration: none;
+    color: #EDEDED;
+}
+
+.footerInfo {
+    width: 350px;
+    height: 200px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    color: #EDEDED;
+    margin-top: 30px;
+    padding-left: 30px;
+}
+
+.textInformation {
+    font-family: 'Overused Grotesk', sans-serif;
+    text-decoration: none;
+    color: #EDEDED;
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.contact{
+    margin-bottom: 15px;
+}
+
+.phone {
+ font-size: 20px;
+ font-weight: 300;
+ opacity: 50%;
+}
+
+#logo2 {
+    margin-top: 30px;
+}
+
+
+
+/* MEDIA QUERIES */
+@media(max-width:1000px){
+   .footerLinks{
+    padding-left: 30px;
+   }
+
+   .footerInfo{
+    padding-left: 0px;
+   }
+}
+
+@media(max-width:850px) {
+    .footerLinks{
+        padding-left: 20px;
+       }
+
+    .link{
+        font-size: 22px;
+    }
+
+    .textInformation{
+        font-size: 24px;
+    }
+}
+
+@media(max-width: 670px) {
+    .footerLinks{
+        padding-left: 0px;
+       }
+}
