@@ -1,4 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.cdnfonts.com/css/overused-grotesk');
+
 body{
     background-color: #f5f5f5;
+}
+
+#Services{
+    font-family: 'Outfit', sans-serif;
+    font-size: 60px; /* momentan 60px pana vad cum arata cu restul componentelor */
+    font-weight: 400;
+}
+#Projects{
+    font-family: 'Outfit', sans-serif;
+    font-size: 60px;
+    font-weight: 400; 
+}
+#Team {
+    font-family: 'Outfit', sans-serif;
+    font-size: 60px;
+    font-weight: 400; 
 }
 

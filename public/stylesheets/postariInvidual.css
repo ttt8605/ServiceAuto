@@ -125,3 +125,191 @@
     color: #292929;
 
 }
+
+
+@media(max-width:1700px){
+  .image-side{
+    max-width: 600px;
+    height: 800px;
+  }
+  .carousel{
+    max-width: 600px;
+    max-height: 550px;
+  }
+
+  .TextSide{
+    max-width: 600px;
+    height: 730px;
+  }
+}
+
+
+@media(max-width:1500px) {
+  .PostName {
+    font-family: 'Overused Grotesk', sans-serif;
+    font-size: 60px;
+    margin-bottom: 80px;
+}
+.carousel{
+  max-width: 500px;
+  max-height: 450px;
+}
+.image-side{
+  max-width: 500px;
+  height: 730px;
+}
+.TextSide{
+  max-width: 500px;
+  height: 630px;
+}
+.container{
+  justify-content: space-around;
+  max-width: 95%;
+}
+}
+
+@media(max-width:1200px) {
+
+.container{
+  justify-content: space-around;
+  max-width: 100%;
+}
+
+body::before{
+  height: 110vh;
+}
+}
+
+
+@media(max-width:1050px){
+  .container{
+    flex-direction: column;
+    margin-top: 0px;
+  }
+  body::before{
+    height: 130vh;
+  }
+  .carousel{
+    max-width: 550px;
+    max-height: 500px;
+  }
+  .image-side{
+    max-width: 550px;
+    height: 750px;
+  }
+  .TextSide{
+    max-width: 550px;
+    height: 600px;
+  }
+}
+
+
+@media(max-width:600px){
+  .PostName {
+    font-family: 'Overused Grotesk', sans-serif;
+    font-size: 55px;
+    margin-bottom: 60px;
+}
+.container{
+  max-width: 100%;;
+}
+.carousel{
+  max-width: 500px;
+  max-height: 450px;
+}
+.image-side{
+  max-width: 450px;
+  height: 640px;
+  margin-top: 50px;
+}
+.TextSide{
+  max-width: 450px;
+  height: 410px;
+}
+.container{
+  justify-content: space-around;
+  max-width: 100%;
+}
+}
+@media(max-width:600px){
+  .PostName {
+    font-family: 'Overused Grotesk', sans-serif;
+    font-size: 55px;
+    margin-bottom: 60px;
+}
+.container{
+  max-width: 100%;;
+}
+.carousel{
+  max-width: 400px;
+  max-height: 450px;
+}
+.image-side{
+  max-width: 400px;
+  height: 500px;
+  margin-top: 50px;
+
+}
+.prev,.next{
+font-size: 26px;
+width: 70px;
+height: 70px;
+}
+.TextSide{
+  max-width: 400px;
+  height: 410px;
+  margin-top: 30px;
+}
+.container{
+  justify-content: space-around;
+  max-width: 100%;
+}
+.PostName {
+  font-family: 'Overused Grotesk', sans-serif;
+  font-size: 50px;
+  margin-bottom: 50px;
+}
+}
+
+@media(max-width:420px){
+  .PostName {
+    font-family: 'Overused Grotesk', sans-serif;
+    font-size: 55px;
+    margin-bottom: 60px;
+}
+.container{
+  max-width: 100%;;
+}
+.carousel{
+  max-width: 340px;
+  max-height: 400px;
+}
+.image-side{
+  max-width: 340px;
+  height: 400px;
+  margin-top: 50px;
+
+}
+.prev,.next{
+font-size: 26px;
+width: 60px;
+height: 60px;
+}
+.TextSide{
+  max-width: 340px;
+  height: 410px;
+  margin-top: 30px;
+}
+.container{
+  justify-content: space-around;
+  max-width: 100%;
+}
+.PostName {
+  font-family: 'Overused Grotesk', sans-serif;
+  font-size: 40px;
+  margin-bottom: 50px;
+}
+.PostDescription{
+  font-size: 20px;
+}
+}

@@ -10,10 +10,10 @@
         <div class="col-md-6 offset-md-2 col-xl-4">
             <div class="card shadow">
                    <div class="card-body">
-<h5 class="card-title mb-4">Edit Car</h5>                                      
+<h5 class="card-title mb-4">Modifică status & detalii</h5>                                      
 <form action="/cars/<%=cars._id%>?_method=PUT" method="POST" novalidate class="validated-form"  >
 <div class=" mb-3">
-    <label for="model" class="form-label">Car Model</label>
+    <label for="model" class="form-label">Model</label>
     <input type="text" name="model" id="model" class="form-control" placeholder="model" value="<%=cars.model %>" required>
     <div class="valid-feedback">
      Looks good!
@@ -21,7 +21,7 @@
    </div>
 
    <div class=" mb-3">
-    <label for="plate" class="form-label">Number Plate</label>
+    <label for="plate" class="form-label">Număr de înmatriculare</label>
     <input type="text" name="plate" id="plate" class="form-control" placeholder="plate" value="<%=cars.plate %>" required>
     <div class="valid-feedback">
      Looks good!
@@ -29,13 +29,13 @@
    </div>
 
    <div class=" mb-3">
-    <label for="owner" class="form-label">Owner name</label>
+    <label for="owner" class="form-label">Proprietar</label>
     <input type="text" name="owner" id="owner" class="form-control" placeholder="owner" value="<%=cars.owner %>" required>
     <div class="valid-feedback">
      Looks good!
     </div></div>
     <div class=" mb-3">
-        <label for="phone" class="form-label">Owner phone</label>
+        <label for="phone" class="form-label">Telefon</label>
         <input type="text" name="phone" id="phone" class="form-control" placeholder="phone number"  value="<%=cars.phone %>"required>
         <div class="valid-feedback">
          Looks good!
@@ -43,7 +43,7 @@
         
         
     <div class=" mb-3 mt-3">
-        <label for="status" class="form-label text">Status of the car</label>
+        <label for="status" class="form-label text">Status Masina</label>
         <select class="form-select" name="status" aria-label="Default select example" >
             <%for(let stat of status){  %>
                 <option value="<%= stat%>" <%= cars.status === stat ? 'selected' : ''  %>><%=stat %></option>
@@ -52,7 +52,7 @@
        </div>
 
    </div>
-<button class="btn btn-success btn-block">edit Car</button>
+<button class="btn btn-success btn-block">Modifica</button>
 
 </form>
                    </div>
@@ -74,7 +74,7 @@
                                   </div>
                               </div>
                               <div class="mt-3 mb-3">
-                                  <label for="status" class="form-label">Status of the part:</label>
+                                  <label for="status" class="form-label">Status Piesa</label>
                                   <select id="status" name="piese[status]" class="form-control" aria-label="Default select example">
                                       <% for(let stat of statusPiese) { %>
                                           <option value="<%= stat %>"><%= stat %></option>
@@ -85,7 +85,7 @@
                                   Looks good!
                               </div>
                           </div>
-                          <button class="btn  btn-success">Submit</button>
+                          <button class="btn  btn-success">Adauga</button>
                       </form>     
                       
                       <div class="row align-items-center mb-2 ml-2 mr-2 mt-2 ">
