@@ -14,7 +14,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 170vh;
+    height: 140vh;
     background-image: url('https://res.cloudinary.com/dn9nc0upp/image/upload/v1726217926/A4_-_3_xywdlc.svg');
     background-repeat:repeat; /* Repeat the image */
     background-position: top left; /* Position the image */
@@ -114,7 +114,7 @@
     font-weight: 400;
     color: #292929;
     margin-top: 10px;
-    margin-bottom: 150px;
+    margin-bottom: 60px;
 
 }
 
@@ -123,7 +123,35 @@
     font-size: 26px;
     font-weight: 400;
     color: #292929;
-    overflow-y: auto; 
+    overflow-y: auto;  /* Enables vertical scrolling */
+
+}
+.ProgrameazateButton{
+margin-top: 30px;
+  border:none;
+  background-color: #E43018;
+  color: #ffffff;
+  width: 250px;
+  height: 50px;
+  border-radius: 40px;
+  font-family: 'Overused Grotesk', sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  padding-top: 9px;
+  padding-right: 44px;
+  margin-bottom: 58px;
+}
+.ArrowButton{
+  background-color: #ffffff;
+  color: #292929;
+  width: 40px !important;
+  height: 37px !important;
+  border-radius: 40px;
+  font-size: 24px;
+  position: relative;
+  bottom: 32px;
+  left: 200px;
+
 
 }
 
@@ -167,6 +195,9 @@
   justify-content: space-around;
   max-width: 95%;
 }
+.PostDescription{
+  font-size: 22px;
+}
 }
 
 @media(max-width:1200px) {
@@ -181,13 +212,14 @@
 
 
 @media(max-width:1050px){
+    body::before{
+        height: 190vh;
+      }
   .container{
     flex-direction: column;
     margin-top: 0px;
   }
-  body::before{
-    height: 190vh;
-  }
+
   .carousel{
     max-width: 550px;
     max-height: 500px;
@@ -201,16 +233,21 @@
     height: 600px;
   }
 }
+@media(max-width:800px){
+  body::before{
+      height: 180vh;
+    }
+
+}
 
 
 
 
 @media(max-width:600px){
-  .PostName {
-    font-family: 'Overused Grotesk', sans-serif;
-    font-size: 55px;
-    margin-bottom: 60px;
-}
+    body::before{
+        height: 170vh;
+      }
+  
 .container{
   max-width: 100%;;
 }
@@ -243,19 +280,40 @@ height: 70px;
   font-size: 50px;
   margin-bottom: 50px;
 }
-body::before{
-  height: 170vh;
+.PostDescription{
+  font-size: 16px;
 }
-.PostDescription {
-
-  font-size: 17px;
-
+.ArrowButton {
+  background-color: #ffffff;
+  color: #292929;
+  width: 28px !important;
+  height: 28px !important;
+  border-radius: 40px;
+  font-size: 19px;
+  position: relative;
+  bottom: 23px;
+  left: 142px;
+}
+.ProgrameazateButton {
+  margin-top: 10px;
+  border: none;
+  background-color: #E43018;
+  color: #ffffff;
+  width: 180px;
+  height: 40px;
+  border-radius: 40px;
+  font-family: 'Overused Grotesk', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  padding-top: 9px;
+  padding-right: 40px;
+  margin-bottom: 0;
 }
 }
 
 @media(max-width:420px){
   body::before{
-    height: 180vh;
+    height: 163vh;
   }
   .PostName {
     font-family: 'Overused Grotesk', sans-serif;
@@ -295,7 +353,7 @@ height: 60px;
 .PostName {
   font-family: 'Overused Grotesk', sans-serif;
   font-size: 40px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 .PostDescription{
   font-size: 16px;

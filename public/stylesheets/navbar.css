@@ -182,6 +182,7 @@ html {
     color: #E34846;
     margin-bottom: 80px;
     text-decoration: none;
+    text-rendering: optimizeLegibility;
 }
 
 .NumberContact{
@@ -350,6 +351,7 @@ html {
 @media(max-width:400px){
     .links{
         padding-left: 30px;
+        margin-bottom: 30px;
     }
 
 .informations{
