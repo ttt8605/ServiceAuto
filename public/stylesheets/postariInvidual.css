@@ -10,19 +10,18 @@
   /* Pseudo-element for background image */
   body::before {
     content: '';
-    position: absolute;
+    position: fixed; /* Keep the image in place even when scrolling */
     top: 0;
     left: 0;
     width: 100%;
-    height: 170vh;
-    background-image: url('https://res.cloudinary.com/dn9nc0upp/image/upload/v1726217926/A4_-_3_xywdlc.svg');
-    background-repeat:repeat; /* Repeat the image */
-    background-position: top left; /* Position the image */
-    background-size: auto; /* Adjust size as needed */
+    height: 100%;
+    background-image: url('https://res.cloudinary.com/dn9nc0upp/image/upload/v1726554292/A4_-_3_vrfxxe.svg');
+    background-repeat: no-repeat; /* Prevent image repetition */
+    background-position: center center; /* Center the image */
+    background-size: cover; /* Make the image cover the screen while maintaining aspect ratio */
     opacity: 0.5; /* Adjust opacity (0 is fully transparent, 1 is fully opaque) */
-    z-index: -1; /* Make sure the image is behind the content */
-  }
-  
+    z-index: -1; /* Ensure the image is behind the content */
+}
   .container{
     margin-top: 150px;
     display: flex;
@@ -185,9 +184,7 @@
     flex-direction: column;
     margin-top: 0px;
   }
-  body::before{
-    height: 190vh;
-  }
+
   .carousel{
     max-width: 550px;
     max-height: 500px;
@@ -243,9 +240,7 @@ height: 70px;
   font-size: 50px;
   margin-bottom: 50px;
 }
-body::before{
-  height: 170vh;
-}
+
 .PostDescription {
 
   font-size: 17px;
@@ -254,9 +249,7 @@ body::before{
 }
 
 @media(max-width:420px){
-  body::before{
-    height: 180vh;
-  }
+
   .PostName {
     font-family: 'Overused Grotesk', sans-serif;
     font-size: 55px;
@@ -298,6 +291,6 @@ height: 60px;
   margin-bottom: 50px;
 }
 .PostDescription{
-  font-size: 16px;
+  font-size: 17px;
 }
 }
