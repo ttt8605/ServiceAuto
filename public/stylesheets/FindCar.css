@@ -181,6 +181,7 @@ h3.active{
     font-size: 18px;
     border: 1px #292929 solid;
     background-color: #F5F5F5;
+    color: #292929;
     border-radius: 10px;
     margin-right: 10px;
 }
@@ -196,4 +197,174 @@ h3.active{
     color: #F5F5F5;
     border-radius: 10px;
 }
+.card{
+    width: 500px;
+    border-radius: 10px;
+}
+.card-body{
+    width: 100%;
+    background-color: #F5F5F5;
+    border-radius: 10px;
+}
+
+
+.card-title{
+    font-family: 'Overused Grotesk', sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+    margin-left: 5px;
+}
+
+.validated-form{
+    padding: 10px;
+}
+
+.form-label{
+    font-family: 'Overused Grotesk', sans-serif;
+    font-weight: 400;
+}
+
+
+@media(max-width:1200px){
+ .UserSide{
+    width: 40%;
+ }
+ .ManagerSide{
+    width: 60%;
+ }
+ h4{
+    font-size: 32px;
+ }
+}
+
+@media(max-width:991px){
+   .Main{
+    flex-direction: column;
+    height: auto;
+   }
+   .UserSide{
+    width: 100%;
+  
+   }
+   .ManagerSide{
+    width: 100%;
+    padding-left: 80px;
+   }
+   .ManagerSide h6{
+    margin-top: 0;
+   }
+
+
+
+}
+
+@media(max-width:768px){
+    h1{
+        font-size: 50px;
+    }
+    .UserSide{
+        padding-left: 20px;
+       }
+       .ManagerSide{
+        padding-left: 20px;
+       }
+       h4 {
+        font-size: 30px;
+    }
+       h6{
+        font-size: 26px;
+       }
+
+       .StatusInfo{
+        padding-bottom: 0;
+        margin-top: 10px;
+       }
+      .StatusInfo h3{
+        font-size: 24px;
+       }
+       .card{
+        width: 400px;
+       }
+       .piese{
+        align-items: center;
+       }
+       .PiesaContainer{
+        width: 400px;
+        height: 100px;
+        padding: 20px;
+       }
+       .PiesaContainer h2{
+        font-size: 19px;
+       }
+       .PiesaContainer h3{
+        font-size: 17px;
+       }
+       .EditButton{
+        width: 74px;
+        height: 36px;
+        font-size: 16px;
+       }
+       .DeleteButton{
+        width: 66px;
+        height: 36px;
+        font-size: 16px;
+       }
+ }
+ 
+
+ @media(max-width:450px){
+    h1{
+        font-size: 34px;
+    }
+    .UserSide{
+        padding-left: 20px;
+       }
+       .ManagerSide{
+        padding-left: 20px;
+       }
+       h4 {
+        font-size: 25px;
+    }
+       h6{
+        font-size: 22px;
+       }
+
+       .StatusInfo{
+        padding-bottom: 0;
+        margin-top: 10px;
+       }
+      .StatusInfo h3{
+        font-size: 22px;
+       }
+       .piese{
+        align-items: center;
+       }
+       .card{
+        width: 320px;
+       }
+       .PiesaContainer{
+        width: 320px;
+        height: 90px;
+        padding: 20px;
+       }
+       .PiesaContainer h2{
+        font-size: 18px;
+       }
+       .PiesaContainer h3{
+        font-size: 15px;
+       }
+       .EditButton{
+        width: 65px;
+        height: 33px;
+        font-size: 14px;
+       }
+       .DeleteButton{
+        width: 60px;
+        height: 33px;
+        font-size: 14px;
+       }
+ }
+ 
+
+
 

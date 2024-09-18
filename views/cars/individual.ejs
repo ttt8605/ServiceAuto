@@ -4,48 +4,105 @@
 
 <% layout('/layouts/boilerplate') %>
 
-
-
 <div class="container">
-    <h1>Statusul masinii mele</h1>
-<section class="Main">
-    <section class="UserSide">
-        <div class="CarInfo">
-        <h4><%=cars.model%><%if(currentUser){%> // <%=cars.owner%><% } %></h4>
-        <h6><%=cars.plate %></h5>
-        </div>
-        <div class="StatusInfo">
-            <h3 class="<%= cars.status === 'Verificare' ? 'active' : ''  %>">În curs de evaluare</h3>
-            <div class="Arrow"></div>
-            <h3 class="<%= cars.status === 'Se lucreaza' ? 'active' : ''  %>">Se lucrează</h3>
-            <div class="Arrow"></div>
-            <h3 class="<%= cars.status === 'Gata de ridicare' ? 'active' : ''  %>">Gata de preluare</h3>
-        </div>
-    </section>
-    <% if(currentUser){ %>
-    <section class="ManagerSide">
-         <h6>Piese</h6>
-         <div class="piese">
-        <% for(piesa of cars.piese){%>
-     <div class="PiesaContainer">
-        <div class="leftSide">
-        <h2><%=piesa.name%></h2>
-        <h3>Status: <%=piesa.status%></h3>
-    </div>
-    <div class="rightSide">
-        <form action="<%=piesa._id%>">
-            <button  class="EditButton">Editeaza</button>
-        </form>
-       <form action="/cars/<%= cars._id %>/piese/<%= piesa._id %>?_method=DELETE" method="POST">
-        <button class="DeleteButton">Sterge</button>
-       </form> 
-    </div>
-     </div>
-<% } %>
-         </div>
-    </section>
-        <% }else{ %>
-    <section class="emptySection"></section>        
+    <h1>Statusul mașinii mele</h1>
+    <section class="Main">
+        <section class="UserSide">
+            <div class="CarInfo">
+                <h4><%= cars.model %><% if (currentUser) { %> // <%= cars.owner %><% } %></h4>
+                <h6><%= cars.plate %></h6>
+            </div>
+            <div class="StatusInfo">
+                <h3 class="<%= cars.status === 'Verificare' ? 'active' : '' %>">În curs de evaluare</h3>
+                <div class="Arrow"></div>
+                <h3 class="<%= cars.status === 'Se lucreaza' ? 'active' : '' %>">Se lucrează</h3>
+                <div class="Arrow"></div>
+                <h3 class="<%= cars.status === 'Gata de ridicare' ? 'active' : '' %>">Gata de preluare</h3>
+            </div>
+        </section>
+
+        <% if (currentUser) { %>
+        <section class="ManagerSide">
+            <h6>Piese</h6>
+            <div class="piese">
+                <% for (piesa of cars.piese) { %>
+                <div id="piesa-card-<%= piesa._id %>" class="PiesaContainer">
+                    <div class="leftSide">
+                        <h2><%= piesa.name %></h2>
+                        <h3>Status: <%= piesa.status %></h3>
+                    </div>
+                    <div class="rightSide">
+                        <form action="<%= piesa._id %>">
+                            <button class="EditButton" data-piesa-id="<%= piesa._id %>">Editează</button>
+                        </form>
+                        <form action="/cars/<%= cars._id %>/piese/<%= piesa._id %>?_method=DELETE" method="POST">
+                            <button class="DeleteButton">Șterge</button>
+                        </form>
+                    </div>
+                </div>
+                <!-- Hidden Edit Form -->
+                <div class="card mb-3 hidden" id="edit-form-<%= piesa._id %>">
+                    <div class="card-body">
+                        <h5 class="card-title mb-3">Editează</h5>
+                        <form action="/cars/<%= cars._id %>/piese/<%= piesa._id %>?_method=PUT" method="POST" novalidate class="validated-form">
+                            <div class="mb-3">
+                                <label for="name-<%= piesa._id %>" class="form-label">Piesă:</label>
+                                <input type="text" name="name" id="name-<%= piesa._id %>" class="form-control" placeholder="model piesă" value="<%= piesa.name %>" required>
+                                <div class="valid-feedback">Looks good!</div>
+                            </div>
+
+                            <div class="mb-3 mt-3">
+                                <label for="status-<%= piesa._id %>" class="form-label">Status:</label>
+                                <div class="styled-select">
+                                  <select name="status" id="status-<%= piesa._id %>" class="form-select">
+                                    <% for (let stat of statusPiese) { %>
+                                      <option value="<%= stat %>" <%= piesa.status === stat ? 'selected' : '' %>><%= stat %></option>
+                                    <% } %>
+                                  </select>
+                                </div>
+                              </div>
+
+                            <button class="btn btn-success btn-block mb-2" type="submit">Modifică Piesa</button>
+                            <button type="button" class="btn mt-1 btn-warning btn-sm cancel-btn" data-piesa-id="<%= piesa._id %>">Anulează</button>
+                        </form>
+                    </div>
+                </div>
+                <% } %>
+            </div>
+        </section>
+        <% } else { %>
+        <section class="emptySection"></section>
         <% } %>
-</section>
+    </section>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const editButtons = document.querySelectorAll('.EditButton');
+      const cancelButtons = document.querySelectorAll('.cancel-btn');
+
+      editButtons.forEach(button => {
+        button.addEventListener('click', function(event) {
+          event.preventDefault();  // Prevent form submission
+          const piesaId = this.getAttribute('data-piesa-id');
+          document.getElementById(`piesa-card-${piesaId}`).classList.add('hidden');
+          document.getElementById(`edit-form-${piesaId}`).classList.remove('hidden');
+        });
+      });
+
+      cancelButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const piesaId = this.getAttribute('data-piesa-id');
+          document.getElementById(`edit-form-${piesaId}`).classList.add('hidden');
+          document.getElementById(`piesa-card-${piesaId}`).classList.remove('hidden');
+        });
+      });
+    });
+    
+</script>
+
+<style>
+    .hidden {
+      display: none;
+    }
+</style>
