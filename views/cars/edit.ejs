@@ -43,7 +43,7 @@
         
         
     <div class=" mb-3 mt-3">
-        <label for="status" class="form-label text">Status Masina</label>
+        <label for="status" class="form-label text">Status mașină</label>
         <select class="form-select" name="status" aria-label="Default select example" >
             <%for(let stat of status){  %>
                 <option value="<%= stat%>" <%= cars.status === stat ? 'selected' : ''  %>><%=stat %></option>
@@ -52,7 +52,7 @@
        </div>
 
    </div>
-<button class="btn btn-success btn-block">Modifica</button>
+<button class="btn btn-success btn-block">Modifică</button>
 
 </form>
                    </div>
@@ -63,18 +63,18 @@
             <div class="card shadow">
                    <div class="card-body">
                    
-                        <h5>Adauga o piesa</h5>
+                        <h5>Adaugă o piesă</h5>
                         <form action="/cars/<%= cars._id %>/piese" method="POST" class="mb-3 validated-form" novalidate>
                           <div class="mb-3">
                               <div class="mb-3">
-                                  <label for="name" class="form-label">Piesa</label>
+                                  <label for="name" class="form-label">Piesă</label>
                                   <input type="text" name="piese[name]" id="name" class="form-control" placeholder="numele piesei" required>
                                   <div class="valid-feedback">
                                       Looks good!
                                   </div>
                               </div>
                               <div class="mt-3 mb-3">
-                                  <label for="status" class="form-label">Status Piesa</label>
+                                  <label for="status" class="form-label">Status piesă</label>
                                   <select id="status" name="piese[status]" class="form-control" aria-label="Default select example">
                                       <% for(let stat of statusPiese) { %>
                                           <option value="<%= stat %>"><%= stat %></option>
@@ -85,7 +85,7 @@
                                   Looks good!
                               </div>
                           </div>
-                          <button class="btn  btn-success">Adauga</button>
+                          <button class="btn  btn-success">Adaugă</button>
                       </form>     
                       
                       <div class="row align-items-center mb-2 ml-2 mr-2 mt-2 ">
