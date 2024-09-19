@@ -1,87 +1,121 @@
+
+<head>
+    <link rel="stylesheet" href="/stylesheets/Appointments.css">
+</head>
+
 <% layout('/layouts/boilerplate') %>
-<div class="container">
-<h1 class="mb-4">
-    Programări curente
-</h1>
 
 
-<h3 class="mb-4">Astăzi</h3>
- <div class="d-flex flex-row ">
-<% for(let apt of appointments) {%>
-    <% if(apt.date === formattedToday){ %>
-       
-            <div class="card mb-4 mr-4" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title mb-2 date">Data: <%= apt.date %></h5>
-                    <h6 class="card-subtitle mb-2 text-body-secondary">Ora: <%= apt.ora %></h6>
-                    <h6 class="card-subtitle mb-2 text-body-secondary"> Nume: <%= apt.name %></h6>
-                    <h6 class="card-subtitle mb-2 text-body-secondary"> Nr. telefon: <%= apt.phone %></h6>
-                    <% if (currentUser) { %>
-                        <div class="d-flex mb-2">
-                            <form action="/programare/<%=apt._id %>?_method=DELETE" method="POST">
-                                <button type="submit" class="btn btn-danger">Sterge</button>
-                            </form>
-                        </div>
-                    <% } %>
+ <div class="container ">
+     <div class="Top-div">
+      <h2>Programari</h2>
+      <button class="EditButton" id="DeleteBtn">Sterge programari</button>
+
+      </div>
+      <section class="TodayAppoint">
+        <h3>Astazi</h3>
+        <% for(let apt of appointments) {%>
+            <% if(apt.date === formattedToday){ %>
+               <div class="AptContainer">
+              
+                <div class="apt-left-div">
+                    <div class="delete-div">
+                        <form action="/programare/<%=apt._id %>?_method=DELETE" method="POST">
+                            <button type="submit" class="delete-btn">&#120;</button>
+                        </form>
+                    </div>   
+                <div class="info-div">
+                <h6 class="apt-name"> <%= apt.name %></h6>
+                <h6 class="apt-phone"> <%= apt.phone %></h6>
                 </div>
-            </div>
-        
-    <% }} %>
-</div>
-<h3 class="mb-4">Zilele următoare</h3>
-<div class="d-flex flex-row">
-<% for(let apt of appointments) {%>
-    <% if(apt.date != formattedToday){ %>
-        
-            <div class="card mb-4 mr-4" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title mb-2 date">Data: <%= apt.date %></h5>
-                    <h6 class="card-subtitle mb-2 text-body-secondary">Ora: <%= apt.ora %></h6>
-                    <h6 class="card-subtitle mb-2 text-body-secondary"> Nume: <%= apt.name %></h6>
-                    <h6 class="card-subtitle mb-2 text-body-secondary"> Nr. telefon: <%= apt.phone %></h6>
-                    <% if (currentUser) { %>
-                        <div class="d-flex mb-2">
-                            <form action="/programare/<%=apt._id %>?_method=DELETE" method="POST">
-                                <button type="submit" class="btn btn-danger">Sterge</button>
-                            </form>
-                        </div>
-                    <% } %>
                 </div>
-            </div>
-        
-    <% }} %>
-</div>
-</div>
+                <div class="middle-line"></div>
+                <div class="apt-right-div">
+                    <h6 class="apt-date"> <%= apt.date %></h6>
+                    <h6 class="apt-ora"><%= apt.ora %></h6>
+                </div>
+               </div>
+            <% }} %>
+      </section>
+      
+      <section class="NextDaysApt">
+        <h3>Zilele următoare</h3>
+        <% for(let apt of appointments) {%>
+        <% if(apt.date != formattedToday){ %>
+            <div class="AptContainer">
+              
+                <div class="apt-left-div">
+                    <div class="delete-div">
+                        <form action="/programare/<%=apt._id %>?_method=DELETE" method="POST">
+                            <button type="submit" class="delete-btn">&#120;</button>
+                        </form>
+                    </div>   
+                <div class="info-div">
+                <h6 class="apt-name"> <%= apt.name %></h6>
+                <h6 class="apt-phone"> <%= apt.phone %></h6>
+                </div>
+                </div>
+                <div class="middle-line"></div>
+                <div class="apt-right-div">
+                    <h6 class="apt-date"> <%= apt.date %></h6>
+                    <h6 class="apt-ora"><%= apt.ora %></h6>
+                </div>
+               </div>
+            <% }} %>
+      </section>
+ </div>
+
+
+
+
+
+
 
 <script>
-function reverseDateFormat(dateString) {
-// Split the date string into its components
-const [year, month, day] = dateString.split('-');
-
-// Reformat the date components
-return `${day}/${month}/${year}`;
-}
-
-// Function to update the date in the h5 elements
-function updateDateTitles() {
-// Select all elements with class 'date'
-const dateElements = document.querySelectorAll('.date');
-
-// Iterate over each element and update its text
-dateElements.forEach(element => {
-    // Extract the date part from the text content
-    const originalText = element.textContent;
-    const dateMatch = originalText.match(/Data: (\d{4}-\d{2}-\d{2})/);
+    function reverseDateFormat(dateString) {
+    // Split the date string into its components
+    const [year, month, day] = dateString.split('-');
     
-    if (dateMatch) {
-        const originalDate = dateMatch[1];
-        const formattedDate = reverseDateFormat(originalDate);
-        // Update the text content with the formatted date
-        element.textContent = `Data: ${formattedDate}`;
+    // Reformat the date components
+    return `${day}/${month}/${year}`;
     }
-});
-}
+    
+    // Function to update the date in the h5 elements
+    function updateDateTitles() {
+    // Select all elements with class 'date'
+    const dateElements = document.querySelectorAll('.date');
+    
+    // Iterate over each element and update its text
+    dateElements.forEach(element => {
+        // Extract the date part from the text content
+        const originalText = element.textContent;
+        const dateMatch = originalText.match(/Data: (\d{4}-\d{2}-\d{2})/);
+        
+        if (dateMatch) {
+            const originalDate = dateMatch[1];
+            const formattedDate = reverseDateFormat(originalDate);
+            // Update the text content with the formatted date
+            element.textContent = `Data: ${formattedDate}`;
+        }
+    });
+    }
+    
+    // Call the function after the page loads
+    document.addEventListener('DOMContentLoaded', updateDateTitles);
 
-// Call the function after the page loads
-document.addEventListener('DOMContentLoaded', updateDateTitles);
-</script>
+
+    // Select the main button
+    const btn = document.getElementById('DeleteBtn'); 
+    
+    // Get all elements with the class 'delete-btn'
+    const btns = document.getElementsByClassName('delete-btn'); 
+
+    // Add event listener to the DeleteBtn
+    btn.addEventListener('click', function() {
+        // Loop through each button in the collection
+        for (let i = 0; i < btns.length; i++) {
+            // Toggle between 'delete-btn' and 'delete-btn-visible' on each button
+            btns[i].classList.toggle('delete-btn-visible'); // Toggle the class
+        }
+    });
+    </script>

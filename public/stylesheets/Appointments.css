@@ -1,0 +1,298 @@
+@import url('https://fonts.cdnfonts.com/css/overused-grotesk');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+    position: relative; /* Positioning context for the pseudo-element */
+  }
+
+  /* Pseudo-element for background image */
+  body::before {
+    content: '';
+    position: fixed; /* Keep the image in place even when scrolling */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://res.cloudinary.com/dn9nc0upp/image/upload/v1726554292/A4_-_3_vrfxxe.svg');
+    background-repeat: no-repeat; /* Prevent image repetition */
+    background-position: center center; /* Center the image */
+    background-size: cover; /* Make the image cover the screen while maintaining aspect ratio */
+    opacity: 0.3; /* Adjust opacity (0 is fully transparent, 1 is fully opaque) */
+    z-index: -1; /* Ensure the image is behind the content */
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.Top-div{
+    padding-top: 50px;
+    padding-bottom: 20px; 
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+}
+
+.container h2{
+    font-family: 'Outfit', sans-serif;
+    font-size: 60px;
+    font-weight: 400;
+   
+}
+.EditButton{
+width: 187px;
+height: 41px;
+align-items: center;
+font-family: 'Overused Grotesk', sans-serif;
+font-weight: 400;
+font-size: 18px;
+border: 1px #292929 solid;
+background-color: #F5F5F5;
+color: #292929;
+border-radius: 10px;
+margin-right: 10px;
+}
+
+.TodayAppoint{
+    width: 100%;
+    background-color: #E2E1DD;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 20px;
+}
+
+.TodayAppoint h3{
+    font-family: 'Overused Grotesk', sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+    padding: 20px;
+    color:#292929;
+}
+
+.AptContainer{
+    width: 80%;
+    height: 130px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-self: center;
+}
+
+.apt-left-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.apt-name{
+    font-family: 'Overused Grotesk', sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+}
+.apt-phone{
+    font-family: 'Overused Grotesk', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: #000000;
+    opacity: 60%;
+}
+
+.apt-right-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.apt-date{
+    font-family: 'Overused Grotesk', sans-serif;
+    font-size: 26px;
+    font-weight: 400;
+}
+.apt-ora{
+    font-family: 'Overused Grotesk', sans-serif;
+    font-size: 26px;
+    font-weight: 300;
+    align-self: flex-end;
+}
+
+.middle-line{
+    width: 50%;
+    height: 1px;
+    background-color: #292929;
+    align-self: center;
+    opacity: 30%;
+}
+.delete-div{
+    align-items: center;
+    align-self: center;
+}
+.delete-btn{
+    display: none;
+
+}
+.delete-btn-visible{
+    align-items: center;
+    border: 1px solid #292929;
+    background-color: transparent;
+    border-radius: 7px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    display: inline-block;
+    color: #292929;
+}
+.info-div{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    margin-left: 20px;
+}
+
+
+
+.NextDaysApt{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+
+.NextDaysApt h3{
+    font-family: 'Overused Grotesk', sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+    padding: 20px;
+    color: #292929;
+}
+
+
+
+@media(max-width:991px){
+    .container h2 {
+        font-size: 50px;
+    }
+    .middle-line {
+        width: 30%;
+        
+    }
+
+    .apt-name{
+        font-size: 28px;
+    }
+    .apt-phone{
+        font-size: 23px;
+    }
+}
+
+@media(max-width:768px){
+    .container h2 {
+        font-size: 36px;
+    }
+    .EditButton{
+        font-size: 16px;
+        width: 150px;
+    }
+    .TodayAppoint h3 {
+        font-size: 35px;
+     
+    }
+    .middle-line {
+        display: none;
+        
+    }
+    
+    .apt-name{
+        font-size: 26px;
+    }
+    .apt-phone{
+        font-size: 21px;
+    }
+
+    .NextDaysApt h3 {
+        font-family: 'Overused Grotesk', sans-serif;
+        font-size: 35px;
+        font-weight: 400;
+        padding: 20px;
+        color: #292929;
+    }
+
+    .apt-date{
+        font-size: 24px;
+    }
+    .apt-ora{
+        font-size: 22px;
+    }
+}
+
+
+@media(max-width:520px){
+    .container h2 {
+        font-size: 32px;
+    }
+ 
+    .TodayAppoint h3 {
+        font-size: 30px;
+     
+    }
+    .NextDaysApt h3 {
+        font-size: 30px;
+     
+    }
+    .AptContainer{
+        width: 90%;
+        align-self: flex-start;
+    }
+    .EditButton {
+        font-size: 14px;
+        width: 161px;
+    }
+}
+
+@media(max-width:420px){
+    .container h2 {
+        font-size: 32px;
+    }
+ 
+    .TodayAppoint h3 {
+        font-size: 30px;
+     
+    }
+    .NextDaysApt h3 {
+        font-size: 30px;
+     
+    }
+    .AptContainer{
+        width: 90%;
+        align-self: flex-start;
+    }
+    .EditButton {
+        font-size: 14px;
+        width: 143px;
+    }
+    .apt-name {
+        font-size: 24px;
+    }
+    .apt-phone {
+        font-size: 19px;
+    }
+    .apt-date {
+        font-size: 21px;
+    }
+    .apt-ora {
+        font-size: 20px;
+    }
+}
