@@ -1,28 +1,57 @@
+<head>
+  <link rel="stylesheet" href="/stylesheets/AllCars.css">
+</head>
+
 <% layout('/layouts/boilerplate') %>
+
+
 <div class="container">
-<h1 class="mb-4">Mașini în service</h1>
-
-<div class="d-flex flex-row align-items-center">
-    <% for(let car of cars) {%>
-        <div class="card mb-4 mr-4" style="width: 18rem;">
-            <div class="card-body">
-              <h5 class="card-title mb-2">Număr de înmatriculare: <%=car.plate %></h5>
-              <h6 class="card-subtitle mb-2 text-body-secondary"> Model: <%= car.model %></h6>
-              <h6 class="card-subtitle mb-2 text-body-secondary"> Proprietar: <%= car.owner%></h6>
-              <h6 class="card-subtitle mb-2 text-body-secondary"> Status: <%= car.status%></h6>
-              <% if (currentUser) { %>
-                <div class="d-flex mb-2">
-                    <a class="btn btn-warning me-2" href="/cars/<%=car._id %>/edit">Modifică</a>
-                    <a class="btn btn-info me-2" href="/cars/<%=car._id %>">Vezi</a>
-                    <form action="/cars/<%=car._id %>?_method=DELETE" method="POST">
-                        <button type="submit" class="btn btn-danger">Șterge</button>
-                    </form>
-                </div>
-            <% } %>
-            
-            </div>
-          </div>
-
-        <% } %>
-
+  <div class="Top-div">
+  <h2>Mașini în service</h2>
+  <button class="EditButton" id="DeleteBtn">Selecteaza</button>
+  </div>
+  <section class="MainSection">
+   <%for(let car of cars){ %>
+    <div class="CarContainer">
+              
+      <div class="car-left-div">
+        <div class="delete-div">
+          <form action="/cars/<%=car._id %>?_method=DELETE" method="POST">
+              <button type="submit" class="delete-btn">&#120;</button>
+          </form>
+      </div>   
+      <div class="info-div">
+      <h6 class="car-name"><%= car.owner %> // <%=car.model %></h6>
+      <h6 class="car-plate"> <%=car.plate %></h6>
+    </div>
       </div>
+      <div class="car-right-div">
+        <a class="Edit-btn" href="/cars/<%=car._id %>/edit">Modifică</a>
+        <form action="/cars/<%=car._id %>?_method=DELETE" method="POST">
+          <button type="submit" class="Delete-btn">Șterge</button>
+      </form>
+      </div>
+     </div>
+    <% } %>
+  </section>
+
+</div>
+
+
+
+<script>
+  // Select the main button
+  const btn = document.getElementById('DeleteBtn'); 
+    
+    // Get all elements with the class 'delete-btn'
+    const btns = document.getElementsByClassName('delete-btn'); 
+
+    // Add event listener to the DeleteBtn
+    btn.addEventListener('click', function() {
+        // Loop through each button in the collection
+        for (let i = 0; i < btns.length; i++) {
+            // Toggle between 'delete-btn' and 'delete-btn-visible' on each button
+            btns[i].classList.toggle('delete-btn-visible'); // Toggle the class
+        }
+    });
+</script>

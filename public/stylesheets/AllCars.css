@@ -1,0 +1,360 @@
+@import url('https://fonts.cdnfonts.com/css/overused-grotesk');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+    position: relative; /* Positioning context for the pseudo-element */
+  }
+
+  /* Pseudo-element for background image */
+  body::before {
+    content: '';
+    position: fixed; /* Keep the image in place even when scrolling */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://res.cloudinary.com/dn9nc0upp/image/upload/v1726554292/A4_-_3_vrfxxe.svg');
+    background-repeat: no-repeat; /* Prevent image repetition */
+    background-position: center center; /* Center the image */
+    background-size: cover; /* Make the image cover the screen while maintaining aspect ratio */
+    opacity: 0.3; /* Adjust opacity (0 is fully transparent, 1 is fully opaque) */
+    z-index: -1; /* Ensure the image is behind the content */
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.Top-div{
+    padding-top: 50px;
+    padding-bottom: 20px; 
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+.container h2{
+    font-family: 'Outfit', sans-serif;
+    font-size: 60px;
+    font-weight: 400;
+   
+   
+}
+#DeleteBtn{
+    display: none;
+}
+
+.MainSection{
+    width: 100%;
+    background-color: #EAEAEA;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 20px;
+}
+
+.CarContainer{
+    width: 90%;
+    height: 130px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-self: center;
+}
+
+.car-left-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.info-div{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    margin-left: 20px;
+}
+.delete-div{
+    align-items: center;
+    align-self: center;
+}
+.delete-btn{
+    display: none;
+
+}
+.delete-btn-visible{
+    align-items: center;
+    border: 1px solid #292929;
+    background-color: transparent;
+    border-radius: 7px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    display: inline-block;
+    color: #292929;
+    padding-left: 7px;
+    padding-bottom: 2px;
+}
+
+.car-name{
+    font-family: 'Overused Grotesk', sans-serif;
+    font-size: 30px;
+    font-weight: 300;
+}
+.car-plate{
+    font-family: 'Overused Grotesk', sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    color: #000000;
+    opacity: 60%;
+}
+
+.car-right-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+    padding-bottom: 24px;
+}
+
+
+
+.Edit-btn{
+    width: 102px;
+    height: 43px;
+    background-color: #013657;
+    color: #ffffff;
+    font-family: 'Overused Grotesk', sans-serif;
+    font-size: 18px;
+    font-weight:400; 
+    text-decoration: none;
+    border-radius: 10px;
+    align-self: center;
+    align-items: center;
+    border: 1px solid #292929;
+    padding-top: 6px;
+    padding-left: 18px;
+}
+
+.Delete-btn{
+    width: 102px;
+    height: 43px;
+    border: none;
+    color: #292929;
+    background-color: transparent;
+    font-family: 'Overused Grotesk', sans-serif;
+    font-size: 18px;
+    font-weight:400; 
+    text-decoration: none;
+    align-self: center;
+    margin-left: 10px;
+    padding-bottom: 3px ;
+
+}
+
+
+
+
+@media(max-width:991px){
+    .container {
+        margin: 0;
+        align-self: center;
+        max-width: 90%;
+    }
+
+    .container h2{
+        font-size: 50px;
+    }
+
+    .car-name{
+        font-size: 27px;
+    }
+    .car-right-div{
+        margin-right: 20px;
+    }
+    .car-plate{
+        font-size: 23px;
+    }
+    .Delete-btn{
+        display: none;
+    }
+    #DeleteBtn{
+        width: 187px;
+        height: 41px;
+        align-items: center;
+        font-family: 'Overused Grotesk', sans-serif;
+        font-weight: 400;
+        font-size: 18px;
+        border: 1px #292929 solid;
+        background-color: #F5F5F5;
+        color: #292929;
+        border-radius: 10px;
+        margin-right: 10px;
+        display: block;
+    }
+}
+
+
+@media(max-width:720px){
+    .container h2 {
+        font-size: 36px;
+    }
+    #DeleteBtn{
+        font-size: 16px;
+        width: 150px;
+    }
+
+    .car-name{
+        font-size: 24px;
+    }
+    .car-plate{
+        font-size: 21px;
+    }
+    .car-right-div{
+        margin-left: 0;
+    }
+    .MainSection{
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
+
+
+@media(max-width:600px){
+
+    .Top-div{
+        margin-bottom: 0;
+    }
+    .container{
+        max-width: 95%;
+    }
+    .container h2 {
+        font-size: 36px;
+    }
+    
+    .CarContainer{
+        background-color: #EAEAEA;
+        border-radius: 10px;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    #DeleteBtn{
+        font-size: 16px;
+        width: 150px;
+        
+    }
+
+    .car-name{
+        font-size: 24px;
+    }
+    .car-plate{
+        font-size: 21px;
+    }
+    .car-right-div{
+        margin-left: 0;
+        padding-bottom: 0;
+    }
+    .MainSection{
+      background-color: transparent;
+    }
+
+    .delete-div{
+        margin-left: 10px;
+    }
+}
+
+@media(max-width:510px){
+    .container{
+       max-width: 100%;
+    }
+    .container h2 {
+        font-size: 30px;
+    }
+    .CarContainer{
+        height: 106px;
+    }
+    #DeleteBtn{
+        font-size: 16px;
+        width: 120px;
+    }
+    .car-name{
+        font-size: 21px;
+    }
+    .car-plate{
+        font-size: 20px;
+    }
+    .Edit-btn {
+        width: 92px;
+        height: 40px;
+        font-size: 16px;
+        padding-top: 6px;
+        padding-left: 17px;
+    }
+}
+
+
+@media(max-width:400px){
+    .container{
+       max-width: 100%;
+    }
+    .container h2 {
+        font-size: 26px;
+    }
+    .CarContainer{
+        height: 106px;
+    }
+    #DeleteBtn{
+        font-size: 15px;
+        width: 100px;
+    }
+    .delete-btn-visible{
+        padding: 7px;
+    }
+}
+@media(max-width:380px){
+    .container{
+       max-width: 100%;
+    }
+    .container h2 {
+        font-size: 26px;
+    }
+    .CarContainer{
+        height: 106px;
+    }
+    #DeleteBtn{
+        font-size: 15px;
+        width: 100px;
+    }
+    .car-name{
+        font-size: 18px;
+        font-weight: 400;
+    }
+    .car-plate{
+        font-size: 17px;
+        font-weight: 400;
+    }
+    .Edit-btn {
+        width: 82px;
+        height: 40px;
+        font-size: 15px;
+        padding-top: 7px;
+        padding-left: 14px;
+    }
+    .delete-btn-visible{
+        font-size: 15px;
+        padding-left: 6px;
+    }
+}

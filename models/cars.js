@@ -17,8 +17,6 @@ const CarSchema = new mongoose.Schema({
     },
     status: {
         type: String,
-        unique: true,
-        index:true,
         required: true,
     },
     owner: {
