@@ -1,4 +1,5 @@
 @import url('https://fonts.cdnfonts.com/css/overused-grotesk');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
 
 /* General reset */
@@ -7,6 +8,7 @@
     padding: 0;
     box-sizing: border-box;
   }
+
   /* Pseudo-element for background image */
   body::before {
     content: '';
@@ -22,6 +24,7 @@
     opacity: 0.5; /* Adjust opacity (0 is fully transparent, 1 is fully opaque) */
     z-index: -1; /* Ensure the image is behind the content */
 }
+
   .container{
     margin-top: 150px;
     display: flex;
@@ -29,6 +32,7 @@
     align-items: center;
     max-width: 90%;
   }
+
   .TextSide{
     width: 100%;
     max-width: 700px;
@@ -37,6 +41,7 @@
    flex-direction: column;
    justify-content: flex-start;
   }
+
   /* Carousel wrapper */
   .image-side{
     width: 100%;
@@ -46,6 +51,7 @@
     flex-direction: column;
     justify-content: space-evenly;
   }
+
   .carousel {
     width: 100%;
     max-width: 700px;
@@ -69,12 +75,14 @@
     width: 100%;
     flex-shrink: 0;
   }
+
   .image-carousel{
     width: 100%;   /* Define the width of the container */
     height: 100%;  /* Define the height of the container */
     overflow: hidden;  /* Hide the overflowing parts of the image */
     border-radius: 14px;
   }
+
   /* Images inside the slides */
   .carousel-slide img {
     width: 100%;    /* Ensure the image takes the full width of the container */
@@ -97,7 +105,6 @@
     font-weight: 300;
   }
 
-
   .ArrowDiv{
     width: 100%;
     height: 50px;
@@ -105,33 +112,35 @@
     justify-content: space-evenly;
   }
   
-/* Text side */
 
+/* Text side */
 .PostName{
-    font-family: 'Overused Grotesk', sans-serif;
+    font-family: 'Outfit', sans-serif;
     font-size: 70px;
     font-weight: 400;
     color: #292929;
     margin-top: 10px;
-    margin-bottom: 150px;
-
+    margin-bottom: 60px;
 }
 
 .PostDescription{
     font-family: 'Overused Grotesk', sans-serif;
-    font-size: 26px;
-    font-weight: 400;
+    font-size: 20px;
+    font-weight: 300;
     color: #292929;
     overflow-y: auto; 
-
 }
 
+
+
+/* MEDIA QUERIES */
 
 @media(max-width:1700px){
   .image-side{
     max-width: 600px;
     height: 800px;
   }
+
   .carousel{
     max-width: 600px;
     max-height: 550px;
@@ -146,36 +155,37 @@
 
 @media(max-width:1500px) {
   .PostName {
-    font-family: 'Overused Grotesk', sans-serif;
     font-size: 60px;
     margin-bottom: 80px;
 }
+
 .carousel{
   max-width: 500px;
   max-height: 450px;
 }
+
 .image-side{
   max-width: 500px;
   height: 730px;
 }
+
 .TextSide{
   max-width: 500px;
   height: 630px;
 }
+
 .container{
   justify-content: space-around;
   max-width: 95%;
 }
 }
 
-@media(max-width:1200px) {
 
+@media(max-width:1200px) {
 .container{
   justify-content: space-around;
   max-width: 100%;
 }
-
-
 }
 
 
@@ -189,10 +199,12 @@
     max-width: 550px;
     max-height: 500px;
   }
+
   .image-side{
     max-width: 550px;
     height: 750px;
   }
+
   .TextSide{
     max-width: 550px;
     height: 600px;
@@ -200,97 +212,93 @@
 }
 
 
-
-
 @media(max-width:600px){
-  .PostName {
-    font-family: 'Overused Grotesk', sans-serif;
-    font-size: 55px;
-    margin-bottom: 60px;
-}
 .container{
   max-width: 100%;;
 }
+
 .carousel{
   max-width: 400px;
   max-height: 450px;
 }
+
 .image-side{
   max-width: 400px;
   height: 500px;
   margin-top: 50px;
-
 }
+
 .prev,.next{
 font-size: 26px;
 width: 70px;
 height: 70px;
 }
+
 .TextSide{
   max-width: 400px;
-  height: 410px;
+  height: 468px;
   margin-top: 30px;
 }
+
 .container{
   justify-content: space-around;
   max-width: 100%;
 }
+
 .PostName {
-  font-family: 'Overused Grotesk', sans-serif;
   font-size: 50px;
   margin-bottom: 50px;
 }
 
 .PostDescription {
-
   font-size: 17px;
+}
+}
 
-}
-}
 
 @media(max-width:420px){
-
   .PostName {
-    font-family: 'Overused Grotesk', sans-serif;
-    font-size: 55px;
     margin-bottom: 60px;
 }
+
 .links{
   height: 55%;
 }
+
 .container{
   max-width: 100%;;
 }
+
 .carousel{
   max-width: 340px;
   max-height: 400px;
 }
+
 .image-side{
   max-width: 340px;
   height: 400px;
   margin-top: 50px;
-
 }
+
 .prev,.next{
 font-size: 26px;
 width: 60px;
 height: 60px;
 }
+
 .TextSide{
   max-width: 340px;
   height: 410px;
   margin-top: 30px;
 }
+
 .container{
   justify-content: space-around;
   max-width: 100%;
 }
+
 .PostName {
-  font-family: 'Overused Grotesk', sans-serif;
   font-size: 40px;
-  margin-bottom: 50px;
-}
-.PostDescription{
-  font-size: 17px;
+  margin-bottom: 30px;
 }
 }
