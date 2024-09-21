@@ -92,8 +92,8 @@
                 <% for(let piesa of cars.piese) { %>
                    <div class="piesa-cnt">
                     <div class="left-side">
-                        <h5 class="piesa-name"><%= piesa.name %></h5>
-                        <h6 class="piesa-satus">Status: <%=piesa.status %></h6>
+                        <h6 class="piesa-name"><%= piesa.name %></h6>
+                        <h6 class="piesa-status">Status: <%=piesa.status %></h6>
                     </div>
                     <div class="right-side">
                         <form action="/cars/<%= cars._id %>/piese/<%= piesa._id %>?_method=DELETE" method="POST">

@@ -168,3 +168,136 @@ body {
     width: 100%;
     margin-bottom: 30px;
 }
+
+.left-side{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 30px;
+    padding-top: 5px;
+}
+
+.piesa-name{
+    font-family: 'Overused Grotesk', sans-serif;
+    font-size: 25px;
+    font-weight: 300;
+    text-decoration: none !important;
+    color: #292929;
+}
+
+.piesa-status{
+    font-family: 'Overused Grotesk', sans-serif;
+    font-size: 21px;
+    font-weight: 300;
+    color: #000000 ;
+    opacity: 60%;
+}
+
+
+.right-side{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.DeleteButton{
+    background-color: transparent;
+    border: none;
+    font-family: 'Overused Grotesk', sans-serif;
+    font-size: 21px;
+    font-weight: 300;
+    margin-right: 30px;
+}
+
+
+
+@media(max-width:1200px){
+    .container h2{
+        font-size: 50px;
+    }
+    .piesa-name{
+        font-size: 22px;
+    }
+    .piesa-status{
+        font-size: 19px;
+    }
+    .DeleteButton{
+        font-size: 19px;
+    }
+    .all-piese{
+        scrollbar-color: darkgray lightgray;
+    }
+}
+
+@media(max-width:991px){
+    .container{
+        margin: 10px;
+        align-self: center;
+    }
+    .MainSection{
+        height: auto;
+        align-items: center;
+    }
+    .CarContainer{
+        flex-direction: column;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+    .car-left-div{
+        width: 100%;
+        height: 100%;
+        margin-top: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .car-right-div{
+        width: 100%;
+        height: 100%;
+        margin-top: 60px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .container h2{
+        font-size: 45px;
+    }
+}
+
+@media(max-width:768px){
+    .container h2{
+        font-size: 40px;
+    }
+}
+
+@media(max-width:500px){
+    .container h2{
+        font-size: 30px;
+    }
+    .piesa-name {
+        font-size: 20px;
+    }
+    .piesa-status {
+        font-size: 16px;
+    }
+    .DeleteButton {
+        font-size: 17px;
+    }
+    .car-left-div{
+     
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .car-right-div{
+       
+        padding-left: 0;
+        padding-right: 0;
+}
+    .MainSection{
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+
+}
