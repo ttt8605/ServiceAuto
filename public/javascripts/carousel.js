@@ -24,29 +24,13 @@ function prevSlide() {
   updateCarousel();
 }
 
-// Function to start autoplay
-function startAutoplay() {
-  autoSlideInterval = setInterval(nextSlide, 4000); // Change every 4 seconds
-}
-
-// Function to stop autoplay
-function stopAutoplay() {
-  clearInterval(autoSlideInterval);
-}
-
 // Event Listeners for buttons
 nextButton.addEventListener('click', () => {
-  stopAutoplay();  // Stop autoplay when user interacts
   nextSlide();
-  startAutoplay();  // Restart autoplay after interaction
 });
 
 prevButton.addEventListener('click', () => {
-  stopAutoplay();
   prevSlide();
-  startAutoplay();
 });
 
-// Start autoplay when page loads
-startAutoplay();
 updateCarousel(); // Ensure the first slide is visible initially

@@ -1,0 +1,170 @@
+@import url('https://fonts.cdnfonts.com/css/overused-grotesk');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+    position: relative; /* Positioning context for the pseudo-element */
+  }
+
+  /* Pseudo-element for background image */
+  body::before {
+    content: '';
+    position: fixed; /* Keep the image in place even when scrolling */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://res.cloudinary.com/dn9nc0upp/image/upload/v1726554292/A4_-_3_vrfxxe.svg');
+    background-repeat: no-repeat; /* Prevent image repetition */
+    background-position: center center; /* Center the image */
+    background-size: cover; /* Make the image cover the screen while maintaining aspect ratio */
+    opacity: 0.3; /* Adjust opacity (0 is fully transparent, 1 is fully opaque) */
+    z-index: -1; /* Ensure the image is behind the content */
+}
+
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.Top-div{
+    padding-top: 50px;
+    padding-bottom: 20px; 
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+.container h2{
+    font-family: 'Outfit', sans-serif;
+    font-size: 60px;
+    font-weight: 400;
+   
+   
+}
+
+.MainSection{
+    width: 100%;
+    background-color: #EAEAEA;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 20px;
+    height: 800px;
+}
+
+
+
+.CarContainer{
+    width: 90%;
+    height: 130px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-self: center;
+}
+
+.car-left-div{
+    width: 45%;
+    height: 100%;
+    margin-top: 80px;
+}
+
+.form-control{
+    min-height: 45px;
+    border-radius: 10px;
+    border: none;
+}
+.form-select{
+    min-height: 45px;
+    border-radius: 10px;
+    border: none;
+}
+
+.form-label{
+    font-family: 'Overused Grotesk', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+
+.car-right-div{
+    width: 45%;
+    height: 650px;
+    margin-top: 30px;
+}
+
+.btn-block{
+    min-height: 45px;
+    border-radius: 10px;
+    border: none;
+    margin-top: 40px;
+    background-color: #013657;
+}
+
+.btn-block:hover{
+    background-color: #E43018;
+}
+
+
+.Add-piesa{
+    width: 100%;
+    height: 55%;
+  
+    border-bottom: 1px #292929 solid;
+}
+
+.Add-piesa h5{
+    font-family: 'Overused Grotesk', sans-serif;
+    font-size: 30px;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.Add-piesa .btn-block{
+    background-color: transparent;
+    border: 1px #292929 solid;
+    color: #292929;
+
+}
+
+.all-piese {
+    margin-top: 20px;
+    max-height: 340px; /* Set the height of the scrollable area */
+    overflow-y: auto;  /* Enable vertical scrolling */
+    padding: 10px;     /* Optional: add some padding for spacing */
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: transparent transparent;
+}
+.all-piese:hover {
+    scrollbar-color: darkgray lightgray; /* Scrollbar color when scrolling or hovered */
+}
+.all-piese h5{
+    font-family: 'Overused Grotesk', sans-serif;
+    font-size: 30px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.piesa-cnt{
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-self: center;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    width: 100%;
+    margin-bottom: 30px;
+}

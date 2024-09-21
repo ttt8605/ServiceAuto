@@ -107,16 +107,23 @@ body {
     padding-bottom: 2px;
 }
 
+.info-div a{
+    text-decoration: none;
+}
+
 .car-name{
     font-family: 'Overused Grotesk', sans-serif;
     font-size: 30px;
     font-weight: 300;
+    text-decoration: none !important;
+    color: #292929;
+   
 }
 .car-plate{
     font-family: 'Overused Grotesk', sans-serif;
     font-size: 24px;
     font-weight: 300;
-    color: #000000;
+    color: #000000 ;
     opacity: 60%;
 }
 
