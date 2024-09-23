@@ -1,60 +1,60 @@
 <head>
-    <link rel="stylesheet" href="/stylesheets/new-edit.css">
-  </head>
+  <link rel="stylesheet" href="/stylesheets/new-edit.css">
+  <link rel="stylesheet" href="/stylesheets/newAngajat.css">
+</head>
+
   <% layout('/layouts/boilerplate') %>
+ 
   
-  
-      <div class="row mt-4 mb-4">
-        <div class="col-md-6 offset-md-3">
-          <div class="card shadow">
-          <div class="card-body">
-          <h2 class="text-center mb-4 text">Adaugă un angajat</h2>
-          
-  <form action="/angajati" method="POST" novalidate class="validated-form" enctype="multipart/form-data" >
-      <div class=" mb-3">
-       <label for="name" class="form-label text">Nume & prenume</label>
-       <input type="text" name="name" id="name" class="form-control" placeholder="service name" autofocus required>
-       <div class="valid-feedback">
-        Looks good!
-       </div>
-      </div>
-      <div class="mb-3">
-        <label class="form-label text" for="role">Rol</label>
-        <input class="form-control" name="role" id="role" aria-label="role"  placeholder="Rolul ocupat de angajat" required>
-        <div class="valid-feedback">
-          Looks good!
-         </div>
-      </div>
+
     
-      <div class="mb-3">
-        <div class="form-file custom-file">
-            <input type="file" class="form-file-input" id="image" name="image" multiple required>
-            <label class="form-file-label text" for="image">
-                <span class="form-file-text custom-file-label">Adaugă imagini</span>
-                <span class="form-file-button">Caută</span>
-            </label>
-        </div>
-    </div>
-    <div class="mb-3">
-      <label class="form-label text" for="about">Descriere</label>
-      <textarea class="form-control" name="about" id="about" aria-label="about " rows="6" maxlength="200"  required></textarea>
-      <div class="valid-feedback">
-        Looks good!
-       </div>
-    </div>
+<div class="left-side"></div>
+<section class="MainSection">
   
-        <div class="mb-3">
-          <button class="btn btn-success btn-block">Adaugă</button>
+   <div class="right-side">
+        <h2>Adaugă un angajat</h2>
+        <form action="/angajati" method="POST" novalidate class="validated-form" enctype="multipart/form-data" >
+          <div class=" mb-3">
+           <label for="name" class="form-label text">Nume & prenume</label>
+           <input type="text" name="name" id="name" class="form-control" placeholder="service name" autofocus required>
+           <div class="valid-feedback">
+            Looks good!
+           </div>
           </div>
-  
-  </form>
-  
-  
-  </div>
-  
-  </div>
-  
-  
+          <div class="mb-3">
+            <label class="form-label text" for="role">Rol</label>
+            <input class="form-control" name="role" id="role" aria-label="role"  placeholder="Rolul ocupat de angajat" required>
+            <div class="valid-feedback">
+              Looks good!
+             </div>
+          </div>
+        
+          <div class="mb-3">
+            <div class="form-file custom-file">
+                <input type="file" class="form-file-input" id="image" name="image" multiple required>
+                <label class="form-file-label text" for="image">
+                    <span class="form-file-text custom-file-label">Adaugă imagini</span>
+                    <span class="form-file-button">Caută</span>
+                </label>
+            </div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label text" for="about">Descriere</label>
+          <textarea class="form-control" name="about" id="about" aria-label="about " rows="6" maxlength="200"  required></textarea>
+          <div class="valid-feedback">
+            Looks good!
+           </div>
+        </div>
+      
+            <div class="mb-3">
+              <button class="btn btn-success btn-block">Adaugă</button>
+              </div>
+      
+      </form>
+   </div>
+</section>
+
+
   <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.min.js"></script>
   <script>
       document.addEventListener('DOMContentLoaded', function () {

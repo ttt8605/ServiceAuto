@@ -1,94 +1,240 @@
 @import url('https://fonts.cdnfonts.com/css/overused-grotesk');
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
+body {
+    margin: 0;
+    padding: 0;
+    position: relative; /* Positioning context for the pseudo-element */
+  }
 
-main{
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
-h1{
-    color: #f2f2f2;
-    font-family: 'Outift', sans-serif;
-    font-weight: 400;
-}
-
-.text{
-    color: #252525;
-    font-family: 'Overused Grotesk', sans-serif;
-    font-weight: 400;
-}
-
-.offcanvas-body{
-    margin-top: 50px;
-    background-color: #212529;
- }
- 
- #meniu1{
-    display: block;
+  /* Pseudo-element for background image */
+  body::before {
+    content: '';
+    position: fixed; /* Keep the image in place even when scrolling */
+    top: 0;
+    left: 0;
     width: 100%;
- }
- 
- #meniu2{
-     display: none;
- }
+    height: 100%;
+    background-image: url('https://res.cloudinary.com/dn9nc0upp/image/upload/v1726554292/A4_-_3_vrfxxe.svg');
+    background-repeat: no-repeat; /* Prevent image repetition */
+    background-position: center center; /* Center the image */
+    background-size: cover; /* Make the image cover the screen while maintaining aspect ratio */
+    opacity: 0.3; /* Adjust opacity (0 is fully transparent, 1 is fully opaque) */
+    z-index: -1; /* Ensure the image is behind the content */
+}
 
- #footer{
+.navbar{
+    background-color: transparent;
+}
+
+.logo{
     display: none;
- }
-
-#fastLinks{
-    text-decoration: none;
-    color: #373737;
-    font-family: 'Overused Grotesk', sans-serif;
-    font-weight: 300;
-    font-size:17px;
 }
 
-.container{
+.meniuButton{
+    background-color: transparent;
+    border-bottom-color: #292929;
+    border-top-color: #292929;
+}
+.meniuTextButton{
+    color: #292929;
+}
+
+.MainSection{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    min-height: 600px;
     margin-top: 50px;
+    justify-content: flex-end;
+    margin-bottom: 140px;
+}
+
+.left-side{
+    width: 40%;
+    height: 100%;
+    position: fixed;
+    background-image: url('https://res.cloudinary.com/dn9nc0upp/image/upload/v1727071290/IMG_8621_q6akt6.jpg');
+    background-repeat: no-repeat; /* Prevent image repetition */
+    background-position: center center; /* Center the image */
+    background-size: cover; /* Make the image cover the screen while maintaining aspect ratio */
+    z-index: -1; /* Ensure the image is behind the content */
 }
 
 
-/* MEDIA QUERIES */
 
-@media(max-width:1024px){
-    .social{
-        width: 215px;
+.right-side{
+    width: 50%;
+    height: 100%;
+   
+    align-self: center;
+    margin-right: 75px;
+}
+
+.right-side h2{
+    font-family: 'Outfit', sans-serif;
+    font-size: 55px;
+    font-weight: 400;
+    padding-left: 100px;
+}
+
+.right-side form{
+    padding: 100px;
+}
+
+
+.form-control{
+    min-height: 50px;
+    border-radius: 10px;
+    border: none;
+    background-color: #eaeaea;
+    font-family: 'Overused Grotesk', sans-serif;
+    font-size: 18px;
+}
+
+#description{
+    height: 287px;
+}
+.form-select{
+    min-height: 50px;
+    border-radius: 10px;
+    border: none;
+}
+.form-file{
+    min-height: 50px;
+}
+
+.form-file-label{
+    background-color: #eaeaea;
+    border-radius: 10px;
+    min-height: 50px;
+}
+.form-file-text{
+    background-color: #eaeaea;
+    min-height: 50px;
+    align-content: center;
+}
+.form-file-button{
+    min-height: 50px;
+    align-content: center;
+}
+.form-label{
+    font-family: 'Overused Grotesk', sans-serif;
+    font-size: 21px;
+    font-weight: 400;
+
+}
+
+
+.btn-block{
+    min-height: 45px;
+    border-radius: 10px;
+    border: none;
+    margin-top: 40px;
+    background-color: #013657;
+}
+
+.btn-block:hover{
+    background-color: #E43018;
+}
+
+/* only for edit pages */
+.img-thumbnail{
+    max-height: 200px;
+}
+
+.deleteImgDiv{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.img-thumbnail{
+    background-color: #eaeaea;
+}
+.card-body{
+    background-color: #eaeaea;
+}
+
+
+@media(max-width:1320px){
+    .right-side form{
+        padding: 0px;
     }
+    .right-side h2 {
+        font-size: 50px;
+        padding-left: 0px;
+        margin-bottom: 50px;
     }
-    
-    @media(max-width:911px){
-        #meniu1{
-            display: none;
-        }
-        
-        #meniu2{               
-             display: block;
-             border-bottom-left-radius: 20px;
-             border-bottom-right-radius: 20px;
-         }
-    
-         #toggle {
-            margin-top: 10px;
-            margin-right: 15px;
-        }
-    
-        #closeBtn {
-          background-color: #f2f2f2;
-        }
-    
-         .container-fluid{
-            width: 100%;
-            height: 90px;
-         }
-    
-          #list {
-            background-color: #373737;
-        }
-    
-        .leftDiv{
-            margin-top: 0px;
-        }
+    .MainSection{
+        margin-top: 100px;
     }
+    .right-side {
+       margin-right: 50px;
+    }
+}
+
+
+@media(max-width:850px){
+    .left-side{
+        display: none;
+    }
+    .MainSection{
+        justify-content: center;
+    }
+    .right-side{
+        margin-right: 0px;
+        width: 70%;
+        min-width: 450px;
+    }
+
+.navbar{
+    background-color: #27354E;
+}
+
+.logo{
+    display: inline-block;
+}
+
+.meniuButton{
+    background-color: transparent;
+    border-bottom-color: #ffffff;
+    border-top-color: #ffffff;
+}
+.meniuTextButton{
+    color: #ffffff;
+}
+}
+
+@media(max-width:500px){
+    .right-side h2{
+        font-size: 40px;
+    }
+    .right-side{
+        min-width: 345px;
+    }
+    #description{
+        height: 250px;
+    }
+    .form-label{
+        font-size: 20px;
+    }
+}
+
+@media(max-width:380px){
+    .right-side h2{
+        font-size: 35px;
+    }
+    .right-side{
+        min-width: 300px;
+    }
+    #description{
+        height: 250px;
+    }
+    .form-label{
+        font-size: 20px;
+    }
+}
+
+

@@ -1,53 +1,57 @@
 <head>
-    <link rel="stylesheet" href="/stylesheets/login.css">
-</head>
+    <link rel="stylesheet" href="/stylesheets/new-edit.css">
+    <link rel="stylesheet" href="/stylesheets/register.css">
+  </head>
+  
 
 <% layout('/layouts/boilerplate') %>
 
 
-<div class="container d-flex justify-content-center align-items-center mt-5">
-    <div class="row">
-        <div class="col-md-6 offset-md-3 col-xl-4 offset-xl-4">
-            <div class="card shadow">
-                   <div class="card-body">
-<h5 class="card-title mb-4">Crează cont</h5>                                      
-<form action="/register" method="POST" class="validated-form" novalidate>
-<div class=" mb-3">
-    <label for="username" class="form-label">Nume utilizator</label>
-    <input type="text" name="username" id="username" class="form-control" placeholder="username" required>
-    <div class="valid-feedback">
-     Looks good!
-    </div>
+
+
+   
+<div class="left-side"></div>
+<section class="MainSection">
+  
+   <div class="right-side">
+        <h2>Creaza un cont</h2>
+        <form action="/register" method="POST" class="validated-form" novalidate>
+            <div class=" mb-3">
+                <label for="username" class="form-label">Nume utilizator</label>
+                <input type="text" name="username" id="username" class="form-control" placeholder="username" required>
+                <div class="valid-feedback">
+                 Looks good!
+                </div>
+               </div>
+            
+               <div class=" mb-3">
+                <label for="email" class="form-label"> Email</label>
+                <input type="email" name="email" id="email" class="form-control" placeholder="email" required>
+                <div class="valid-feedback">
+                 Looks good!
+                </div>
+               </div>
+            
+               <div class=" mb-3">
+                <label for="password" class="form-label">Parola</label>
+                <input type="password" name="password" id="password" class="form-control" placeholder="password" required>
+                <div class="valid-feedback">
+                 Looks good!
+                </div>
+                <div class=" mt-3 mb-3">
+                    <label for="role" class="form-label">Rol:</label>
+                    <select id="role" name="role" class="form-control">
+                        <option value="mechanic">Mecanic</option>
+                        <option value="manager">Manager</option>
+                    </select>
+                </div>
+            
+               </div>
+            <button class="btn btn-success btn-block">Crează cont</button>
+            
+            </form>
+               
    </div>
+</section>
 
-   <div class=" mb-3">
-    <label for="email" class="form-label"> Email</label>
-    <input type="email" name="email" id="email" class="form-control" placeholder="email" required>
-    <div class="valid-feedback">
-     Looks good!
-    </div>
-   </div>
-
-   <div class=" mb-3">
-    <label for="password" class="form-label">Parola</label>
-    <input type="password" name="password" id="password" class="form-control" placeholder="password" required>
-    <div class="valid-feedback">
-     Looks good!
-    </div>
-    <div class=" mt-3 mb-3">
-        <label for="role" class="form-label">Rol:</label>
-        <select id="role" name="role" class="form-control">
-            <option value="mechanic">Mecanic</option>
-            <option value="manager">Manager</option>
-        </select>
-    </div>
-
-   </div>
-<button class="btn btn-success btn-block">Crează cont</button>
-
-</form>
-                   </div>
-            </div>
-        </div>
-    </div>
-</div>
+                
