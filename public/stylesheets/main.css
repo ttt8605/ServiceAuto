@@ -158,7 +158,117 @@ body {
     background-color: #27354E;
     color: #ffffff;
   }
+ 
+.container{
+  margin-top: 80px;
+}
+  .serviceCard{
+    width: 100%;
+    position: relative;
+    margin-top: 100px;
+    height: 650px;
+    overflow-y: auto;
 
+  }
+ .ServiceCardTitleDiv{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: flex-start;
+ 
+ } 
+ .ServiceCardTitleDiv h3{
+  font-family: 'Outfit', sans-serif;
+    font-size: 50px;
+    font-weight: 400;
+    margin-right: 40px;
+ }
+ .ServiceCardTitleDiv img{
+  width: 60px;
+  height: 60px;
+ align-self: center;
+ background-color: #D9D9DB;
+ border-radius: 30px;
+ padding-left: 12px;
+ padding-right: 12px;
+ }
+
+ .card{
+  width: 100%;
+  height: 600px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #D9D9DB;
+  border-radius: 20px;
+  position: sticky;
+  margin-bottom: 20px;
+  top: 0;
+  
+
+ }
+
+
+
+ .left-service-side{
+  width: 50%;
+  height: 100%;
+ }
+
+ .left-service-side img{
+  width: 100%;
+  height: 100%;
+  overflow: hidden; 
+  object-fit: cover; 
+  border-top-left-radius:20px ;
+  border-bottom-left-radius:20px ;
+ }
+ .right-service-side{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 40px;
+ }
+
+ .right-service-side p{
+  font-family: 'Overused Grotesk', sans-serif;
+  font-size: 21px;
+  font-weight: 400;
+  color: #292929;
+ }
+
+ .right-side-top{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 100px;
+ }
+ .right-side-top-title{
+  text-decoration: none;
+  font-family: 'Overused Grotesk', sans-serif;
+    font-size: 50px;
+    font-weight: 400;
+    color: #292929;
+    align-self: center;
+    transition: color 0.3s ease;
+ }
+
+ .right-side-top-title:hover{
+  color: #29292989;
+ }
+
+ .right-side-top-buttons{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+ }
+
+
+ 
 
    @media (max-width: 1200px){
      h2{
@@ -176,6 +286,18 @@ body {
     .OverVideoDiv{
         bottom: 150px;
         left: 60px;
+    }
+    .right-side-top-title{
+      font-size: 40px;
+    }
+    .right-service-side p{
+      font-size: 19px;
+    }
+    .right-side-top-buttons{
+      flex-direction: column;
+    }
+    .btn-warning{
+      margin-bottom: 5px;
     }
 
    }
@@ -206,6 +328,43 @@ body {
         font-size: 22px;
     }
   }
+
+  @media (max-width: 991px){
+    .serviceCard{
+      height: 750px;
+    }
+.card{
+  flex-direction: column;
+  height: 700px;
+  padding: 20px;
+}
+.left-service-side {
+  width: 100%;
+  height: 50%;
+}
+.left-service-side img{
+border-radius: 20px;
+}
+.right-service-side {
+  width: 100%;
+  height: 50%;
+  padding: 0px;
+}
+.right-service-side p{
+  font-size: 18px;
+}
+.right-side-top{
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.right-side-top-buttons{
+  flex-direction: row;
+}
+.btn-warning{
+  margin-bottom: 0px;
+}
+  }
+  
   
   /* Media query for mobile devices (up to 768px width) */
   @media (max-width: 768px) {
@@ -220,6 +379,31 @@ body {
     .OverVideoDiv{
         left: 45px;
     }
+    .serviceCard{
+      margin-top: 30px;
+    }
+    .ServiceCardTitleDiv img {
+      width: 45px;
+      height: 45px;
+     
+  }
+    .ServiceCardTitleDiv h3{
+      font-size: 40px;
+    }
+    .serviceCard{
+      height: 650px;
+    }
+.card{
+  flex-direction: column;
+  height: 600px;
+  padding: 20px;
+}
+.right-side-top-title {
+  font-size: 35px;
+}
+.right-service-side p {
+  font-size: 17px;
+}
   }
 
 
@@ -243,7 +427,14 @@ body {
   }
 
   @media (max-width: 500px) {
-
+    .serviceCard {
+      height: 550px;
+  }
+    .card {
+      flex-direction: column;
+      height: 500px;
+      padding: 10px;
+  }
     .OverVideoDiv{
         left: 25px;
     }
@@ -262,6 +453,19 @@ body {
         height: 31px !important;
         font-size: 21px;
     }
+    .left-service-side {
+      width: 100%;
+      height: 45%;
+  }
+  .right-service-side {
+    width: 100%;
+    height: 55%;
+    padding: 0px;
+}
+.card{
+  flex-direction: column;
+  padding: 10px;
+}
   }
 
 
@@ -285,4 +489,20 @@ body {
         height: 31px !important;
         font-size: 21px;
     }
+    
+    .right-side-top-title {
+      font-size: 30px;
+  }
+  }
+
+
+
+  @media (max-width: 370px) {
+
+    .right-side-top-buttons {
+      flex-direction: column;
+  }
+  .btn-warning {
+    margin-bottom: 5px;
+}
   }

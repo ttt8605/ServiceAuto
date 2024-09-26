@@ -21,7 +21,71 @@
         <form action="/"><button id="third"class="SelectButton">Locatie</button></form>
     </div>
 
-  </div>  
+  </div>
+
+  <div class="container">
+          <div class="ServiceCardTitleDiv">
+            <h3>Serviciile noastre</h3>
+            <img src="https://res.cloudinary.com/dn9nc0upp/image/upload/v1727330124/Vector_kbgdqx.svg" alt="">
+          </div>
+  <section class="serviceCard">
+    <% for(let service of services) {%>
+          <div class="card">
+            <div class="left-service-side">
+              <img src="<%= service.images[0].url %>"  alt="...">
+            </div>
+            <div class="right-service-side">
+              <div class="right-side-top">
+                <a href="/services/<%=service._id %>" class="right-side-top-title"><%=service.name%> &rarr;</a>
+                <% if (currentUser && currentUser.role === 'manager') { %>
+                <div class="right-side-top-buttons">
+                  <a class="btn btn-warning me-2" href="/services/<%=service._id %>/edit">Modifică</a>
+                    <form action="/services/<%=service._id %>?_method=DELETE" method="POST">
+                        <button type="submit" class="btn btn-danger">Șterge</button>
+                    </form>
+                </div>
+                <% } %>
+              
+              </div>
+              <p id="limited-paragraph"><%=service.description %></p>
+
+            </div>
 
 
+          </div>
+
+
+      <% } %>
+  </section>
+
+</div>
   <!-- /// HOW TO DO SERVICE PART https://www.youtube.com/watch?v=gv7d9KU36pM&ab_channel=DeeecodeTheWeb -->
+
+
+<script>
+  function limitWords(selector, wordLimit) {
+    const paragraphs = document.querySelectorAll(selector);  // Select all matching elements
+
+    paragraphs.forEach(paragraph => {
+        const words = paragraph.innerText.split(' ');  // Split the paragraph text into words
+
+        if (words.length > wordLimit) {
+            paragraph.innerText = words.slice(0, wordLimit).join(' ') + '...';  // Limit the words
+        }
+    });
+}
+
+// Apply this to all paragraphs inside cards with a word limit of 50
+limitWords('.card p', 30);
+
+
+
+ // Get all cards
+ const cards = document.querySelectorAll('.card');
+
+// Loop through each card and set top with 20px increments
+cards.forEach((card, index) => {
+    let topValue = index * 20;  // 0px for first card, 20px for second, 40px for third, etc.
+    card.style.top = topValue + 'px';
+});
+</script>
