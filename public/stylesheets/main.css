@@ -69,7 +69,7 @@ body {
 
   .OverVideoDiv{
     z-index: 2;
-    bottom: 100px;
+    bottom: 160px;
     left: 92px;
     position: absolute;
     width: auto;
@@ -125,16 +125,14 @@ body {
     justify-content: space-around;
     align-items: center;
     bottom: 50px;
-    width: auto;
-    height: auto;
     background-color: #ededed;
     border-radius: 40px;
-
   }
 
   .SelectButton{
     background-color: transparent;
     border: none;
+    border-radius: 40px;
     font-family: 'Overused Grotesk', sans-serif;
     font-weight: 300;
     font-size: 20px;
@@ -143,15 +141,16 @@ body {
     width: 125px;
     height: 40px;
     transition: background-color 0.5s ease; /* Smooth transition for the background color */
-  
   }
+
  #first{
-    border-top-left-radius: 30px;
-    border-bottom-left-radius:30px;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius:40px;
   }
+
   #third{
-    border-top-right-radius: 30px;
-    border-bottom-right-radius:30px;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius:40px;
   }
 
   .SelectButton:hover{
@@ -162,27 +161,29 @@ body {
 .container{
   margin-top: 80px;
 }
+
   .serviceCard{
     width: 100%;
     position: relative;
-    margin-top: 100px;
+    margin-top: 30px;
     height: 650px;
     overflow-y: auto;
-
   }
+
  .ServiceCardTitleDiv{
   display: flex;
   flex-direction: row;
   width: 100%;
   justify-content: flex-start;
- 
  } 
+
  .ServiceCardTitleDiv h3{
   font-family: 'Outfit', sans-serif;
     font-size: 50px;
     font-weight: 400;
     margin-right: 40px;
  }
+ 
  .ServiceCardTitleDiv img{
   width: 60px;
   height: 60px;
@@ -204,11 +205,7 @@ body {
   position: sticky;
   margin-bottom: 20px;
   top: 0;
-  
-
  }
-
-
 
  .left-service-side{
   width: 50%;
@@ -223,6 +220,7 @@ body {
   border-top-left-radius:20px ;
   border-bottom-left-radius:20px ;
  }
+
  .right-service-side{
   width: 50%;
   height: 100%;
@@ -246,6 +244,7 @@ body {
   justify-content: space-between;
   margin-bottom: 100px;
  }
+
  .right-side-top-title{
   text-decoration: none;
   font-family: 'Overused Grotesk', sans-serif;
@@ -273,13 +272,12 @@ body {
  display: flex;
  justify-content: flex-start;
  margin-top: 100px;
-
  }
+
  .line{
   width: 100px;
   rotate: 1 1 0 167deg;
   position: relative;
-
 }
 
 .Important-info-section{
@@ -306,34 +304,31 @@ flex-direction: column;
   text-decoration: none;
   font-family: 'Overused Grotesk', sans-serif;
     font-size: 40px;
-    font-weight: 300;
+    font-weight: 400;
     color: #292929;
     padding: 30px;
     padding-bottom: 0;
     padding-top: 60px;
-
 }
 
 .cube a:nth-child(2){
   padding-top: 0;
-
 }
+
 .arrowImg{
   width: 35px;
   height: 35px;
 }
 
-
 .cube h2{
   text-decoration: none;
   font-family: 'Overused Grotesk', sans-serif;
     font-size: 40px;
-    font-weight: 300;
+    font-weight: 400;
     color: #292929;
     padding: 30px;
     padding-bottom: 0;
     padding-top: 60px;
-
 }
 
 .cube h3{
@@ -351,6 +346,7 @@ flex-direction: column;
   background-image:url("https://res.cloudinary.com/dn9nc0upp/image/upload/v1727426274/Screenshot_2024-08-28_at_12.07.46_1_k97wes.png");
   background-size: cover;
 }
+
 
 
 
