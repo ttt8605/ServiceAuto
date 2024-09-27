@@ -267,8 +267,92 @@ body {
   justify-content: space-between;
  }
 
+ .line-div{
+  width: 100%;
+  height: 100px;
+ display: flex;
+ justify-content: flex-start;
+ margin-top: 100px;
 
- 
+ }
+ .line{
+  width: 100px;
+  rotate: 1 1 0 167deg;
+  position: relative;
+
+}
+
+.Important-info-section{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-top: 50px;
+  flex-wrap: wrap;
+}
+
+.cube{
+  width: 300px;
+  height: 300px;
+  background-color: #E2E1DD;
+  border-radius: 10px;
+  display: flex;
+  justify-content: flex-start;
+flex-direction: column;
+}
+
+.cube a{
+  text-decoration: none;
+  font-family: 'Overused Grotesk', sans-serif;
+    font-size: 40px;
+    font-weight: 300;
+    color: #292929;
+    padding: 30px;
+    padding-bottom: 0;
+    padding-top: 60px;
+
+}
+
+.cube a:nth-child(2){
+  padding-top: 0;
+
+}
+.arrowImg{
+  width: 35px;
+  height: 35px;
+}
+
+
+.cube h2{
+  text-decoration: none;
+  font-family: 'Overused Grotesk', sans-serif;
+    font-size: 40px;
+    font-weight: 300;
+    color: #292929;
+    padding: 30px;
+    padding-bottom: 0;
+    padding-top: 60px;
+
+}
+
+.cube h3{
+  text-decoration: none;
+  font-family: 'Overused Grotesk', sans-serif;
+    font-size: 25px;
+    font-weight: 300;
+    color: #292929;
+    padding: 30px;
+    padding-top: 0px;
+    text-decoration:#292929 underline;
+}
+
+.cube:nth-child(3){
+  background-image:url("https://res.cloudinary.com/dn9nc0upp/image/upload/v1727426274/Screenshot_2024-08-28_at_12.07.46_1_k97wes.png");
+  background-size: cover;
+}
+
+
 
    @media (max-width: 1200px){
      h2{
@@ -336,32 +420,39 @@ body {
 .card{
   flex-direction: column;
   height: 700px;
-  padding: 20px;
 }
 .left-service-side {
   width: 100%;
   height: 50%;
 }
 .left-service-side img{
-border-radius: 20px;
+border-bottom-left-radius: 0 ;
+border-top-right-radius: 20px;
 }
 .right-service-side {
   width: 100%;
   height: 50%;
-  padding: 0px;
+  padding: 20px;
 }
 .right-service-side p{
   font-size: 18px;
 }
 .right-side-top{
   margin-bottom: 20px;
-  margin-top: 20px;
+  
 }
 .right-side-top-buttons{
   flex-direction: row;
 }
 .btn-warning{
   margin-bottom: 0px;
+}
+.Important-info-section {
+  justify-content: center;
+
+}
+.cube{
+  margin: 20px;
 }
   }
   
@@ -396,7 +487,6 @@ border-radius: 20px;
 .card{
   flex-direction: column;
   height: 600px;
-  padding: 20px;
 }
 .right-side-top-title {
   font-size: 35px;
@@ -433,7 +523,6 @@ border-radius: 20px;
     .card {
       flex-direction: column;
       height: 500px;
-      padding: 10px;
   }
     .OverVideoDiv{
         left: 25px;
@@ -460,11 +549,16 @@ border-radius: 20px;
   .right-service-side {
     width: 100%;
     height: 55%;
-    padding: 0px;
 }
 .card{
   flex-direction: column;
-  padding: 10px;
+}
+.ServiceCardTitleDiv h3{
+  font-size: 30px;
+  margin-right: 0px;
+}
+.ServiceCardTitleDiv{
+  justify-content: space-between;
 }
   }
 
