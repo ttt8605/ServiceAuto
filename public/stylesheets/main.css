@@ -791,7 +791,7 @@ justify-content: space-between;
 }
 .angajat-carousel-control-buttons2{
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   margin-top: 50px;
 }
@@ -807,12 +807,13 @@ justify-content: space-between;
   border: none;
   background-color: #E2E2E2;
   color: #292929;
+  padding: 9px;
 }
 
 .angajat-carousel-control-buttons2 button:nth-child(2){
   background-color: #E33E3C;
   color:#ffffff ;
-  margin-left: 80px;
+
 }
 
 
@@ -950,16 +951,48 @@ justify-content: space-between;
   .Text-Img{
     margin-top: 80px;
   }
+  .AngajatiCard{
+    flex-direction: column;
+    width:360px;
+    align-items: center;
+    padding: 30px;
+    height: auto;
+  }
+  .img-div-angajati {
+    width: 318px;
+    height: 406px;
+}
+
   }
 
 
 
-  @media (max-width: 370px) {
+  @media (max-width: 360px) {
 
     .right-side-top-buttons {
       flex-direction: column;
   }
   .btn-warning {
     margin-bottom: 5px;
+}
+.AngajatiCard{
+  flex-direction: column;
+  width: 340px;
+  align-items: center;
+  padding: 30px;
+  height: auto;
+}
+.img-div-angajati {
+  width: 290px;
+  height: 362px;
+}
+.nume-angajat{
+  font-size: 30px;
+}
+.rol-angajat{
+  font-size: 27px;
+}
+.about-angajat{
+  font-size: 18px;
 }
   }
