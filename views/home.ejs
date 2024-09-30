@@ -16,9 +16,9 @@
        </form>
     </div>
     <div class="ButtonGroup">
-        <form action="/"><button id="first" class="SelectButton">Program</button></form>
-        <form action="/"><button id="second"class="SelectButton">Contact</button></form>
-        <form action="/"><button id="third"class="SelectButton">Locație</button></form>
+        <form action="/program"><button id="first" class="SelectButton">Program</button></form>
+        <form action="/#contact"><button id="second"class="SelectButton">Contact</button></form>
+        <form action="https://maps.app.goo.gl/uN2vfMr2XfX8zH1q8"><button id="third"class="SelectButton">Locație</button></form>
     </div>
 
   </div>
@@ -63,7 +63,7 @@
 
   <section class="Important-info-section">
     <div class="cube"><a href="/program">Program</a><a href="/program"><img class="arrowImg" src="https://res.cloudinary.com/dn9nc0upp/image/upload/v1727425165/Vector_ar2k8n.svg" alt=""></a></div>
-    <div class="cube"><h2>Contact</h2><h3>0790217727</h3></div>
+    <div class="cube" id="contact"><h2>Contact</h2><h3>0790217727</h3></div>
     <div class="cube">
       <a href="https://maps.app.goo.gl/uN2vfMr2XfX8zH1q8">Locație</a><a href="https://maps.app.goo.gl/uN2vfMr2XfX8zH1q8"><img class="arrowImg" src="https://res.cloudinary.com/dn9nc0upp/image/upload/v1727425165/Vector_ar2k8n.svg" alt=""></a>
     </div>
@@ -78,6 +78,66 @@
   <button class="ProgrameazateButton2">Programează-te aici<p class="ArrowButton2">&rarr;</p></button>
  </form>
 </section>
+<div class="container" id="container2">
+
+<div class="line-div">
+  <img src="https://res.cloudinary.com/dn9nc0upp/image/upload/v1726126505/Line_5_eegm5k.svg" alt="" class="line">
+</div>
+
+<section class="Angajati-Section">
+  <div class="Angajati-title-div"> 
+    <h1>Fă cunoștință cu echipa</h1>
+    <img class="img-angajati" src="https://res.cloudinary.com/dn9nc0upp/image/upload/v1727679531/Clip_path_group_uszlm6.svg" alt="">
+  </div>
+  <div class="angajat-carousel-control-buttons2">
+    <button>&larr;</button>
+    <button>&rarr;</button>
+  </div>
+<% for(let angajat of an) {%>
+
+  <div class="AngajatiCard">
+       <div class="img-div-angajati">
+        <img src="<%= angajat.images[0].url %>"  alt="">
+       </div>
+       <div class="angajat-presentation-side">
+        <div class="Title-roll-actionButtons">
+          <div>
+        <h3 class="nume-angajat"><%=angajat.name %></h3>
+        <h4 class="rol-angajat"><%=angajat.role %></h4>
+          </div>
+          <div>
+        <% if (currentUser && currentUser.role === 'manager') { %>
+          <div id="buttonsDiv" class="d-flex mb-2">
+              <a class="btn btn-warning me-2 mb-2" href="/angajati/<%=angajat._id %>/edit">Modifică</a>
+              <form action="/angajati/<%=angajat._id %>?_method=DELETE" method="POST">
+                  <button type="submit" class="btn btn-info">Șterge</button>
+              </form>
+            </div>
+      <% } %>
+    </div>
+      </div>
+      <div class="text-angajat-div">
+        <p class="about-angajat"><%=angajat.about %></p>
+      </div>
+       </div>
+  </div>
+
+  <% } %>
+    <div class="angajat-carousel-control-buttons">
+      <button>&larr;</button>
+      <button>&rarr;</button>
+    </div>
+
+</section>
+
+
+</div>
+
+
+
+
+
+
 
 
 <script>
