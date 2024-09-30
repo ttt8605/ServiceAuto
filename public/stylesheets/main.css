@@ -82,11 +82,8 @@ body {
     font-weight: 400;
     margin-top: 5px;
     color: #ffffff;
-    
-  
     /* text-shadow: 6px 6px 5px rgba(0, 0, 0, 0.6); */
 }
-
 
 .ProgrameazateButton{
     border:none;
@@ -114,7 +111,6 @@ body {
     font-size: 24px;
    margin: 0 !important;
   }
-
 
   .ButtonGroup{
     z-index: 2;
@@ -371,7 +367,8 @@ flex-direction: column;
   position: absolute;
   font-family: 'Overused Grotesk', sans-serif;
   font-size: 70px;
-  font-weight: 400;
+  font-weight: 300;
+  font-style: italic;
   color: #ffffff;
   text-align: center;
   top: 15%; /* Adjust this based on your layout */
