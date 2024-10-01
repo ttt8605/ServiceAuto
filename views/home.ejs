@@ -90,42 +90,44 @@
     <img class="img-angajati" src="https://res.cloudinary.com/dn9nc0upp/image/upload/v1727679531/Clip_path_group_uszlm6.svg" alt="">
   </div>
   <div class="angajat-carousel-control-buttons2">
-    <button>&larr;</button>
-    <button>&rarr;</button>
+    <button class="prev">&larr;</button>
+    <button class="next">&rarr;</button>
   </div>
-<% for(let angajat of an) {%>
-
-  <div class="AngajatiCard">
-       <div class="img-div-angajati">
-        <img src="<%= angajat.images[0].url %>"  alt="">
-       </div>
-       <div class="angajat-presentation-side">
-        <div class="Title-roll-actionButtons">
-          <div>
-        <h3 class="nume-angajat"><%=angajat.name %></h3>
-        <h4 class="rol-angajat"><%=angajat.role %></h4>
+  <div class="carousel">
+    <div class="carousel-container"> 
+      <% for (let angajat of an) { %>
+        <div class="AngajatiCard <% if (angajat === an[0]) { %>visible<% } else { %>invisible<% } %>">
+          <div class="img-div-angajati">
+            <img src="<%= angajat.images[0].url %>" alt="">
           </div>
-          <div>
-        <% if (currentUser && currentUser.role === 'manager') { %>
-          <div id="buttonsDiv" class="d-flex mb-2">
-              <a class="btn btn-warning me-2 mb-2" href="/angajati/<%=angajat._id %>/edit">Modifică</a>
-              <form action="/angajati/<%=angajat._id %>?_method=DELETE" method="POST">
-                  <button type="submit" class="btn btn-info">Șterge</button>
-              </form>
+          <div class="angajat-presentation-side">
+            <div class="Title-roll-actionButtons">
+              <div>
+                <h3 class="nume-angajat"><%= angajat.name %></h3>
+                <h4 class="rol-angajat"><%= angajat.role %></h4>
+              </div>
+              <div>
+                <% if (currentUser && currentUser.role === 'manager') { %>
+                  <div id="buttonsDiv" class="d-flex mb-2">
+                    <a class="btn btn-warning me-2 mb-2" href="/angajati/<%= angajat._id %>/edit">Modifică</a>
+                    <form action="/angajati/<%= angajat._id %>?_method=DELETE" method="POST">
+                      <button type="submit" class="btn btn-info">Șterge</button>
+                    </form>
+                  </div>
+                <% } %>
+              </div>
             </div>
+            <div class="text-angajat-div">
+              <p class="about-angajat"><%= angajat.about %></p>
+            </div>
+          </div>
+        </div>
       <% } %>
-    </div>
-      </div>
-      <div class="text-angajat-div">
-        <p class="about-angajat"><%=angajat.about %></p>
-      </div>
-       </div>
-  </div>
-
-  <% } %>
+</div>
+</div>
     <div class="angajat-carousel-control-buttons">
-      <button>&larr;</button>
-      <button>&rarr;</button>
+      <button class="prev">&larr;</button>
+     <button class="next">&rarr;</button>
     </div>
 
 </section>
@@ -138,7 +140,7 @@
 
 
 
-<script src="/javascripts/carousel.js"></script>
+<script src="/javascripts/angajatiCarousel.js"></script>
 
 <script>
   function limitWords(selector, wordLimit) {
@@ -166,4 +168,7 @@ cards.forEach((card, index) => {
     let topValue = index * 20;  // 0px for first card, 20px for second, 40px for third, etc.
     card.style.top = topValue + 'px';
 });
+
+
+
 </script>

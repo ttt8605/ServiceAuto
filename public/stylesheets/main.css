@@ -431,17 +431,44 @@ flex-direction: column;
   width: 60px;
   height: 60px;
 }
-
-.AngajatiCard{
-  width: 90%;
+.carousel {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  margin: 0 auto;
   position: relative;
-  margin-top: 30px;
+}
+
+.carousel-container {
+  display: flex;
+  transition: transform 0.8s ease-in-out; /* Smooth animation */
+  width: 100%;
+  /* Change this to fit the number of cards you have */
+  min-width: 100%; /* Ensure it takes full width */
+}
+
+.AngajatiCard {
+  width: 100%; /* Adjust this value as needed */
+  position: relative;
+  margin: 30px auto; /* Center the card horizontally */
   height: 650px;
   display: flex;
   flex-direction: row;
   background-color: #E33E3C;
   border-radius: 20px;
-  align-self: center;
+  opacity: 0; /* Start with an invisible state */
+  
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition for opacity and position */
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+.AngajatiCard.visible {
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Reset translation */
+}
+
+.AngajatiCard.invisible {
+  opacity: 0; /* Invisible */
 }
 
 .img-div-angajati{
@@ -813,6 +840,10 @@ justify-content: space-between;
 
 }
 
+.carousel{
+  width: 400px;
+}
+
 
   }
 
@@ -915,6 +946,21 @@ justify-content: space-between;
   width: 40px;
   height: 40px;
 }
+.AngajatiCard{
+  flex-direction: column;
+  width:360px;
+  align-items: center;
+  padding: 30px;
+  height: auto;
+}
+.img-div-angajati {
+  width: 318px;
+  height: 406px;
+}
+
+.carousel{
+  width: 360px;
+}
   }
 
 
@@ -959,7 +1005,21 @@ justify-content: space-between;
     width: 318px;
     height: 406px;
 }
+.AngajatiCard{
+  flex-direction: column;
+  width:340px;
+  align-items: center;
+  padding: 30px;
+  height: auto;
+}
+.img-div-angajati {
+  width: 287px;
+  height: 361px;
+}
 
+.carousel{
+  width: 340px;
+}
   }
 
 
@@ -991,5 +1051,21 @@ justify-content: space-between;
 }
 .about-angajat{
   font-size: 18px;
+}
+
+.AngajatiCard{
+  flex-direction: column;
+  width:320px;
+  align-items: center;
+  padding: 30px;
+  height: auto;
+}
+.img-div-angajati {
+  width: 288px;
+  height: 375px;
+}
+
+.carousel{
+  width: 320px;
 }
   }
