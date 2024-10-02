@@ -26,7 +26,7 @@
 }
   
   .container{
-    margin-top: 150px;
+    margin-top: 50px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -40,6 +40,7 @@
    display: flex;
    flex-direction: column;
    justify-content: flex-start;
+  
   }
 
   /* Carousel wrapper */
@@ -78,7 +79,7 @@
 
   .image-carousel{
     width: 100%;   /* Define the width of the container */
-    height: 100%;  /* Define the height of the container */
+    height: 500px;  /* Define the height of the container */
     overflow: hidden;  /* Hide the overflowing parts of the image */
     border-radius: 14px;
   }
@@ -86,7 +87,7 @@
   /* Images inside the slides */
   .carousel-slide img {
     width: 100%;    /* Ensure the image takes the full width of the container */
-    height: 60%;   /* Ensure the image takes the full height */
+    height: 100%;   /* Ensure the image takes the full height */
     object-fit: cover;  /* Crops the image without distorting */
     border-radius: 14px;
   }
@@ -119,8 +120,8 @@
     font-size: 70px;
     font-weight: 400;
     color: #292929;
-    margin-top: 10px;
     margin-bottom: 60px;
+    margin-top: 85px;
 }
 
 .PostDescription{
@@ -219,7 +220,7 @@
 @media(max-width:1050px){
   .container{
     flex-direction: column;
-    margin-top: 0px;
+    margin-top: 70px;
   }
 
   .carousel{
@@ -248,6 +249,9 @@
   max-width: 400px;
   max-height: 450px;
 }
+.image-carousel{
+  height: 300px;
+}
 
 .image-side{
   max-width: 400px;
@@ -275,6 +279,7 @@ height: 70px;
 .PostName {
   font-size: 50px;
   margin-bottom: 50px;
+  margin-top: 50px;
 }
 
 .PostDescription{
@@ -308,6 +313,7 @@ height: 70px;
   padding-right: 40px;
   margin-bottom: 0;
 }
+
 }
 
 @media(max-width:420px){
@@ -331,7 +337,7 @@ height: 70px;
 .image-side{
   max-width: 340px;
   height: 400px;
-  margin-top: 50px;
+  margin-top: 0;
 }
 
 .prev,.next{
@@ -354,5 +360,9 @@ height: 60px;
 .PostName {
   font-size: 40px;
   margin-bottom: 30px;
+}
+.ArrowDiv {
+
+  margin-top: 50px;
 }
 }

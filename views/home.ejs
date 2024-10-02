@@ -96,7 +96,7 @@
   <div class="carousel">
     <div class="carousel-container"> 
       <% for (let angajat of an) { %>
-        <div class="AngajatiCard <% if (angajat === an[0]) { %>visible<% } else { %>invisible<% } %>">
+        <div class="AngajatiCard ">
           <div class="img-div-angajati">
             <img src="<%= angajat.images[0].url %>" alt="">
           </div>
@@ -132,6 +132,33 @@
 
 </section>
 
+<div class="line-div">
+  <img src="https://res.cloudinary.com/dn9nc0upp/image/upload/v1726126505/Line_5_eegm5k.svg" alt="" class="line">
+</div>
+<section class="projectSection">
+  <h3 id="Projects"  >Proiectele noastre</h3>
+   <div class="projects-loop">
+    <% for(let post of postari) {%>
+            <div class="post-card">
+              <a href="/postari/<%=post._id %>">
+              <img src="<%= post.images[0].url %>" class="img-post" alt="...">
+              <div class="under-post-div">
+              <h5><%=post.name%> &rarr;</h5>
+              <% if (currentUser && currentUser.role === 'manager') { %>
+              <div class="edit-delete-group">
+              <a class="btn btn-warning me-2" href="/postari/<%=post._id %>/edit">Modifică</a>
+              <form action="/postari/<%=post._id %>?_method=DELETE" method="POST">
+                  <button type="submit" class="btn btn-danger">Șterge</button>
+              </form>
+              </div>
+              <% } %>
+              </div>
+              </a>
+                  </div>
+        
+          <% } %>
+   </div>
+</section>
 
 </div>
 
@@ -140,35 +167,5 @@
 
 
 
-<script src="/javascripts/angajatiCarousel.js"></script>
+<script src="/javascripts/MainPage.js"></script>
 
-<script>
-  function limitWords(selector, wordLimit) {
-    const paragraphs = document.querySelectorAll(selector);  // Select all matching elements
-
-    paragraphs.forEach(paragraph => {
-        const words = paragraph.innerText.split(' ');  // Split the paragraph text into words
-
-        if (words.length > wordLimit) {
-            paragraph.innerText = words.slice(0, wordLimit).join(' ') + '...';  // Limit the words
-        }
-    });
-}
-
-// Apply this to all paragraphs inside cards with a word limit of 50
-limitWords('.card p', 30);
-
-
-
- // Get all cards
- const cards = document.querySelectorAll('.card');
-
-// Loop through each card and set top with 20px increments
-cards.forEach((card, index) => {
-    let topValue = index * 20;  // 0px for first card, 20px for second, 40px for third, etc.
-    card.style.top = topValue + 'px';
-});
-
-
-
-</script>
