@@ -751,7 +751,7 @@ justify-content: space-between;
 }
 
 
-  .btn{
+  .find-car-submit-btn{
     min-height: 50px;
    border-top-right-radius: 10px;
    border-bottom-right-radius: 10px;
@@ -764,11 +764,12 @@ justify-content: space-between;
     width: 50px;
   }
   
-  .btn:hover{
+  .find-car-submit-btn:hover{
     background-color: #E2E1DD;
     color: #292929;
   }
   
+ 
 
 
 
@@ -1102,6 +1103,11 @@ justify-content: space-between;
 .btn-block:hover{
   background-color: #E33E3C;
 }
+
+.find-car-title h3 {
+  font-size: 28px;
+ 
+}
   }
 
 
@@ -1149,6 +1155,13 @@ justify-content: space-between;
       
       margin-left: 20px;
   }
+  .find-car-title h3 {
+    font-size: 25px;
+    text-align: center;
+}
+  .find-car-form {
+    width: 400px;
+}
   }
 
   @media (max-width: 500px) {
@@ -1344,6 +1357,9 @@ justify-content: space-between;
   width: 100%;
   background-color: #D9D9DB;
   padding-top: 80px;
+}
+.find-car-form {
+  width: 340px;
 }
   }
 
