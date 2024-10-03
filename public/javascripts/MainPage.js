@@ -68,3 +68,53 @@ nextButtons.forEach(button => {
 
 // Initialize the carousel position
 updateCarousel();
+
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll('.post-card');  // Select all cards
+  const showMoreButton = document.getElementById('show-more-btn');
+  const showLessButton = document.getElementById('show-less-btn');
+  const cardsToShow = 4;
+  let visibleCards = cardsToShow;
+
+  // Hide cards beyond the first 4
+  cards.forEach((card, index) => {
+    if (index >= cardsToShow) {
+      card.classList.add('hidden');
+    }
+  });
+
+  // Show more cards when the button is clicked
+  showMoreButton.addEventListener('click', () => {
+    for (let i = visibleCards; i < visibleCards + cardsToShow && i < cards.length; i++) {
+      cards[i].classList.remove('hidden');
+      cards[i].classList.add('visible')
+    }
+    visibleCards += cardsToShow;
+    
+    // If all cards are visible, hide the "Show More" button and show "Show Less" button
+    if (visibleCards >= cards.length) {
+      showMoreButton.classList.add('hidden');
+      showLessButton.classList.remove('hidden');
+    }
+  });
+
+  // Show less cards when the button is clicked
+  showLessButton.addEventListener('click', () => {
+    for (let i = visibleCards - 1; i >= cardsToShow; i--) {
+      if (i < cards.length) {  // Ensure we are within bounds
+        cards[i].classList.remove('visible');
+        cards[i].classList.add('hidden');
+      }
+    }
+    visibleCards = cardsToShow;
+
+    // If only 4 cards are visible, hide the "Show Less" button and show "Show More" button
+    if (visibleCards === cardsToShow) {
+      showLessButton.classList.add('hidden');
+      showMoreButton.classList.remove('hidden');
+    }
+  });
+});
+
+
+

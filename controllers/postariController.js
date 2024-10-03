@@ -20,7 +20,7 @@ module.exports.NewPostRequest = async(req,res)=>{
           newPost.images = req.files.map(f => ({ url: f.path, filename: f.filename }));
            await newPost.save();
            req.flash('success','Post created');
-          res.redirect('/')
+          res.redirect(`/postari/${newPost._id}`)
     }else{
         throw new Error('No files attached to the request');
     }
@@ -91,10 +91,10 @@ module.exports.PostEditRequest = async(req,res)=>{
        await post.updateOne({$pull:{images:{filename:{$in:req.body.deleteImages}}}})
     }
     req.flash('success','post updated');
-    res.redirect(`/`)
+    res.redirect(`/postari/${post._id}`)
 }catch(err){
     req.flash('error',err);
-    res.redirect(`/postari/${post._id}/edit`)
+    res.redirect(`/`)
 }
    
 }

@@ -16,7 +16,7 @@
        </form>
     </div>
     <div class="ButtonGroup">
-        <form action="/program"><button id="first" class="SelectButton">Program</button></form>
+        <form action="/program/#tabel"><button id="first" class="SelectButton">Program</button></form>
         <form action="/#contact"><button id="second"class="SelectButton">Contact</button></form>
         <form action="https://maps.app.goo.gl/uN2vfMr2XfX8zH1q8"><button id="third"class="SelectButton">Locație</button></form>
     </div>
@@ -24,7 +24,7 @@
   </div>
 
   <div class="container">
-          <div class="ServiceCardTitleDiv">
+          <div class="ServiceCardTitleDiv" id="Services">
             <h3>Serviciile noastre</h3>
             <img src="https://res.cloudinary.com/dn9nc0upp/image/upload/v1727330124/Vector_kbgdqx.svg" alt="">
           </div>
@@ -84,7 +84,7 @@
   <img src="https://res.cloudinary.com/dn9nc0upp/image/upload/v1726126505/Line_5_eegm5k.svg" alt="" class="line">
 </div>
 
-<section class="Angajati-Section">
+<section class="Angajati-Section" id="Team">
   <div class="Angajati-title-div"> 
     <h1>Fă cunoștință cu echipa</h1>
     <img class="img-angajati" src="https://res.cloudinary.com/dn9nc0upp/image/upload/v1727679531/Clip_path_group_uszlm6.svg" alt="">
@@ -158,9 +158,68 @@
         
           <% } %>
    </div>
+   <button id="show-more-btn" class="show-btn">Vezi mai mult &darr;</button>
+   <button id="show-less-btn" class="show-btn hidden">Vezi mai putin &uarr;</button>
 </section>
 
 </div>
+
+<div class="Appointment-section-title">
+  <h1>Programează-te aici</h1>
+</div>
+<section id="MakeAnAppoinment" class="Appointment-section">
+<div class="img-div-appointment">
+  <img src="https://res.cloudinary.com/dn9nc0upp/image/upload/v1727941672/IMG_6358_u1n37k.jpg" alt="">
+</div>
+<div class="form-div-appointment">
+  <form action="/programare" method="POST" class="validated-form" novalidate>
+    <div class=" mb-3">
+        <label for="model" class="form-label">Nume & prenume</label>
+        <input type="text" name="name" id="name" class="form-control"  required>
+        <div class="valid-feedback">
+         Looks good!
+        </div>
+       </div>
+    
+       <div class=" mb-3">
+        <label for="plate" class="form-label">Telefon</label>
+        <input type="text" name="phone" id="phone" class="form-control"  required>
+        <div class="valid-feedback">
+         Looks good!
+        </div>
+       </div>
+    
+     
+  
+       <div class="mt-3 mb-3">
+        <label for="date" class="form-label">Alege o dată</label>
+        <select id="date" name="date" class="form-control mb-3" aria-label="Default select example">
+            <% datesWithAvailableHours.forEach(dateObj => { %>
+                <option value="<%= dateObj.date %>"><%= dateObj.date %></option>
+            <% }) %>
+        </select>
+    </div>
+
+   
+<label for="ora" class="form-label">Alege ora</label>
+<select id="ora" name="ora" class="form-control mb-3" aria-label="Default select example" required>
+<% if (datesWithAvailableHours.length > 0 && datesWithAvailableHours[0].hours.length > 0) { %>
+  <% datesWithAvailableHours[0].hours.forEach(hour => { %>
+    <option value="<%= hour %>"><%= hour %></option>
+  <% }) %>
+<% } else { %>
+  <option value="" disabled selected>Nu sunt programari disponibile</option>
+<% } %>
+</select>
+           
+           
+    
+    <button class="btn-block">Trimite</button>
+    
+    </form>
+</div>
+
+</section>
 
 
 
@@ -168,4 +227,72 @@
 
 
 <script src="/javascripts/MainPage.js"></script>
+<script>
+
+//apointment js
+function reverseDateFormat(dateString) {
+    // Split the date string into its components
+    const [year, month, day] = dateString.split('-');
+    
+    // Reformat the date components
+    return `${day}/${month}/${year}`;
+  }
+  
+  // Function to update the options in the select element
+  function updateDateOptions() {
+    const selectElement = document.getElementById('date');
+    
+    // Iterate over each option and update its text
+    Array.from(selectElement.options).forEach(option => {
+        const originalDate = option.value;
+        option.text = reverseDateFormat(originalDate);
+    });
+  }
+  
+  // Call the function after the page loads
+  document.addEventListener('DOMContentLoaded', updateDateOptions);
+  
+  // Attach a submit event listener to the form
+  document.querySelector('form').addEventListener('submit', function() {
+    // Convert the plate input value to uppercase before submitting the form
+    const plateInput = document.getElementById('plate');
+    plateInput.value = plateInput.value.toUpperCase();
+  });
+  
+  
+  const datesWithAvailableHours = <%- JSON.stringify(datesWithAvailableHours) %>;
+  
+  document.getElementById('date').addEventListener('change', function() {
+  const selectedDate = this.value;
+  const hoursSelect = document.getElementById('ora');
+  const selectedDateObj = datesWithAvailableHours.find(dateObj => dateObj.date === selectedDate);
+  
+  // Clear previous options
+  hoursSelect.innerHTML = '';
+  
+  // Populate hours for the selected date
+  if (selectedDateObj) {
+      selectedDateObj.hours.forEach(hour => {
+          const option = document.createElement('option');
+          option.value = hour;
+          option.textContent = hour;
+          hoursSelect.appendChild(option);
+      });
+  
+  }
+  });
+  
+  
+  
+  document.getElementById('myForm').addEventListener('submit', function(event) {
+  const selectElement = document.getElementById('ora');
+  const selectedValue = selectElement.value;
+  
+  // Prevent form submission if no valid option is selected
+  if (selectedValue === "" || selectedValue === "No available times") {
+  alert('Please select a valid time slot.');
+  event.preventDefault(); // Prevent form submission
+  }
+  });
+</script>
 

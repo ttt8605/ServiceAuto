@@ -35,6 +35,7 @@ body {
  
 }
 
+
 .meniuButton {
     background-color: transparent;
 }
@@ -572,6 +573,37 @@ justify-content: space-between;
   height: 500px;
   margin-top: 50px;
 }
+.post-card.hidden {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.7s ease, max-height 0.7s ease;
+}
+
+
+/* Visible cards */
+.post-card.visible {
+  opacity: 1;
+  max-height: 500px; /* Set to a reasonable height for the content */
+  transition: opacity 0.8s ease, max-height 0.8s ease;
+}
+
+.show-btn{
+  background-color: transparent ;
+  border: none;
+  font-family: 'Overused Grotesk', sans-serif;
+  font-weight: 300;
+  font-size: 21px;
+  color: #292929;
+  border-bottom: 1px #292929 solid;
+  width: 200px;
+  align-self: center;
+  margin-top: 40px;
+
+}
+.show-btn.hidden{
+  display: none; 
+}
 
 .img-post{
   width: 100%;
@@ -603,6 +635,74 @@ justify-content: space-between;
   flex-direction: row;
   height: 38px;
   margin-top: 5px;
+}
+
+.Appointment-section-title{
+   margin-top: 150px;
+   margin-bottom: 30px;
+   margin-left: 50px;
+}
+
+.Appointment-section-title h1{
+  font-family: 'Outfit', sans-serif;
+  font-size: 50px;
+  font-weight: 400;
+  color: #292929;
+}
+
+.Appointment-section{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  height: 650px;
+  background-color: #E33E3C;
+
+}
+
+.img-div-appointment{
+  width: 50%;
+  height: 100%;
+}
+.img-div-appointment img{
+  width: 100%;
+  height: 100%;
+  object-fit:cover; 
+}
+
+.form-div-appointment{
+  width: 50%;
+  height: 100%;
+  padding: 100px;
+}
+.form-label{
+  font-family: 'Overused Grotesk', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: #ffffff;
+
+}
+.form-control{
+  min-height: 45px;
+  border-radius: 10px;
+  border: none;
+  background-color: #eaeaea;
+  font-family: 'Overused Grotesk', sans-serif;
+  font-size: 18px;
+}
+.btn-block{
+  min-height: 45px;
+  border-radius: 10px;
+  border: none;
+  margin-top: 40px;
+  background-color: #013657;
+  color: #ffffff;
+  transition: background-color 0.3s ease, transform 0.3s ease ;
+}
+
+.btn-block:hover{
+  background-color: #E2E1DD;
+  color: #292929;
 }
 
 @media (max-width: 1350px){
@@ -706,6 +806,11 @@ justify-content: space-between;
         height: 33px !important;
         font-size: 22px;
     }
+
+    .form-div-appointment {
+      padding: 50px;
+      padding-top: 90px;
+  }
   }
 
   @media (max-width: 991px){
@@ -784,6 +889,13 @@ justify-content: space-between;
   margin-top: 50px;
 }
 
+.Appointment-section-title h1 {
+  font-size: 40px;
+  margin-left:0;
+}.Appointment-section-title {
+
+  margin-left: 20px;
+}
 
   }
   
@@ -904,7 +1016,24 @@ justify-content: space-between;
   width: 400px;
 }
 
+.img-div-appointment {
+  display: none;
+}
+.form-div-appointment {
+  padding: 100px;
+  width: 100%;
+  background-color: #D9D9DB;
+}
+.form-control{
+  border: 0.5px #2929296e solid;
+}
+.form-label{
+  color: #292929;
+}
 
+.btn-block:hover{
+  background-color: #E33E3C;
+}
   }
 
 
@@ -940,6 +1069,18 @@ justify-content: space-between;
       width: 400px;
       height: 450px;
     }
+    .form-div-appointment {
+      padding: 70px;
+      width: 100%;
+      background-color: #D9D9DB;
+    }
+    .Appointment-section-title h1 {
+      margin-left: 0;
+    }
+    .Appointment-section-title {
+      
+      margin-left: 20px;
+  }
   }
 
   @media (max-width: 500px) {
@@ -1044,6 +1185,20 @@ justify-content: space-between;
   width: 350px;
   height: 400px;
 }
+.form-div-appointment {
+  padding: 50px;
+  width: 100%;
+  background-color: #D9D9DB;
+  padding-top: 80px;
+}
+.Appointment-section-title h1 {
+  font-size: 30px;
+
+}
+.Appointment-section-title {
+  margin-top: 100px;
+ 
+}
 
   }
 
@@ -1114,6 +1269,13 @@ justify-content: space-between;
 .post-card{
   width: 320px;
   height: 370px;
+}
+
+.form-div-appointment {
+  padding: 20px;
+  width: 100%;
+  background-color: #D9D9DB;
+  padding-top: 80px;
 }
   }
 
