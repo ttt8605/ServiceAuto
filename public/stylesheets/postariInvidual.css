@@ -173,10 +173,16 @@
   max-width: 500px;
   height: 630px;
 }
+.image-carousel{
+  height: 450px;
+}
 
 .container{
   justify-content: space-around;
   max-width: 95%;
+}
+.PostName{
+  margin-top: 10px;
 }
 }
 
@@ -225,7 +231,7 @@
 .image-side{
   max-width: 400px;
   height: 500px;
-  margin-top: 50px;
+  margin-top: 0px;
 }
 .image-carousel{
   height: 300px;
@@ -269,7 +275,8 @@ height: 70px;
 }
 
 .container{
-  max-width: 100%;;
+  max-width: 100%;
+  margin-top:50px;
 }
 
 .carousel{
