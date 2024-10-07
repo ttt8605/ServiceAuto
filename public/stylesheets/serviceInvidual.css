@@ -196,6 +196,9 @@
   max-width: 500px;
   height: 730px;
 }
+.image-carousel{
+  height: 450px;
+}
 
 .TextSide{
   max-width: 500px;
@@ -205,6 +208,10 @@
 .container{
   justify-content: space-around;
   max-width: 95%;
+}
+
+.PostName{
+  margin-top: 10px;
 }
 }
 
@@ -256,7 +263,7 @@
 .image-side{
   max-width: 400px;
   height: 500px;
-  margin-top: 50px;
+  margin-top: 0px;
 }
 
 .prev,.next{
@@ -268,18 +275,19 @@ height: 70px;
 .TextSide{
   max-width: 400px;
   height: 468px;
-  margin-top: 30px;
+  margin-top: 0px;
 }
 
 .container{
   justify-content: space-around;
   max-width: 100%;
+  margin-top: 0;
 }
 
 .PostName {
   font-size: 50px;
   margin-bottom: 50px;
-  margin-top: 50px;
+  margin-top: 0px;
 }
 
 .PostDescription{
@@ -326,7 +334,8 @@ height: 70px;
 }
 
 .container{
-  max-width: 100%;;
+  max-width: 100%;
+  margin-top:50px;
 }
 
 .carousel{
