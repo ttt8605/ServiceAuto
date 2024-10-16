@@ -72,10 +72,9 @@ const sessionConfig = {
     resave: false,
     saveUninitialized: true,
     cookie: {
-        httpOnly: true, // Helps protect against cross-site scripting (XSS) attacks
-        secure: process.env.NODE_ENV === 'production', // Ensure cookies are only sent over HTTPS in production
-        expires: Date.now() + 1000 * 60 * 60 * 24 * 7, // 1 week
-        maxAge: 1000 * 60 * 60 * 24 * 7 // 1 week in milliseconds
+        path: '/', // Default path for cookies
+        expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
+        maxAge: 1000 * 60 * 60 * 24 * 7
     }
 };
 app.use(session(sessionConfig));
