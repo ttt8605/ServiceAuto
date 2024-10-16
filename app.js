@@ -135,6 +135,6 @@ app.use((err, req, res, next) => {
 });
 
 const port = process.env.PORT || 3000;
-app.listen(port,'0.0.0.0',() => {
-    console.log(`listening on port  http://0.0.0.0:${port}`);
+app.listen(port,() => {
+    console.log(`listening on port 3000`);
 });
