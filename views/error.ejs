@@ -1,6 +1,15 @@
+
+<head>
+    <link rel="stylesheet" href="/stylesheets/error.css">
+</head>
 <% layout('/layouts/boilerplate') %>
-<div class="container mt-5">
-    <h1 class="display-4">Error <%= err.statusCode %></h1>
+<div class="container">
+
+<section >
+ <h1 class="display-4">Error <%= err.statusCode %></h1>
     <p class="lead"><%= err.message %></p>
     <a href="/" class="btn btn-primary">Go Home</a>
+</section>
+
 </div>
+   

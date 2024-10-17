@@ -1,5 +1,51 @@
+@import url('https://fonts.cdnfonts.com/css/overused-grotesk');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+
+
 body{
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+}
+
+
+.alert{
+    z-index: 3;
+    margin: 0;
+    padding: 40px;
+}
+
+
+strong{
+    font-family: 'Outfit', sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+}
+
+
+.alert-dismissible .btn-close{
+    top: 30px;
+    right: 30px;
+}
+
+
+@media(max-width:400px){
+
+.alert{
+    padding: 20px;
+}
+
+
+.alert-dismissible .btn-close{
+    top: 8px;
+    right: 9px;
+}
+
+
+strong{
+    font-family: 'Outfit', sans-serif;
+    font-size: 23px;
+    font-weight: 400;
+}
 }

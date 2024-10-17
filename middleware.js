@@ -1,6 +1,6 @@
 module.exports.isLoggedIn = (req,res,next)=>{
     if(!req.isAuthenticated()){
-        req.flash('error','You are not authorized');
+        req.flash('error','Nu sunteti autorizat');
         return res.redirect('/*')
     }
     next();
@@ -8,11 +8,11 @@ module.exports.isLoggedIn = (req,res,next)=>{
     
     module.exports.isManager = (req, res, next) => {
         if (!req.isAuthenticated()) {
-            req.flash('error', 'You need to be logged in to access this page.');
+            req.flash('error', 'Trebuie sa fi autentificat pentru a accesa asta');
             return res.redirect('/login');
         }
         if (req.user.role !== 'manager') {
-            req.flash('error', 'You do not have the required permissions to access this page.');
+            req.flash('error', 'Nu aveti permisiune in a accesa aceasta pagina');
             return res.redirect('/');
         }
         next();

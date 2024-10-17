@@ -7,3 +7,13 @@
 .MainSection{
     margin-top: 150px;
 }
+
+
+
+
+@media(max-width:1320px){
+    .MainSection{
+        margin-top: 0px;
+    }
+    
+}
