@@ -295,6 +295,7 @@ border-radius: 20px;
   display: flex;
   justify-content: flex-start;
 flex-direction: column;
+text-decoration: none;
 }
 
 .cube a{
@@ -323,9 +324,9 @@ flex-direction: column;
     font-size: 40px;
     font-weight: 400;
     color: #292929;
-    padding: 30px;
+    padding: 0px;
     padding-bottom: 0;
-    padding-top: 60px;
+    padding-top: 0px;
 }
 
 .cube h3{
@@ -334,13 +335,13 @@ flex-direction: column;
     font-size: 25px;
     font-weight: 300;
     color: #292929;
-    padding: 30px;
+    padding: 0px;
     padding-top: 0px;
     text-decoration:#292929 underline;
 }
 
 .cube:nth-child(3){
-  background-image:url("https://res.cloudinary.com/dn9nc0upp/image/upload/v1729233462/Group_52_idwi4r.svg");
+  background-image:url("https://res.cloudinary.com/dn9nc0upp/image/upload/v1729256207/Group_52_nxz33n.png");
   background-size: cover;
 }
 
