@@ -5,8 +5,10 @@
     </a>
   </div>
   <div class="mr-4 ml-4 meniu">
+    <div id="meniuDiv">
     <button class="meniuButton" id="menuButton"></button>
     <h5 class="meniuTextButton">Meniu</h5>
+    </div>
   </div>
 </nav>
 
@@ -81,7 +83,7 @@
           </div>
           <div class="quickLinks">
             <a class="textInformations" href="/program/#tabel">Program &rarr;</a>
-            <h3 class="textInformations">Locație &rarr;</h3>
+            <a class="textInformations" href="https://maps.app.goo.gl/uN2vfMr2XfX8zH1q8">Locație &rarr;</a>
           
         </div>
         <% } %>
@@ -97,7 +99,7 @@
 <script>
 
   // Get the menu button and sliding menu elements
-const menuButton = document.getElementById('menuButton');
+const menuButton = document.getElementById('meniuDiv');
 const slidingMenu = document.getElementById('slidingMenu');
 const closeMenu = document.getElementById('closeMenu');
 const links = document.querySelectorAll('.meniuLink');

@@ -17,7 +17,7 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 150px;
+    width: 170px;
     height: 50px;
 }
 
@@ -26,6 +26,14 @@ html {
     height: 96px;
     margin-left: 20px;
     align-items: center;
+}
+
+
+#meniuDiv{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
 }
 
 .meniuTextButton {
@@ -44,6 +52,7 @@ html {
      background-color: #27354E;
      border-bottom-color: #ffffff ;
      border-top-color: #ffffff;
+    margin-top: 15px;
 }
 
 /* Sliding menu */
@@ -340,12 +349,17 @@ html {
 }
 
 .meniu{
+
     margin: 0 !important;
+    width: 100px;
+    margin-right: 10px !important;
 }
 
 #logo{
     margin:0 !important;
 }
+
+
 }
 
 
