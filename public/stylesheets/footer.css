@@ -45,7 +45,7 @@
     color: #EDEDED;
     font-size: 30px;
     font-weight: 500;
-    margin-bottom: 15px;
+    margin-bottom: 0px;
 }
 
 .contact{
@@ -149,7 +149,7 @@
         font-size: 15px;
     }
     .contact{
-        margin-bottom: 0;
+        margin-bottom: 5px;
     }
     .footerLinks{
         order: 3;
